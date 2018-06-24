@@ -1,0 +1,19 @@
+{
+  "name": "@specron/example",
+  "version": "0.0.0",
+  "description": ".",
+  "scripts": {
+    "compile": "specron compile",
+    "sandbox": "specron sandbox",
+    "prepublishOnly": "specron compile",
+    "test": "specron compile && specron test --require ts-node/register"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@specron/cli": "latest",
+    "@specron/spec": "latest",
+    "ts-node": "^6.1.1",
+    "typescript": "^2.9.1",
+    "web3": "1.0.0-beta.34"
+  }
+}

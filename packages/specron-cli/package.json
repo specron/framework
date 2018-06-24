@@ -1,0 +1,45 @@
+{
+  "name": "@specron/cli",
+  "version": "0.0.2",
+  "description": "Command-line tool for ChainSpin framework.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "specron": "./bin/specron"
+  },
+  "scripts": {
+    "clean": "rm -Rf ./dist; rm -Rf ./build",
+    "transpile": "npm run clean; tsc",
+    "lint": "tslint 'src/**/*.ts?(x)'",
+    "prepublishOnly": "npm run transpile",
+    "test": "npm run transpile && ava"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "files": [
+      "dist/tests/*.test.js",
+      "dist/tests/**/*.test.js"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/inquirer": "^0.0.41",
+    "@types/node": "^10.3.2",
+    "@types/yargs": "^11.0.0",
+    "ava": "^0.25.0",
+    "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1"
+  },
+  "peerDependencies": {
+    "web3": "latest"
+  },
+  "dependencies": {
+    "@specron/compiler": "^0.0.1",
+    "@specron/init": "^0.0.1",
+    "@specron/sandbox": "^0.0.1",
+    "@specron/spec": "^0.0.1",
+    "inquirer": "^6.0.0",
+    "yargs": "^11.0.0"
+  }
+}

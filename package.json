@@ -1,0 +1,35 @@
+{
+  "scripts": {
+    "bootstrap": "lerna exec npm install",
+    "publish": "lerna publish --force-publish",
+    "test": "lerna run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/specron/monorepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/specron/monorepo/issues"
+  },
+  "homepage": "https://github.com/specron/monorepo#readme",
+  "keywords": [
+    "test",
+    "testing",
+    "spec",
+    "specification",
+		"hay",
+		"solidity",
+		"sol",
+		"solc",
+    "javascript",
+    "typescript",
+    "nodejs",
+    "tdd",
+    "unit",
+    "cli"
+  ],
+  "author": "Kristijan Sedlak (Xpepermint)",
+  "devDependencies": {
+    "lerna": "3.0.0-beta.21"
+  }
+}

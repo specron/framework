@@ -1,0 +1,41 @@
+{
+  "name": "@specron/compiler",
+  "version": "0.0.1",
+  "description": "Solidity contract compiler for ChainSpin framework.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -Rf ./dist",
+    "transpile": "npm run clean; tsc",
+    "lint": "tslint 'src/**/*.ts?(x)'",
+    "prepublishOnly": "npm run transpile",
+    "test": "ava"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "files": [
+      "src/tests/*.test.ts",
+      "src/tests/**/*.test.ts"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@0xcert/ethereum-utils": "1.0.1",
+    "@types/fs-extra": "5.0.3",
+    "@types/node": "^10.3.2",
+    "ava": "^1.0.0-beta.6",
+    "ts-node": "^6.1.0",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "fast-glob": "^2.2.2",
+    "fs-extra": "6.0.1",
+    "solc": "^0.4.24"
+  }
+}
