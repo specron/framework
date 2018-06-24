@@ -10,6 +10,7 @@ The source code is available on [GitHub](https://github.com/specron/monorepo) wh
 
 | Package | Description | Version
 |-|-|-
+| [@specron/cli](https://github.com/specron/monorepo/tree/master/packages/specron-cli) | Command-line interface. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcli.svg)](https://badge.fury.io/js/specron%2Fcli)
 | [@specron/compiler](https://github.com/specron/monorepo/tree/master/packages/specron-compiler) | Smart contracts compiler. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcompiler.svg)](https://badge.fury.io/js/specron%2Fcompiler)
 | [@specron/init](https://github.com/specron/monorepo/tree/master/packages/specron-init) | Project structure initializer. | [![NPM Version](https://badge.fury.io/js/@specron%2Finit.svg)](https://badge.fury.io/js/specron%2Finit)
 | [@specron/sandbox](https://github.com/specron/monorepo/tree/master/packages/specron-sandbox) | Ethereum sandbox server. | [![NPM Version](https://badge.fury.io/js/@specron%2Fsandbox.svg)](https://badge.fury.io/js/specron%2Fsandbox)
