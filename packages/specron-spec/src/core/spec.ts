@@ -1,4 +1,4 @@
-import { Spec as SpecBase } from '@hayspec/core';
+import { Spec as SpecBase } from '@hayspec/spec';
 import { DefaultReporter } from '@hayspec/reporter';
 import { Stage } from './stage';
 import { Context } from './context';

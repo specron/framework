@@ -1,4 +1,4 @@
-import * as core from "@hayspec/core";
+import * as core from "@hayspec/spec";
 import { DefaultReporter } from "@hayspec/reporter";
 
 /**

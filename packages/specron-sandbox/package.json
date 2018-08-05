@@ -1,6 +1,6 @@
 {
   "name": "@specron/sandbox",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Ethereum sandbox server for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -36,5 +36,5 @@
   "dependencies": {
     "ganache-cli": "^6.1.0"
   },
-  "gitHead": "b498fca482fd791d3ec26d5619093af2d8d33ff3"
+  "gitHead": "836af65060def29957a79993fbdae8acf08dcf39"
 }

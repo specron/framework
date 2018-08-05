@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { Context as ContextBase } from '@hayspec/core';
+import { Context as ContextBase } from '@hayspec/spec';
 import { Stage } from './stage';
 
 /**
