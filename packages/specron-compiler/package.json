@@ -1,6 +1,6 @@
 {
   "name": "@specron/compiler",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Solidity contract compiler for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -38,5 +38,5 @@
     "fs-extra": "6.0.1",
     "solc": "^0.4.24"
   },
-  "gitHead": "836af65060def29957a79993fbdae8acf08dcf39"
+  "gitHead": "1eea9a0522fe49eabae71e89561d95bebe4265fe"
 }
