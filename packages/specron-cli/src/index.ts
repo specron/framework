@@ -79,7 +79,7 @@ const { argv } = yargs
       default: 'localhost',
     }),
     testHandler)
-  .epilog('Copyright © 0xcert.org 2018.')
+  .epilog('Copyright © Xpepermint 2018.')
   .help()
   .version();
 
