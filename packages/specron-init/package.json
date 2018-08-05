@@ -1,6 +1,6 @@
 {
   "name": "@specron/init",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Project generator for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -35,5 +35,5 @@
   "dependencies": {
     "fs-extra": "^6.0.1"
   },
-  "gitHead": "16e3151b0138a29ab774e3f20f2eaf33952e129c"
+  "gitHead": "b498fca482fd791d3ec26d5619093af2d8d33ff3"
 }
