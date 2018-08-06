@@ -42,7 +42,7 @@ export class Context<Data = {}> extends ContextBase<Data> {
     const config = {
       args: [],
       from: await this.getAccounts().then((a) => a[0]),
-      gas: 3000000,
+      gas: 6000000,
       gasPrice: 5000000000,
       ...options,
     };
@@ -67,7 +67,7 @@ export class Context<Data = {}> extends ContextBase<Data> {
    * Transforms an object into web3 tuple type.
    * @param obj Web3 structure as object.
    */
-  toTuple(obj) {
+  public toTuple(obj) {
     if (!(obj instanceof Object)) {
       return [];
     }
