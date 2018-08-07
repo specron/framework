@@ -1,5 +1,6 @@
-import * as core from "@hayspec/spec";
 import { DefaultReporter } from "@hayspec/reporter";
+import * as core from "@hayspec/spec";
+import tuple from '../helpers/tuple';
 
 /**
  * 
@@ -29,8 +30,11 @@ export class Stage<Data = {}> extends core.Stage<Data> {
     return this.data[k];
   }
 
-  public foo() {
-    
+  /**
+   * 
+   */
+  public tuple(obj) {
+    return tuple(obj);
   }
 
 }

@@ -12,6 +12,7 @@
     "test": "ava --verbose"
   },
   "ava": {
+    "concurrency": 1,
     "compileEnhancements": false,
     "extensions": [
       "ts"
@@ -19,7 +20,7 @@
     "require": [
       "ts-node/register"
     ],
-    "files": [
+    "sources": [
       "src/tests/*.test.ts",
       "src/tests/**/*.test.ts"
     ]

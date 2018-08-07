@@ -16,40 +16,26 @@ test.after(async () => {
   sandbox.close();
 });
 
-test('method `getAccounts` deploys contract from JSON file', async (t) => {
-  const ctx = new Context(stage);
-  const accounts = await ctx.getAccounts();
-  t.true(accounts.length > 0);
-});
-
-test('method `requireContract` deploys contract from JSON file', async (t) => {
+test('variable `web3` exposes the web3 instance', async (t) => {
   const stage = new Stage(web3, reporter);
   const ctx = new Context(stage);
-  const contact = await ctx.requireContract({ src: './src/tests/assets/Example.json' });
+  t.is(ctx.web3, web3);
+});
+
+test('method `deploy` deploys contract from JSON file', async (t) => {
+  const stage = new Stage(web3, reporter);
+  const ctx = new Context(stage);
+  const contact = await ctx.deploy({ src: './src/tests/assets/Example.json' });
   const res = await contact.methods.test().call();
   t.is(res, '123457');
 });
 
-test('method `toTuple` transforms an object to tuple type', async (t) => {
+test('method `tuple` transforms an object to tuple type', async (t) => {
   const ctx = new Context(stage);
-  const tuple = ctx.toTuple({
+  const tuple = ctx.tuple({
     foo: "FOO",
-    bar: ["BAR1", "BAR2"],
-    baz: {
-      bazfoo: [1, 2],
-      bazbar: 'BAZBAR',
-    },
-    zed: [
-      {
-        zedfoo: [1, 2],
-        zedbar: 'BAZBAR',
-      }
-    ]
   });
   t.deepEqual(tuple, [
     "FOO",
-    ["BAR1", "BAR2"],
-    [[1, 2], 'BAZBAR'],
-    [[[1, 2], 'BAZBAR']],
   ]);
 });
