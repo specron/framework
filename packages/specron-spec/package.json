@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Test suits for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "@0xcert/ethereum-utils": "1.0.1",
-    "@specron/sandbox": "^0.0.19",
+    "@specron/sandbox": "^0.0.20",
     "@types/node": "^10.3.2",
     "ava": "^1.0.0-beta.6",
     "ts-node": "^7.0.0",
@@ -40,9 +40,9 @@
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.4.10",
-    "@hayspec/runner": "^0.4.10",
-    "@hayspec/spec": "^0.4.10"
+    "@hayspec/reporter": "^0.4.12",
+    "@hayspec/runner": "^0.4.12",
+    "@hayspec/spec": "^0.4.12"
   },
   "gitHead": "bb325548efd53192bb9d8c625eeeff2d686b5a7a"
 }
