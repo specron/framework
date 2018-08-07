@@ -14,23 +14,24 @@
   "ava": {
     "concurrency": 1,
     "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
     "require": [
       "ts-node/register"
     ],
-    "sources": [
+    "extensions": [
+      "ts"
+    ],
+    "files": [
       "src/tests/*.test.ts",
       "src/tests/**/*.test.ts"
     ]
   },
   "license": "MIT",
   "devDependencies": {
+    "@0xcert/ethereum-utils": "1.0.1",
     "@specron/sandbox": "^0.0.18",
     "@types/node": "^10.3.2",
     "ava": "^1.0.0-beta.6",
-    "ts-node": "^6.1.0",
+    "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.1",
     "web3": "1.0.0-beta.35"

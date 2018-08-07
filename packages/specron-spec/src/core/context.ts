@@ -1,7 +1,7 @@
 import { Context as ContextBase } from '@hayspec/spec';
 import { Stage } from './stage';
-import deploy from '../helpers/deploy';
-import tuple from '../helpers/tuple';
+import deploy from '../methods/deploy';
+import tuple from '../methods/tuple';
 
 /**
  * 

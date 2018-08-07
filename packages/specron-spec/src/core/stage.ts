@@ -1,6 +1,6 @@
 import { DefaultReporter } from "@hayspec/reporter";
 import * as core from "@hayspec/spec";
-import tuple from '../helpers/tuple';
+import tuple from '../methods/tuple';
 
 /**
  * 
