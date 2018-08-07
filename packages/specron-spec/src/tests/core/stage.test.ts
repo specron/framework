@@ -1,6 +1,6 @@
 import test from 'ava';
 import * as Web3 from 'web3';
-import { Stage, Reporter } from '..';
+import { Stage, Reporter } from '../..';
 
 const web3 = new (Web3 as any)('http://localhost:8545') as Web3.default;
 const reporter = new Reporter();

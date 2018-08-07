@@ -1,5 +1,6 @@
 import { Context as ContextBase } from '@hayspec/spec';
 import { Stage } from './stage';
+import reverts from '../asserts/reverts';
 import deploy from '../methods/deploy';
 import tuple from '../methods/tuple';
 
@@ -21,6 +22,17 @@ export class Context<Data = {}> extends ContextBase<Data> {
    */
   public get web3() {
     return this.stage.web3;
+  }
+
+  /**
+   * 
+   */
+  public reverts(fn: () => any, message?: any) {
+    return this.assert({
+      assertion: 'reverts',
+      handler: () => reverts(fn),
+      message,
+    });
   }
 
   /**

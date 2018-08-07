@@ -20,7 +20,7 @@ test('deploys contract at local path', async (t) => {
     from: await web3.eth.getAccounts().then((a) => a[0]),
     gas: 6000000,
     gasPrice: 1,
-    src: './src/tests/assets/Example.json',
+    src: './src/tests/assets/Scaffold.json',
   });
   const res = await contact.methods.test().call();
   t.is(res, '123457');

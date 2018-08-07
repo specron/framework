@@ -1,5 +1,5 @@
 import test from 'ava';
-import { Runner } from '..';
+import { Runner } from '../..';
 
 test('method `require` loads spec files based on pattern', async (t) => {
   const runner = new Runner();
