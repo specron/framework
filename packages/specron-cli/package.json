@@ -1,6 +1,6 @@
 {
   "name": "@specron/cli",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Command-line tool for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -32,10 +32,10 @@
     "typescript": "^2.9.1"
   },
   "dependencies": {
-    "@specron/compiler": "^0.0.17",
-    "@specron/init": "^0.0.17",
-    "@specron/sandbox": "^0.0.17",
-    "@specron/spec": "^0.0.17",
+    "@specron/compiler": "^0.0.18",
+    "@specron/init": "^0.0.18",
+    "@specron/sandbox": "^0.0.18",
+    "@specron/spec": "^0.0.18",
     "inquirer": "^6.0.0",
     "yargs": "^11.0.0"
   },
