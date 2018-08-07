@@ -29,4 +29,8 @@ export class Stage<Data = {}> extends core.Stage<Data> {
     return this.data[k];
   }
 
+  public foo() {
+    
+  }
+
 }
