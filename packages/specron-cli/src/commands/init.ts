@@ -1,21 +1,18 @@
 import * as inquirer from 'inquirer';
 import { Generator } from '@specron/init';
+import { Printer } from '@hayspec/reporter';
 
 /**
  * Initializes project directory.
  */
 export default async function (argv) {
-  const { name, description, root } = argv;
-
+  const { name, description } = argv;
+  const root = process.cwd();
+  const printer = new Printer();
+  
   let answers = {};
   if (!(name && description)) {
     answers = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'root',
-        message: "Project root:",
-        default: root || '.',
-      },
       {
         type: 'input',
         name: 'name',
@@ -30,18 +27,31 @@ export default async function (argv) {
       },
     ]);
   } else {
-    answers = { name, description, root };
+    answers = { name, description };
   }
   
   const generator = new Generator({
-    root: answers['root'],
+    root,
     name: (answers['name'] || process.cwd().split(/\\|\//).reverse()[0]).toLowerCase(),
     description: answers['description'],
   });
   try {
-    console.log(`Initializing ...`);
     await generator.build();
-    console.log(`Done`);
+
+    printer.end(
+      printer.indent(1, ''),
+      `Continue by running the commands below:`
+    );
+    printer.end(
+      printer.indent(2, ''),
+      printer.colorize('gray', `$ npm install`)
+    );
+    printer.end(
+      printer.indent(2, ''),
+      printer.colorize('gray', `$ npm test`)
+    );
+    printer.end();
+
   } catch (e) {
     console.error(e);
   }
