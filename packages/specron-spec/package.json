@@ -33,16 +33,16 @@
     "ava": "^1.0.0-beta.6",
     "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
-    "typescript": "^2.9.1",
+    "typescript": "^3.0.1",
     "web3": "1.0.0-beta.35"
   },
   "peerDependencies": {
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.4.14",
-    "@hayspec/runner": "^0.4.14",
-    "@hayspec/spec": "^0.4.14"
+    "@hayspec/reporter": "^0.4.15",
+    "@hayspec/runner": "^0.4.15",
+    "@hayspec/spec": "^0.4.15"
   },
   "gitHead": "ca3d98e46f6f4d720552f49d54157f21e260cc93"
 }

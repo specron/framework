@@ -7,8 +7,8 @@ test('adds new source files', (t) => {
   compiler.source('./src/tests/assets/*.sol');
   const files = Object.keys(compiler.input.sources);
   t.deepEqual(files, [
-    './src/tests/assets/Token1.sol',
-    './src/tests/assets/Token2.sol',
+    './src/tests/assets/token-a.sol',
+    './src/tests/assets/token-b.sol',
   ]);
 });
 
@@ -18,8 +18,8 @@ test('compiles source files', (t) => {
   compiler.compile();
   const contracts = Object.keys(compiler.output.contracts);
   t.deepEqual(contracts, [
-    './src/tests/assets/Token1.sol',
-    './src/tests/assets/Token2.sol',
+    './src/tests/assets/token-a.sol',
+    './src/tests/assets/token-b.sol',
     '@0xcert/ethereum-utils/contracts/math/SafeMath.sol',
   ]);
 });
@@ -31,7 +31,7 @@ test('saves compiled sources to destination', async (t) => {
   compiler.save('./build/foo');
   const files = glob.sync('./build/foo/*.json') as string[];
   t.deepEqual(files, [
-    './build/foo/Token1.json',
-    './build/foo/Token2.json',
+    './build/foo/token-a.json',
+    './build/foo/token-b.json',
   ]);
 });

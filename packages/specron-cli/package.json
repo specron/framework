@@ -29,13 +29,14 @@
     "ava": "^0.25.0",
     "ts-node": "^6.1.1",
     "tslint": "^5.10.0",
-    "typescript": "^2.9.1"
+    "typescript": "^3.0.1",
+    "web3": "^1.0.0-beta.35"
   },
   "dependencies": {
-    "@specron/compiler": "^0.0.22",
+    "@specron/compiler": "file:../specron-compiler",
     "@specron/init": "^0.0.22",
     "@specron/sandbox": "^0.0.22",
-    "@specron/spec": "^0.0.22",
+    "@specron/spec": "file:../specron-spec",
     "inquirer": "^6.0.0",
     "yargs": "^11.0.0"
   },

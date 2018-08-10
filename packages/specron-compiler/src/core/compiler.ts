@@ -3,19 +3,22 @@ import * as fs from 'fs';
 import * as fsx from 'fs-extra';
 import * as pth from 'path';
 import * as glob from 'fast-glob';
-import { SolcInput, SolcOutput } from './solc';
+import { SolcInput, SolcOutput } from '../lib/solc';
+import { DefaultReporter } from './reporter';
 
 /**
  * Solidity compiler configuration object.
  */
 export interface CompilerRecipe extends SolcInput {
-  cwd: string;
+  cwd?: string;
+  reporter?: DefaultReporter;
 }
 
 /**
  * Solidity compiler.
  */
 export class Compiler {
+  protected reporter: DefaultReporter;
   public cwd: string;
   public input: SolcInput;
   public output: SolcOutput = {};
@@ -24,15 +27,14 @@ export class Compiler {
    * Class constructor.
    * @param recipe Compiler configuration object.
    */
-  public constructor(
-    recipe?: CompilerRecipe
-  ) {
+  public constructor(recipe?: CompilerRecipe) {
     this.input = {
       sources: {
         ...(recipe ? recipe.sources : {}),
       },
       language: recipe && recipe.language ? recipe.language : 'Solidity',
       settings: {
+        evmVersion: 'constantinople',
         outputSelection: {
           '*': {
             '*': [
@@ -48,15 +50,14 @@ export class Compiler {
       },
     };
     this.cwd = recipe && recipe.cwd ? recipe.cwd : process.cwd();
+    this.reporter = recipe && recipe.reporter ? recipe.reporter : null;
   }
 
   /**
    * Loads sources by pattern.
    * @param patterns File search patterns.
    */
-  public source(
-    ...patterns: string[]
-  ) {
+  public source(...patterns: string[]) {
     const files = glob.sync(patterns, { cwd: this.cwd })
       .map((f) => f.toString());
  
@@ -74,6 +75,10 @@ export class Compiler {
    * Compiles the solc input and memorizes the output.
    */
   public compile() {
+    if (this.reporter) {
+      this.reporter.onCompileStart(this);
+    }
+
     const importer = (file: string) => {
       file = this.normalizePath(file);
       return {
@@ -86,6 +91,10 @@ export class Compiler {
       solc.compileStandardWrapper(input, importer)
     );
 
+    if (this.reporter) {
+      this.reporter.onCompileEnd(this);
+    }
+
     return !Array.isArray(this.output.errors);
   }
 
@@ -93,14 +102,16 @@ export class Compiler {
    * Saves memoried compiler output to destination folder.
    * @param dist Destination folder.
    */
-  public save(
-    dist: string
-  ) {
+  public save(dist: string) {
+    if (this.reporter) {
+      this.reporter.onSaveStart(this);
+    }
+
     const target = pth.resolve(this.cwd, dist);
     fsx.ensureDirSync(target);
 
     let count = 0;
-    Object.keys(this.output.contracts).forEach((file) => {
+    Object.keys(this.output.contracts || {}).forEach((file) => {
       const sourcePath = this.normalizePath(file);
 
       const isModule = sourcePath.indexOf('./node_modules') === 0;
@@ -112,20 +123,22 @@ export class Compiler {
       const contractName = fileName.split('.').slice(0, -1).join('.');
       const destPath = pth.join(target, `${contractName}.json`);
 
-      const json = {
-        contractName,
-        sourcePath,
-        ...this.output.contracts[file][contractName],
-      };
-      if (json.metadata) {
-        json.metadata = JSON.parse(json.metadata);
-      }
+      const json = this.output.contracts[file];
+      Object.keys(json).forEach((contract) => {
+        if (json[contract].metadata) {
+          json[contract].metadata = JSON.parse(json[contract].metadata);
+        }
+      });
 
       const data = JSON.stringify(json, null, 2);
       fs.writeFileSync(destPath, data);
 
       count++;
     });
+
+    if (this.reporter) {
+      this.reporter.onSaveEnd(this);
+    }
 
     return count;
   }
@@ -142,9 +155,7 @@ export class Compiler {
    * Converts a file path not starting with a dot to match node_modules.
    * @param path File path
    */
-  protected normalizePath(
-    path: string
-  ) {
+  protected normalizePath(path: string) {
     return path.indexOf('./') !== 0 ? `./node_modules/${path}` : path;
   }
 

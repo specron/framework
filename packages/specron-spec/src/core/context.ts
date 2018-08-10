@@ -1,4 +1,4 @@
-import { Context as ContextBase } from '@hayspec/spec';
+import { Context as ContextBase, AssertionNote } from '@hayspec/spec';
 import { Stage } from './stage';
 import reverts from '../asserts/reverts';
 import deploy from '../methods/deploy';
@@ -27,7 +27,7 @@ export class Context<Data = {}> extends ContextBase<Data> {
   /**
    * 
    */
-  public reverts(fn: () => any, message?: any) {
+  public reverts(fn: () => any, message?: any): AssertionNote | Promise<AssertionNote> {
     return this.assert({
       assertion: 'reverts',
       handler: () => reverts(fn),
@@ -40,6 +40,7 @@ export class Context<Data = {}> extends ContextBase<Data> {
    */
   public async deploy(options: {
     src: string;
+    contract?: string;
     args?: any[];
     from?: string;
     gas?: number;

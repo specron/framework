@@ -17,14 +17,14 @@ type ContextHandler<Data> = (context: Context<Data>, stage: Stage<Data>) => (voi
 /**
  * 
  */
-export class Spec<Data = {}, Web3 = {}> extends SpecBase<Data> {
+export class Spec<Data = {}> extends SpecBase<Data> {
   protected _stage: Stage<Data>;
-  public parent: Spec<Data, Web3>;
+  public parent: Spec<Data>;
 
   /**
    * 
    */
-  public constructor(stage?: Stage<Data>, parent?: Spec<Data, Web3>) {
+  public constructor(stage?: Stage<Data>, parent?: Spec<Data>) {
     super(stage, parent);
   }
 
@@ -88,7 +88,7 @@ export class Spec<Data = {}, Web3 = {}> extends SpecBase<Data> {
   /**
    * 
    */
-  public spec(message: string, spec: Spec<Data, Web3>) {
+  public spec(message: string, spec: Spec<Data>) {
     return super.spec(message, spec);
   }
 

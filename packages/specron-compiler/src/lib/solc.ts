@@ -4,9 +4,9 @@
  */
 export interface SolcInput {
   // Source code language.
-  language: 'Solidity' | 'serpent' | 'lll' | 'assembly';
+  language?: 'Solidity' | 'serpent' | 'lll' | 'assembly';
   // Source.
-  sources: {
+  sources?: {
     [file: string]: {
       // Hash of the source file.
       keccak256?: string;

@@ -1,4 +1,4 @@
-import { Compiler } from '@specron/compiler';
+import { Compiler, DefaultReporter } from '@specron/compiler';
 
 /**
  * Compiles solidity contracts.
@@ -6,13 +6,10 @@ import { Compiler } from '@specron/compiler';
 export default async function (argv) {
   const { match, build } = argv;
 
-  const compiler = new Compiler();
-  try {
-    console.log('Compiling contracts ...',);
-    compiler.require(...match);
-    compiler.save(build);
-    console.log('Done');
-  } catch (e) {
-    console.error(e);
-  }
+  const compiler = new Compiler({
+    reporter: new DefaultReporter(),
+  });
+  compiler.source(...match);
+  compiler.compile();
+  compiler.save(build);
 }
