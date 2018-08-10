@@ -1,4 +1,4 @@
 {
   "ignore": ["dist/*"],
-  "ext": "js,ts"
+  "ext": "js,ts,sol"
 }

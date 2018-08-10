@@ -3,116 +3,149 @@ import * as fs from 'fs';
 import * as fsx from 'fs-extra';
 import * as pth from 'path';
 import * as glob from 'fast-glob';
+import { SolcInput, SolcOutput } from './solc';
 
 /**
- *
+ * Solidity compiler configuration object.
  */
-export interface ContractData {
-  contractName: string;
-  sourcePath: string;
-  abi: any[];
-  bytecode: string;
+export interface CompilerRecipe extends SolcInput {
+  cwd: string;
 }
 
 /**
- *
+ * Solidity compiler.
  */
 export class Compiler {
-  protected cwd: string;
-  protected contracts: ContractData[] = [];
-
+  public cwd: string;
+  public input: SolcInput;
+  public output: SolcOutput = {};
+  
   /**
-   *
+   * Class constructor.
+   * @param recipe Compiler configuration object.
    */
-  public constructor(cwd?: string) {
-    this.cwd = cwd || process.cwd();
+  public constructor(
+    recipe?: CompilerRecipe
+  ) {
+    this.input = {
+      sources: {
+        ...(recipe ? recipe.sources : {}),
+      },
+      language: recipe && recipe.language ? recipe.language : 'Solidity',
+      settings: {
+        outputSelection: {
+          '*': {
+            '*': [
+              'abi', 'ast', 'legacyAST', 'devdoc', 'userdoc', 'metadata', 
+              'ir', 'evm', 'evm.assembly', 'evm.legacyAssembly', 'evm.bytecode',
+              'evm.bytecode.object', 'evm.bytecode.opcodes', 'evm.bytecode.sourceMap',
+              'evm.bytecode.linkReferences', 'evm.deployedBytecode', 'evm.methodIdentifiers',
+              'evm.gasEstimates', 'ewasm', 'ewasm.wast', 'ewasm.wasm'
+            ],
+          },
+        },
+        ...(recipe ? recipe.settings : {}),
+      },
+    };
+    this.cwd = recipe && recipe.cwd ? recipe.cwd : process.cwd();
   }
 
   /**
-   *
+   * Loads sources by pattern.
+   * @param patterns File search patterns.
    */
-  public require(...patterns: string[]) {
-    const files = this.getFiles(patterns);
-    const output = this.compileFiles(files);
-
-    for (const key in output.contracts) {
-      const data = output.contracts[key];
-      const [sourcePath, contractName] = key.split(':');
-
-      this.contracts.push({
-        ...data,
-        contractName,
-        abi: JSON.parse(data.interface),
-        sourcePath: pth.resolve(this.normalizePath(sourcePath)),
-      });
-    }
-
-    return this;
-  }
-
-  /**
-   *
-   */
-  public serialize () {
-    return JSON.parse(JSON.stringify(this.contracts));
-  }
-
-  /**
-   *
-   */
-  public clear () {
-    this.contracts = [];
-    return this;
-  }
-
-  /**
-   *
-   */
-  public save(dist: string) {
-    const modulePath = pth.join(this.cwd, 'node_module');
-    const targetPath = pth.resolve(this.cwd, dist);
-
-    fsx.ensureDirSync(targetPath);
-
-    this.contracts.forEach((contract) => {
-      const isModule = contract.sourcePath.indexOf(modulePath) === 0;
-      if (!isModule) {
-        const path = pth.join(targetPath, `${contract.contractName}.json`);
-        const data = JSON.stringify(contract, null, 2);
-        fs.writeFileSync(path, data);
-      }
-    });
-  }
-
-  /**
-   *
-   */
-  protected getFiles(patterns: string[]) {
-    return glob.sync(patterns, { cwd: this.cwd }) as string[];
-  }
-
-  /**
-   *
-   */
-  protected compileFiles(files: string[]) {
-    const sources = {} as any;
-
-    files.forEach((f) => {
-      sources[f] = fs.readFileSync(f).toString();
-    });
-
-    return solc.compile({ sources }, 1, (path: string) => {
-      return {
-        contents: fs.readFileSync(this.normalizePath(path)).toString(),
+  public source(
+    ...patterns: string[]
+  ) {
+    const files = glob.sync(patterns, { cwd: this.cwd })
+      .map((f) => f.toString());
+ 
+    files.forEach((file) => {
+      file = this.normalizePath(file);
+      this.input.sources[file] = {
+        content: fs.readFileSync(file).toString(),
       };
     });
+
+    return Object.keys(this.input.sources).length;
+  }
+
+  /**
+   * Compiles the solc input and memorizes the output.
+   */
+  public compile() {
+    const importer = (file: string) => {
+      file = this.normalizePath(file);
+      return {
+        contents: fs.readFileSync(file).toString(),
+      };
+    };
+    const input = JSON.stringify(this.input);
+
+    this.output = JSON.parse(
+      solc.compileStandardWrapper(input, importer)
+    );
+
+    return !Array.isArray(this.output.errors);
+  }
+
+  /**
+   * Saves memoried compiler output to destination folder.
+   * @param dist Destination folder.
+   */
+  public save(
+    dist: string
+  ) {
+    const target = pth.resolve(this.cwd, dist);
+    fsx.ensureDirSync(target);
+
+    let count = 0;
+    Object.keys(this.output.contracts).forEach((file) => {
+      const sourcePath = this.normalizePath(file);
+
+      const isModule = sourcePath.indexOf('./node_modules') === 0;
+      if (isModule) {
+        return;
+      }
+
+      const fileName = pth.basename(sourcePath);
+      const contractName = fileName.split('.').slice(0, -1).join('.');
+      const destPath = pth.join(target, `${contractName}.json`);
+
+      const json = {
+        contractName,
+        sourcePath,
+        ...this.output.contracts[file][contractName],
+      };
+      if (json.metadata) {
+        json.metadata = JSON.parse(json.metadata);
+      }
+
+      const data = JSON.stringify(json, null, 2);
+      fs.writeFileSync(destPath, data);
+
+      count++;
+    });
+
+    return count;
   }
 
   /**
    *
    */
-  protected normalizePath(path: string) {
-    return path.indexOf('@') === 0 ? `node_modules/${path}` : path;
+  public clear() {
+    this.output = {};
+    return this;
+  }
+
+  /**
+   * Converts a file path not starting with a dot to match node_modules.
+   * @param path File path
+   */
+  protected normalizePath(
+    path: string
+  ) {
+    return path.indexOf('./') !== 0 ? `./node_modules/${path}` : path;
   }
 
 }

@@ -5,6 +5,10 @@ import "@0xcert/ethereum-utils/contracts/math/SafeMath.sol";
 contract Token2 {
   using SafeMath for uint256;
 
+  /**
+   * @dev Returns fake value.
+   * @param _value Multiploer value.
+   */
   function test () 
     public
     pure

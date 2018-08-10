@@ -1,5 +1,15 @@
 ```js
+import { Compiler } from '.';
+
 const compiler = new Compiler();
-compiler.require('./src/contracts/*.sol');
-compiler.save('./build');
+compiler.source('./src/tests/assets/*.sol');
+compiler.source('./src/tests/assets/*.sol');
+
+if (compiler.compile()) {
+  compiler.save('./build/foo');
+  console.log('Done!');
+} else {
+  console.log('Errors:', JSON.stringify(compiler.output, null, 2));
+}
+compiler.clear();
 ```
