@@ -1,6 +1,6 @@
 {
   "name": "@specron/example",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": ".",
   "scripts": {
     "compile": "specron compile",
@@ -10,10 +10,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@specron/cli": "latest",
-    "@specron/spec": "latest",
-    "ts-node": "^6.1.1",
-    "typescript": "^2.9.1",
+    "@specron/cli": "^0.0.28",
+    "@specron/spec": "^0.0.28",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1",
     "web3": "1.0.0-beta.35"
   },
   "gitHead": "ca3d98e46f6f4d720552f49d54157f21e260cc93"

@@ -1,6 +1,6 @@
 {
   "name": "@specron/sandbox",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Ethereum sandbox server for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,8 +30,8 @@
     "@types/supertest": "^2.0.4",
     "ava": "1.0.0-beta.6",
     "supertest": "^3.1.0",
-    "ts-node": "^6.1.0",
-    "typescript": "^2.9.1"
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
   },
   "dependencies": {
     "ganache-cli": "^6.1.0"
