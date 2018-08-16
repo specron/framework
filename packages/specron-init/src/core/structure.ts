@@ -53,7 +53,7 @@ export const files = [
     ],
   },
   {
-    path: ['src', 'contracts', 'Main.sol'],
+    path: ['src', 'contracts', 'main.sol'],
     content: [
       `pragma solidity ^0.4.24;`,
       ``,
@@ -71,7 +71,7 @@ export const files = [
     ],
   },
   {
-    path: ['src', 'tests', 'Main.test.ts'],
+    path: ['src', 'tests', 'main.test.ts'],
     content: [
       `import { Spec } from '@specron/spec';`,
       ``,
