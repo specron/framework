@@ -14,9 +14,11 @@ export default async function deploy(config: {
 }) {
   const src = path.resolve(process.cwd(), (config.src[0] != '.' ? 'node_modules' : ''), config.src);
   const data = require(src);
-  const contract = new config.web3.eth.Contract((config.contract ? data[config.contract] : data).abi);
+  const abi = config.contract ? data[config.contract].abi : data.abi;
+  const bytecode = config.contract ? data[config.contract].evm.bytecode.object : data.bytecode;
+  const contract = new config.web3.eth.Contract(abi);
   const deploy = await contract.deploy({
-    data: data.bytecode,
+    data: bytecode,
     arguments: config.args,
   }).send({
     from: config.from,
@@ -24,7 +26,7 @@ export default async function deploy(config: {
     gasPrice: config.gasPrice,
   });
   return new config.web3.eth.Contract(
-    data.abi,
+    abi,
     deploy.options.address
   );
 }

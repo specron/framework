@@ -40,38 +40,38 @@ test('method `tuple` transforms an object to tuple type', async (t) => {
   ]);
 });
 
-// test('method `reverts()` asserts that function throws a revert error', async (t) => {
-//   const ctx = new Context(stage);
-//   const results = [
-//     ctx.reverts(() => { throw new Error('revert'); }),
-//     await ctx.reverts(() => Promise.reject('revert'), 'foo'),
-//     ctx.reverts(() => { return; }, 'foo'),
-//     await ctx.reverts(() => Promise.resolve()),
-//   ];
-//   t.deepEqual(results, [
-//     {
-//       type: 'AssertionNote',
-//       message: null,
-//       assertion: 'reverts',
-//       success: true,
-//     },
-//     {
-//       type: 'AssertionNote',
-//       message: 'foo',
-//       assertion: 'reverts',
-//       success: true,
-//     },
-//     {
-//       type: 'AssertionNote',
-//       message: 'foo',
-//       assertion: 'reverts',
-//       success: false,
-//     },
-//     {
-//       type: 'AssertionNote',
-//       message: null,
-//       assertion: 'reverts',
-//       success: false,
-//     },
-//   ]);
-// });
+test('method `reverts` asserts that function throws a revert error', async (t) => {
+  const ctx = new Context(stage);
+  const results = [
+    ctx.reverts(() => { throw new Error('revert'); }),
+    await ctx.reverts(() => Promise.reject('revert'), 'foo'),
+    ctx.reverts(() => { return; }, 'foo'),
+    await ctx.reverts(() => Promise.resolve()),
+  ];
+  t.deepEqual(results, [
+    {
+      type: 'AssertionNote',
+      message: null,
+      assertion: 'reverts',
+      success: true,
+    },
+    {
+      type: 'AssertionNote',
+      message: 'foo',
+      assertion: 'reverts',
+      success: true,
+    },
+    {
+      type: 'AssertionNote',
+      message: 'foo',
+      assertion: 'reverts',
+      success: false,
+    },
+    {
+      type: 'AssertionNote',
+      message: null,
+      assertion: 'reverts',
+      success: false,
+    },
+  ]);
+});

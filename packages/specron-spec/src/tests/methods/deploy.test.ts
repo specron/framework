@@ -14,13 +14,26 @@ test.after(async () => {
   sandbox.close();
 });
 
-test('deploys contract at local path', async (t) => {
+test('deploys contract from specron file', async (t) => {
   const contact = await deploy({
     web3,
     from: await web3.eth.getAccounts().then((a) => a[0]),
     gas: 6000000,
     gasPrice: 1,
-    src: './src/tests/assets/Scaffold.json',
+    src: './src/tests/assets/scaffold-b.json',
+    contract: 'Main',
+  });
+  const res = await contact.methods.test().call();
+  t.is(res, '100');
+});
+
+test('deploys contract from truffle file', async (t) => {
+  const contact = await deploy({
+    web3,
+    from: await web3.eth.getAccounts().then((a) => a[0]),
+    gas: 6000000,
+    gasPrice: 1,
+    src: './src/tests/assets/scaffold-a.json',
   });
   const res = await contact.methods.test().call();
   t.is(res, '123457');
