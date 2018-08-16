@@ -25,9 +25,12 @@ test('variable `web3` exposes the web3 instance', async (t) => {
 test('method `deploy` deploys contract from JSON file', async (t) => {
   const stage = new Stage(web3, reporter);
   const ctx = new Context(stage);
-  const contact = await ctx.deploy({ src: './src/tests/assets/Scaffold.json' });
+  const contact = await ctx.deploy({
+    src: './src/tests/assets/scaffold-b.json',
+    contract: 'Main',
+  });
   const res = await contact.methods.test().call();
-  t.is(res, '123457');
+  t.is(res, '100');
 });
 
 test('method `tuple` transforms an object to tuple type', async (t) => {

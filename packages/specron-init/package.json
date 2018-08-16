@@ -33,7 +33,7 @@
     "typescript": "^3.0.1"
   },
   "dependencies": {
-    "fs-extra": "^6.0.1"
+    "fs-extra": "^7.0.0"
   },
   "gitHead": "ca3d98e46f6f4d720552f49d54157f21e260cc93"
 }

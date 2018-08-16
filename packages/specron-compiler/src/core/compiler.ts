@@ -34,7 +34,7 @@ export class Compiler {
       },
       language: recipe && recipe.language ? recipe.language : 'Solidity',
       settings: {
-        evmVersion: 'constantinople',
+        evmVersion: 'byzantium',
         outputSelection: {
           '*': {
             '*': [

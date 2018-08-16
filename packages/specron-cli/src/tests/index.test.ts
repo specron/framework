@@ -12,16 +12,18 @@ test('starts sandbox server', async (t) => {
 });
 
 test('initializes current folder', async (t) => {
-  const command = `./bin/specron init --name foo --description bar --root ./node_modules/.tmp/${Date.now()}`;
+  const cwd = `./node_modules/.tmp/init-${Date.now()}`;
+  const command = `mkdir -p ${cwd}; cd ${cwd}; ../../../bin/specron init --name foo --description bar`;
   const { stdout, stderr } = await exec(command);
-  t.true(stdout.indexOf('Done') !== -1);
+  t.true(stdout.indexOf('Continue by running the commands below:') !== -1);
   t.true(stderr === '');
 });
 
 test('compiles smart contracts', async (t) => {
-  const command = `./bin/specron compile --match ./src/tests/assets/*.sol --build ./node_modules/.tmp/${Date.now()}`;
+  const dist = `./node_modules/.tmp/compile-${Date.now()}`;
+  const command = `./bin/specron compile --match ./src/tests/assets/*.sol --build ${dist}`;
   const { stdout, stderr } = await exec(command);
-  t.true(stdout.indexOf('Done') !== -1);
+  t.true(stdout.indexOf('Contracts') !== -1);
   t.true(stderr === '');
 });
 
