@@ -12,7 +12,7 @@
     "transpile": "npm run clean; tsc",
     "lint": "tslint 'src/**/*.ts?(x)'",
     "prepublishOnly": "npm run transpile",
-    "test": "npm run transpile && ava"
+    "test": "npm run transpile && nyc ava"
   },
   "ava": {
     "compileEnhancements": false,
@@ -21,12 +21,18 @@
       "dist/tests/**/*.test.js"
     ]
   },
+  "nyc": {
+    "exclude": [
+      "src/tests"
+    ]
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/inquirer": "^0.0.41",
     "@types/node": "^10.3.2",
     "@types/yargs": "^11.0.0",
     "ava": "^0.25.0",
+    "nyc": "^12.0.2",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.1",
     "web3": "^1.0.0-beta.35"

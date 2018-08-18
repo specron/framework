@@ -1,5 +1,7 @@
 .DS_Store
 .vscode
+.nyc_output
+package-lock.json
 node_modules
-build
 dist
+build

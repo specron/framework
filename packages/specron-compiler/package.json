@@ -9,7 +9,7 @@
     "transpile": "npm run clean; tsc",
     "lint": "tslint 'src/**/*.ts?(x)'",
     "prepublishOnly": "npm run transpile",
-    "test": "ava"
+    "test": "nyc ava"
   },
   "ava": {
     "compileEnhancements": false,
@@ -24,12 +24,24 @@
       "src/tests/**/*.test.ts"
     ]
   },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "exclude": [
+      "src/tests"
+    ]
+  },
   "license": "MIT",
   "devDependencies": {
     "@0xcert/ethereum-utils": "1.0.1",
     "@types/fs-extra": "5.0.3",
     "@types/node": "^10.3.2",
     "ava": "^1.0.0-beta.6",
+    "nyc": "^12.0.2",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.1"
   },

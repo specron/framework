@@ -2,11 +2,15 @@
 
 > Lightweight, open source and magic-free framework for testing solidity smart contracts.
 
-Specron is a lightweight, open source, magic-free framework for testing smart contracts written in [solidity](https://solidity.readthedocs.io/en/v0.4.24/). The testing suite is built on top of the [Hayspec framework](https://github.com/hayspec/monorepo) thus tests are written in [TypeScript](https://www.typescriptlang.org/).
+Specron is a lightweight, open source, magic-free framework for testing smart contracts written in [solidity](https://solidity.readthedocs.io/en/v0.4.24/). The testing suite is built on top of the [Hayspec framework](https://github.com/specron/monorepo) thus tests are written in [TypeScript](https://www.typescriptlang.org/).
 
 Specron provides development environment for the Ethereum blockchain and includes useful tools which enable developers to easily write tests for smart contracts.
 
 The source code is available on [GitHub](https://github.com/specron/monorepo) where you can also find our [issue tracker](https://github.com/specron/monorepo/issues).
+
+## Packages
+
+[![Build Status](https://travis-ci.org/specron/monorepo.svg?branch=master)](https://travis-ci.org/specron/monorepo)&nbsp;[![codecov](https://codecov.io/gh/specron/monorepo/branch/master/graph/badge.svg)](https://codecov.io/gh/specron/monorepo)
 
 | Package | Description | Version
 |-|-|-

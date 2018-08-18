@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
+.nyc_output
 node_modules
-dist
 lerna-debug.log
+package-lock.json

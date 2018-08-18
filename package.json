@@ -17,9 +17,9 @@
     "testing",
     "spec",
     "specification",
-		"hay",
-		"solidity",
-		"sol",
+    "hay",
+    "solidity",
+    "sol",
     "solc",
     "smart",
     "contract",
@@ -36,6 +36,7 @@
   ],
   "author": "Kristijan Sedlak (Xpepermint)",
   "devDependencies": {
-    "lerna": "3.0.0-beta.21"
+    "lerna": "^3.1.1",
+    "nyc": "^12.0.2"
   }
 }
