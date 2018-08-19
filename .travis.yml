@@ -4,6 +4,8 @@ node_js:
   - 9
   - 10
 script:
+  # use latest npm to work on node9
+  - npm install -g npm
   # codecov
   - npm install -g codecov
   # initialization & testing
