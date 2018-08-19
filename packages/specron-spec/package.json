@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "Test suits for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -38,7 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "@0xcert/ethereum-utils": "1.0.1",
-    "@specron/sandbox": "^0.0.33",
+    "@specron/sandbox": "^0.0.34",
     "@types/node": "^10.3.2",
     "ava": "^1.0.0-beta.6",
     "nyc": "^12.0.2",
