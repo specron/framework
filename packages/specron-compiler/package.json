@@ -45,10 +45,10 @@
     "typescript": "^3.0.1"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.4.15",
+    "@hayspec/reporter": "^0.4.18",
     "fast-glob": "^2.2.2",
     "fs-extra": "6.0.1",
     "solc": "^0.4.24"
   },
-  "gitHead": "82f226b2ac3b1e012d1eec67b15929e5cc58bbba"
+  "gitHead": "c22050569295e5621b246ff35505aad4661a914d"
 }

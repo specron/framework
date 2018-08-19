@@ -48,5 +48,5 @@
   "dependencies": {
     "ganache-cli": "^6.1.8"
   },
-  "gitHead": "82f226b2ac3b1e012d1eec67b15929e5cc58bbba"
+  "gitHead": "c22050569295e5621b246ff35505aad4661a914d"
 }
