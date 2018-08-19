@@ -7,8 +7,7 @@
   "scripts": {
     "clean": "rm -Rf ./dist",
     "transpile": "npm run clean; tsc",
-    "lint": "tslint 'src/**/*.ts?(x)'",
-    "prepublishOnly": "npm run transpile",
+    "prepare": "npm run transpile",
     "test": "nyc ava"
   },
   "ava": {
