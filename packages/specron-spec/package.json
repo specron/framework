@@ -7,9 +7,8 @@
   "scripts": {
     "clean": "rm -Rf ./dist",
     "transpile": "npm run clean; tsc",
-    "lint": "tslint 'src/**/*.ts?(x)'",
     "prepublishOnly": "npm run transpile",
-    "test": "nyc ava"
+    "test": "nyc ava --verbose"
   },
   "ava": {
     "concurrency": 1,

@@ -5,7 +5,7 @@ node_js:
   - 10
 script:
   # codecov
-  - npm install codecov -g
+  - npm install -g codecov
   # initialization & testing
   - npm run bootstrap && npm test
 after_success:
