@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "bootstrap": "lerna --concurrency bootstrap && lerna exec --scope '@specron/spec' npm install && lerna exec --scope '@specron/cli' npm install",
+    "bootstrap": "lerna bootstrap && lerna exec --scope '@specron/spec' npm install && lerna exec --scope '@specron/cli' npm install",
     "publish": "lerna publish --force-publish",
     "test": "lerna run test"
   },
