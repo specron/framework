@@ -50,9 +50,9 @@
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.4.18",
-    "@hayspec/runner": "^0.4.18",
-    "@hayspec/spec": "^0.4.18"
+    "@hayspec/reporter": "^0.4.19",
+    "@hayspec/runner": "^0.4.19",
+    "@hayspec/spec": "^0.4.19"
   },
   "gitHead": "c22050569295e5621b246ff35505aad4661a914d"
 }
