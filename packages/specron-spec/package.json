@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Test suits for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
