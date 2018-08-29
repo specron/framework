@@ -6,6 +6,14 @@ Specron provides development environment for the Ethereum blockchain and include
 
 The source code is available on [GitHub](https://github.com/specron/monorepo) where you can also find our [issue tracker](https://github.com/specron/monorepo/issues).
 
+## Installation
+
+Start by installing the specron command-line tool.
+
+```
+$ npm install -g @specron/cli
+```
+
 ## Packages
 
 [![Build Status](https://travis-ci.org/specron/monorepo.svg?branch=master)](https://travis-ci.org/specron/monorepo)&nbsp;[![codecov](https://codecov.io/gh/specron/monorepo/branch/master/graph/badge.svg)](https://codecov.io/gh/specron/monorepo)
@@ -17,14 +25,6 @@ The source code is available on [GitHub](https://github.com/specron/monorepo) wh
 | [@specron/init](https://github.com/specron/monorepo/tree/master/packages/specron-init) | Project structure initializer. | [![NPM Version](https://badge.fury.io/js/@specron%2Finit.svg)](https://badge.fury.io/js/specron%2Finit)
 | [@specron/sandbox](https://github.com/specron/monorepo/tree/master/packages/specron-sandbox) | Ethereum sandbox server. | [![NPM Version](https://badge.fury.io/js/@specron%2Fsandbox.svg)](https://badge.fury.io/js/specron%2Fsandbox)
 | [@specron/spec](https://github.com/specron/monorepo/tree/master/packages/specron-spec) | Core test suite. | [![NPM Version](https://badge.fury.io/js/@specron%2Fspec.svg)](https://badge.fury.io/js/specron%2Fspec)
-
-## Installation
-
-Start by installing the specron command-line tool.
-
-```
-$ npm install -g @specron/cli
-```
 
 ## Getting started
 
