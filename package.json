@@ -1,42 +1,13 @@
 {
   "scripts": {
-    "bootstrap": "lerna bootstrap && lerna exec --scope '@specron/spec' npm install && lerna exec --scope '@specron/cli' npm install",
-    "publish": "lerna publish --force-publish",
-    "test": "lerna run test"
+    "exec": "monpo exec",
+    "list": "monpo list",
+    "bootstrap": "monpo exec -- npm install",
+    "test": "monpo exec -- npm run test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/specron/monorepo.git"
-  },
-  "bugs": {
-    "url": "https://github.com/specron/monorepo/issues"
-  },
-  "homepage": "https://github.com/specron/monorepo#readme",
-  "keywords": [
-    "test",
-    "testing",
-    "spec",
-    "specification",
-    "hay",
-    "solidity",
-    "sol",
-    "solc",
-    "smart",
-    "contract",
-    "smart-contract",
-    "web3",
-    "ethereum",
-    "eth",
-    "javascript",
-    "typescript",
-    "nodejs",
-    "tdd",
-    "unit",
-    "cli"
-  ],
   "author": "Kristijan Sedlak (Xpepermint)",
   "devDependencies": {
-    "lerna": "^3.1.1",
+    "@monpo/cli": "^0.1.0",
     "nyc": "^12.0.2"
   }
 }
