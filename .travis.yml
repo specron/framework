@@ -9,7 +9,7 @@ script:
   # codecov
   - npm install -g codecov
   # initialization
-  - npm run bootstrap
+  - npm install
   # testing
   - npm test
 after_success:
