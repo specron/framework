@@ -2,6 +2,7 @@
   "scripts": {
     "exec": "monpo exec",
     "list": "monpo list",
+    "bootstrap": "monpo exec -- npm install",
     "test": "monpo exec -- npm run test"
   },
   "author": "Kristijan Sedlak (Xpepermint)",
