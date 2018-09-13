@@ -48,6 +48,7 @@ test('method `reverts` asserts that function throws a revert error', async (t) =
   const results = [
     ctx.reverts(() => { throw new Error('revert'); }),
     await ctx.reverts(() => Promise.reject('revert'), 'foo'),
+    await ctx.reverts(() => Promise.reject(new Error('revert foo')), 'foo'),
     ctx.reverts(() => { return; }, 'foo'),
     await ctx.reverts(() => Promise.resolve()),
   ];
@@ -57,6 +58,12 @@ test('method `reverts` asserts that function throws a revert error', async (t) =
       message: null,
       assertion: 'reverts',
       success: true,
+    },
+    {
+      type: 'AssertionNote',
+      message: 'foo',
+      assertion: 'reverts',
+      success: false,
     },
     {
       type: 'AssertionNote',
