@@ -1,6 +1,6 @@
 {
   "name": "@specron/compiler",
-  "version": "0.0.40",
+  "version": "0.0.42",
   "description": "Solidity contract compiler for ChainSpin framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -45,10 +45,9 @@
     "typescript": "^3.0.1"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.4.19",
+    "@hayspec/reporter": "^0.4.21",
     "fast-glob": "^2.2.2",
-    "fs-extra": "6.0.1",
+    "fs-extra": "7.0.0",
     "solc": "^0.4.24"
-  },
-  "gitHead": "c22050569295e5621b246ff35505aad4661a914d"
+  }
 }
