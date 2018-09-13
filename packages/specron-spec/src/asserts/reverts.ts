@@ -2,9 +2,9 @@
  * 
  */
 function isRevertError(e, message?: string) {
-  const isRevert = String(e).search('revert') >= 0 || (e.message !== undefined && e.message.search('revert') >= 0);
+  const isRevert = String(e).includes('revert') || (e.message !== undefined && e.message.includes('revert'));
   if(isRevert && message !== undefined) {
-    return String(e).search(message) >= 0 || (e.message !== undefined && e.message.search(message) >= 0);
+    return String(e).includes(message) || (e.message !== undefined && e.message.includes(message));
   }
   return isRevert;
 }
