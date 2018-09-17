@@ -31,6 +31,7 @@ test('method `deploy` deploys contract from JSON file', async (t) => {
   });
   const res = await contact.methods.test().call();
   t.is(res, '100');
+  t.is(contact.options.gas, 6000000);
 });
 
 test('method `tuple` transforms an object to tuple type', async (t) => {
