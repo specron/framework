@@ -22,6 +22,7 @@ test('deploys contract from specron file', async (t) => {
     gasPrice: 1,
     src: './src/tests/assets/scaffold-b.json',
     contract: 'Main',
+    defaultGasLimit: 6000000,
   });
   const res = await contact.methods.test().call();
   t.is(res, '100');
@@ -34,6 +35,7 @@ test('deploys contract from truffle file', async (t) => {
     gas: 6000000,
     gasPrice: 1,
     src: './src/tests/assets/scaffold-a.json',
+    defaultGasLimit: 6000000,
   });
   const res = await contact.methods.test().call();
   t.is(res, '123457');
@@ -47,6 +49,7 @@ test('deploys contract from node_modules', async (t) => {
       gas: 6000000,
       gasPrice: 1,
       src: '@0xcert/ethereum-utils/build/contracts/Ownable.json',
+      defaultGasLimit: 6000000,
     });  
     t.pass();
   } catch (e) {
