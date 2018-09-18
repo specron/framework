@@ -1,5 +1,5 @@
 fixes:
-  - "hayspec/framework::/" # travis path to match github repo paths
+  - "specron/framework::/" # travis path to match github repo paths
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
