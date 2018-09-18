@@ -27,6 +27,10 @@ export default async function deploy(config: {
   });
   return new config.web3.eth.Contract(
     abi,
-    deploy.options.address
+    deploy.options.address,
+    {
+      gas: config.gas,
+      from: config.from,
+    },
   );
 }
