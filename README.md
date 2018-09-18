@@ -189,11 +189,11 @@ specron --require ts-node/register
 
 | Package | Description | Version
 |-|-|-
-| [@specron/cli](https://github.com/specron/monorepo/tree/master/packages/specron-cli) | Command-line interface. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcli.svg)](https://badge.fury.io/js/specron%2Fcli)
-| [@specron/compiler](https://github.com/specron/monorepo/tree/master/packages/specron-compiler) | Smart contracts compiler. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcompiler.svg)](https://badge.fury.io/js/specron%2Fcompiler)
-| [@specron/init](https://github.com/specron/monorepo/tree/master/packages/specron-init) | Project structure initializer. | [![NPM Version](https://badge.fury.io/js/@specron%2Finit.svg)](https://badge.fury.io/js/specron%2Finit)
-| [@specron/sandbox](https://github.com/specron/monorepo/tree/master/packages/specron-sandbox) | Ethereum sandbox server. | [![NPM Version](https://badge.fury.io/js/@specron%2Fsandbox.svg)](https://badge.fury.io/js/specron%2Fsandbox)
-| [@specron/spec](https://github.com/specron/monorepo/tree/master/packages/specron-spec) | Core test suite. | [![NPM Version](https://badge.fury.io/js/@specron%2Fspec.svg)](https://badge.fury.io/js/specron%2Fspec)
+| [@specron/cli](https://github.com/specron/monorepo/tree/master/packages/specron-cli) | Command-line interface. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcli.svg)](https://badge.fury.io/js/%40specron%2Fcli)
+| [@specron/compiler](https://github.com/specron/monorepo/tree/master/packages/specron-compiler) | Smart contracts compiler. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcompiler.svg)](https://badge.fury.io/js/%40specron%2Fcompiler)
+| [@specron/init](https://github.com/specron/monorepo/tree/master/packages/specron-init) | Project structure initializer. | [![NPM Version](https://badge.fury.io/js/@specron%2Finit.svg)](https://badge.fury.io/js/%40specron%2Finit)
+| [@specron/sandbox](https://github.com/specron/monorepo/tree/master/packages/specron-sandbox) | Ethereum sandbox server. | [![NPM Version](https://badge.fury.io/js/@specron%2Fsandbox.svg)](https://badge.fury.io/js/%40specron%2Fsandbox)
+| [@specron/spec](https://github.com/specron/monorepo/tree/master/packages/specron-spec) | Core test suite. | [![NPM Version](https://badge.fury.io/js/@specron%2Fspec.svg)](https://badge.fury.io/js/%40specron%2Fspec)
 
 ## Contributing
 
