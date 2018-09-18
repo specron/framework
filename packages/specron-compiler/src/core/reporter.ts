@@ -65,7 +65,8 @@ export class DefaultReporter {
    * 
    */
   protected onErrors(compiler: Compiler) {
-    const errors = compiler.output.errors;
+    const errors = compiler.output.errors.filter((e) => e.severity === "error");
+    const warnings = compiler.output.errors.filter((e) => e.severity === "warning");
 
     if (errors && errors.length) {
       this.printer.end(
@@ -73,10 +74,22 @@ export class DefaultReporter {
         'Errors'
       );
       errors.filter((e) => e.formattedMessage).forEach((error) => {
-        const color = this.getErrorColor(error);
         this.printer.end(
           this.printer.indent(2, ''),
-          this.printer.colorize(color, error.formattedMessage.trim())
+          this.printer.colorize('redBright', error.formattedMessage.trim())
+        );
+      });
+    }
+
+    if (warnings && warnings.length) {
+      this.printer.end(
+        this.printer.indent(1, ''),
+        'Warnings'
+      );
+      warnings.filter((e) => e.formattedMessage).forEach((warning) => {
+        this.printer.end(
+          this.printer.indent(2, ''),
+          this.printer.colorize('yellowBright', warning.formattedMessage.trim())
         );
       });
     }
@@ -112,7 +125,10 @@ export class DefaultReporter {
 
     const sources = Object.keys(compiler.input.sources || {}).length;
     const contracts = Object.keys(compiler.output.contracts || {}).length;
-    const errors = Object.keys(compiler.output.errors || {}).length;
+    const errors = compiler.output.errors.filter((e) => e.severity === "error").length;
+    const warnings = compiler.output.errors.filter((e) => e.severity === "warning").length;
+
+
     if (contracts) {
       messages.push(
         this.printer.indent(1, ''),
@@ -134,20 +150,15 @@ export class DefaultReporter {
         ' errors',
       );
     }
+    if (warnings) {
+      messages.push(
+        this.printer.indent(1, ''),
+        this.printer.colorize('yellowBright', warnings),
+        ' warnings',
+      );
+    }
     if (messages.length) {
       this.printer.end(...messages);
     }
   }
-
-  /**
-   * 
-   */
-  protected getErrorColor(error: any) {
-    if (error.severity === 'error') {
-      return 'redBright';
-    } else {
-      return 'yellowBright';
-    }
-  }
-
 }
