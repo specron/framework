@@ -10,7 +10,6 @@ export default async function deploy(config: {
   from: string;
   gas: number;
   gasPrice: number;
-  defaultGasLimit: number;
   args?: any[];
 }) {
   const src = path.resolve(process.cwd(), (config.src[0] != '.' ? 'node_modules' : ''), config.src);
@@ -30,7 +29,8 @@ export default async function deploy(config: {
     abi,
     deploy.options.address,
     {
-      gas: config.defaultGasLimit,
-    }
+      gas: config.gas,
+      from: config.from,
+    },
   );
 }

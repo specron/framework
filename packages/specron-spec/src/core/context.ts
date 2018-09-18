@@ -45,7 +45,6 @@ export class Context<Data = {}> extends ContextBase<Data> {
     from?: string;
     gas?: number;
     gasPrice?: number;
-    defaultGasLimit?: number;
   }) {
     return deploy({
       web3: this.stage.web3,
@@ -53,7 +52,6 @@ export class Context<Data = {}> extends ContextBase<Data> {
       from: await this.stage.web3.eth.getAccounts().then((a) => a[0]),
       gas: 6000000,
       gasPrice: 1,
-      defaultGasLimit: 6000000,
       ...options,
     });
   }
