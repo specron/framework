@@ -5,7 +5,16 @@ import { Compiler } from './compiler';
  * 
  */
 export class DefaultReporter {
-  protected printer: Printer = new Printer();
+  protected printer: Printer;
+  protected showWarnings: boolean;
+  public constructor(showWarnings?: boolean) {
+    this.printer = new Printer();
+    if(showWarnings !== undefined) {
+      this.showWarnings = showWarnings;
+    }else {
+      this.showWarnings = true;
+    }
+  }
 
   /**
    * 
@@ -66,7 +75,10 @@ export class DefaultReporter {
    */
   protected onErrors(compiler: Compiler) {
     const errors = compiler.output.errors.filter((e) => e.severity === "error");
-    const warnings = compiler.output.errors.filter((e) => e.severity === "warning");
+    let warnings;
+    if (this.showWarnings) {
+      warnings = compiler.output.errors.filter((e) => e.severity === "warning");
+    }
 
     if (errors && errors.length) {
       this.printer.end(
@@ -125,9 +137,14 @@ export class DefaultReporter {
 
     const sources = Object.keys(compiler.input.sources || {}).length;
     const contracts = Object.keys(compiler.output.contracts || {}).length;
-    const errors = compiler.output.errors.filter((e) => e.severity === "error").length;
-    const warnings = compiler.output.errors.filter((e) => e.severity === "warning").length;
-
+    let errors;
+    let warnings;
+    if(compiler.output.errors) {
+      errors = compiler.output.errors.filter((e) => e.severity === "error").length;
+      if (this.showWarnings) {
+        warnings = compiler.output.errors.filter((e) => e.severity === "warning").length;
+      }
+    }
 
     if (contracts) {
       messages.push(
