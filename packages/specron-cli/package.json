@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@hayspec/reporter": "^0.4.21",
-    "@specron/compiler": "0.0.42",
+    "@specron/compiler": "0.0.43",
     "@specron/init": "0.0.42",
     "@specron/sandbox": "0.0.42",
     "@specron/spec": "0.0.42",
