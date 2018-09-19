@@ -4,8 +4,18 @@ import { Compiler } from './compiler';
 /**
  * 
  */
+export type Severity = 'error' | 'warning';
+
+/**
+ * 
+ */
 export class DefaultReporter {
-  protected printer: Printer = new Printer();
+  protected printer: Printer;
+  protected severities: Severity[];
+  public constructor(severities?: Severity[]) {
+    this.printer = new Printer();
+    this.severities = severities || ['error', 'warning'];
+  }
 
   /**
    * 
@@ -65,21 +75,26 @@ export class DefaultReporter {
    * 
    */
   protected onErrors(compiler: Compiler) {
-    const errors = compiler.output.errors;
-
-    if (errors && errors.length) {
-      this.printer.end(
-        this.printer.indent(1, ''),
-        'Errors'
-      );
-      errors.filter((e) => e.formattedMessage).forEach((error) => {
-        const color = this.getErrorColor(error);
+    
+    this.severities.forEach((severity) => {
+      const failures = compiler.output.errors
+        .filter((e) => e.severity === severity);
+      
+      if (failures.length) {
         this.printer.end(
-          this.printer.indent(2, ''),
-          this.printer.colorize(color, error.formattedMessage.trim())
+          this.printer.indent(1, ''),
+          severity === 'error' ? 'Errors' : 'Warnings'
         );
-      });
-    }
+
+        failures.filter((e) => e.formattedMessage).forEach((failure) => {
+          const color = this.getErrorColor(failure);
+          this.printer.end(
+            this.printer.indent(2, ''),
+            this.printer.colorize(color, failure.formattedMessage.trim())
+          );
+        });
+      }
+    });
   }
 
   /**
@@ -108,25 +123,29 @@ export class DefaultReporter {
   protected onOverview(compiler: Compiler) {
     this.printer.end();
 
-    const messages = [];
+  const messages = [];
 
-    const sources = Object.keys(compiler.input.sources || {}).length;
-    const contracts = Object.keys(compiler.output.contracts || {}).length;
-    const errors = Object.keys(compiler.output.errors || {}).length;
-    if (contracts) {
-      messages.push(
-        this.printer.indent(1, ''),
-        this.printer.colorize('greenBright', contracts),
-        ' contracts',
-      );
-    }
-    if (sources) {
-      messages.push(
-        this.printer.indent(1, ''),
-        this.printer.colorize('gray', sources),
-        ' sources',
-      );
-    }
+  const contracts = Object.keys(compiler.output.contracts || {}).length;
+  if (contracts) {
+    messages.push(
+      this.printer.indent(1, ''),
+      this.printer.colorize('greenBright', contracts),
+      ' contracts',
+    );
+  }
+
+  const sources = Object.keys(compiler.input.sources || {}).length;
+  if (sources) {
+    messages.push(
+      this.printer.indent(1, ''),
+      this.printer.colorize('gray', sources),
+      ' sources',
+    );
+  }
+
+  if (this.severities.indexOf('error') !== -1) {
+    const errors = (compiler.output.errors || []).filter((e) => e.severity === 'error').length;
+
     if (errors) {
       messages.push(
         this.printer.indent(1, ''),
@@ -134,12 +153,25 @@ export class DefaultReporter {
         ' errors',
       );
     }
-    if (messages.length) {
-      this.printer.end(...messages);
-    }
   }
 
-  /**
+  if (this.severities.indexOf('warning') !== -1) {
+    const warnings =  (compiler.output.errors || []).filter((e) => e.severity === 'warning').length;
+
+    if (warnings) {
+      messages.push(
+        this.printer.indent(1, ''),
+        this.printer.colorize('yellowBright', warnings),
+        ' warnings',
+      );
+    }
+  }
+  if (messages.length) {
+    this.printer.end(...messages);
+  }
+  }
+
+   /**
    * 
    */
   protected getErrorColor(error: any) {
@@ -149,5 +181,6 @@ export class DefaultReporter {
       return 'yellowBright';
     }
   }
-
 }
+
+
