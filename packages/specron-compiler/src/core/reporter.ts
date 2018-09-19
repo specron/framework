@@ -4,16 +4,17 @@ import { Compiler } from './compiler';
 /**
  * 
  */
+export type Severity = 'error' | 'warning';
+
+/**
+ * 
+ */
 export class DefaultReporter {
   protected printer: Printer;
-  protected showWarnings: boolean;
-  public constructor(showWarnings?: boolean) {
+  protected severities: Severity[];
+  public constructor(severities?: Severity[]) {
     this.printer = new Printer();
-    if(showWarnings !== undefined) {
-      this.showWarnings = showWarnings;
-    }else {
-      this.showWarnings = true;
-    }
+    this.severities = severities || ['error', 'warning'];
   }
 
   /**
@@ -74,37 +75,26 @@ export class DefaultReporter {
    * 
    */
   protected onErrors(compiler: Compiler) {
-    const errors = compiler.output.errors.filter((e) => e.severity === "error");
-    let warnings;
-    if (this.showWarnings) {
-      warnings = compiler.output.errors.filter((e) => e.severity === "warning");
-    }
-
-    if (errors && errors.length) {
-      this.printer.end(
-        this.printer.indent(1, ''),
-        'Errors'
-      );
-      errors.filter((e) => e.formattedMessage).forEach((error) => {
+    
+    this.severities.forEach((severity) => {
+      const failures = compiler.output.errors
+        .filter((e) => e.severity === severity);
+      
+      if (failures.length) {
         this.printer.end(
-          this.printer.indent(2, ''),
-          this.printer.colorize('redBright', error.formattedMessage.trim())
+          this.printer.indent(1, ''),
+          severity === 'error' ? 'Errors' : 'Warnings'
         );
-      });
-    }
 
-    if (warnings && warnings.length) {
-      this.printer.end(
-        this.printer.indent(1, ''),
-        'Warnings'
-      );
-      warnings.filter((e) => e.formattedMessage).forEach((warning) => {
-        this.printer.end(
-          this.printer.indent(2, ''),
-          this.printer.colorize('yellowBright', warning.formattedMessage.trim())
-        );
-      });
-    }
+        failures.filter((e) => e.formattedMessage).forEach((failure) => {
+          const color = this.getErrorColor(failure);
+          this.printer.end(
+            this.printer.indent(2, ''),
+            this.printer.colorize(color, failure.formattedMessage.trim())
+          );
+        });
+      }
+    });
   }
 
   /**
@@ -133,33 +123,29 @@ export class DefaultReporter {
   protected onOverview(compiler: Compiler) {
     this.printer.end();
 
-    const messages = [];
+  const messages = [];
 
-    const sources = Object.keys(compiler.input.sources || {}).length;
-    const contracts = Object.keys(compiler.output.contracts || {}).length;
-    let errors;
-    let warnings;
-    if(compiler.output.errors) {
-      errors = compiler.output.errors.filter((e) => e.severity === "error").length;
-      if (this.showWarnings) {
-        warnings = compiler.output.errors.filter((e) => e.severity === "warning").length;
-      }
-    }
+  const contracts = Object.keys(compiler.output.contracts || {}).length;
+  if (contracts) {
+    messages.push(
+      this.printer.indent(1, ''),
+      this.printer.colorize('greenBright', contracts),
+      ' contracts',
+    );
+  }
 
-    if (contracts) {
-      messages.push(
-        this.printer.indent(1, ''),
-        this.printer.colorize('greenBright', contracts),
-        ' contracts',
-      );
-    }
-    if (sources) {
-      messages.push(
-        this.printer.indent(1, ''),
-        this.printer.colorize('gray', sources),
-        ' sources',
-      );
-    }
+  const sources = Object.keys(compiler.input.sources || {}).length;
+  if (sources) {
+    messages.push(
+      this.printer.indent(1, ''),
+      this.printer.colorize('gray', sources),
+      ' sources',
+    );
+  }
+
+  if (this.severities.indexOf('error') !== -1) {
+    const errors = (compiler.output.errors || []).filter((e) => e.severity === 'error').length;
+
     if (errors) {
       messages.push(
         this.printer.indent(1, ''),
@@ -167,6 +153,11 @@ export class DefaultReporter {
         ' errors',
       );
     }
+  }
+
+  if (this.severities.indexOf('warning') !== -1) {
+    const warnings =  (compiler.output.errors || []).filter((e) => e.severity === 'warning').length;
+
     if (warnings) {
       messages.push(
         this.printer.indent(1, ''),
@@ -174,8 +165,22 @@ export class DefaultReporter {
         ' warnings',
       );
     }
-    if (messages.length) {
-      this.printer.end(...messages);
+  }
+  if (messages.length) {
+    this.printer.end(...messages);
+  }
+  }
+
+   /**
+   * 
+   */
+  protected getErrorColor(error: any) {
+    if (error.severity === 'error') {
+      return 'redBright';
+    } else {
+      return 'yellowBright';
     }
   }
 }
+
+
