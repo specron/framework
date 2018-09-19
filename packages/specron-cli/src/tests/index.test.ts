@@ -21,7 +21,7 @@ test('initializes current folder', async (t) => {
 
 test('compiles smart contracts', async (t) => {
   const dist = `./node_modules/.tmp/compile-${Date.now()}`;
-  const command = `./bin/specron compile --match ./src/tests/assets/*.sol --build ${dist}`;
+  const command = `./bin/specron compile --no-warnings --match ./src/tests/assets/*.sol --build ${dist}`;
   const { stdout, stderr } = await exec(command);
   t.true(stdout.indexOf('Contracts') !== -1);
   t.true(stderr === '');
