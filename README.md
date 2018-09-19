@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/specron/framework.svg?branch=master)](https://travis-ci.org/specron/framework)&nbsp;[![codecov](https://codecov.io/gh/specron/framework/branch/master/graph/badge.svg)](https://codecov.io/gh/specron/framework)
-
 # Specron framework
 
-> Lightweight, open source and magic-free framework for testing solidity smart contracts.
+[![Build Status](https://travis-ci.org/specron/framework.svg?branch=master)](https://travis-ci.org/specron/framework)&nbsp;[![codecov](https://codecov.io/gh/specron/framework/branch/master/graph/badge.svg)](https://codecov.io/gh/specron/framework)
 
 Specron is a lightweight, open source, magic-free framework for testing smart contracts written in [solidity](https://solidity.readthedocs.io/en/v0.4.24/). The testing suite is built on top of the [Hayspec framework](https://github.com/specron/framework) thus using [TypeScript](https://www.typescriptlang.org/) is supported.
 
