@@ -1,4 +1,4 @@
-# Specron framework
+# Specron Framework
 
 [![Build Status](https://travis-ci.org/specron/framework.svg?branch=master)](https://travis-ci.org/specron/framework)&nbsp;[![codecov](https://codecov.io/gh/specron/framework/branch/master/graph/badge.svg)](https://codecov.io/gh/specron/framework)
 
@@ -16,13 +16,13 @@ Start by installing the specron command-line tool.
 $ npm install -g @specron/cli web3
 ```
 
-Specron depends on the latest [web3](https://www.npmjs.com/package/web3) package so make sure you have it globaly installed. Specron also uses promises thus you need to use [Promise polyfill](https://github.com/taylorhakes/promise-polyfill) when promises are not supported.
+Specron depends on the latest [web3](https://www.npmjs.com/package/web3) package so make sure you have it globally installed. Specron also uses promises thus you need to use [Promise polyfill](https://github.com/taylorhakes/promise-polyfill) when promises are not supported.
 
 ## Getting started
 
 Specron automates the testing process of your Solidity code. It doesn't require you to install certain applications in order to get started.
 
-The Specron interface is designed to fully support the power of [TypeScript](https://www.typescriptlang.org/) when writting tests. It is magic-free which means you have a complete control and visibility of what the code does and how tests are executed. The testing flow should look familiar to any JavaScript or TypeScript developer.
+The Specron interface is designed to fully support the power of [TypeScript](https://www.typescriptlang.org/) when writing tests. It is magic-free which means you have a complete control and visibility of what the code does and how tests are executed. The testing flow should look familiar to any JavaScript or TypeScript developer.
 
 ### Project initialization
 
@@ -46,7 +46,7 @@ Run tests to verify everything works as expected.
 $ npm test
 ```
 
-### Writting tests
+### Writing tests
 
 The core test functionality is provided by the `@specron/spec` module which is automatically attached to your project at initialization. Here we explain some of the main framework features but please explore the source code to find out all the possibilities.
 
@@ -62,7 +62,7 @@ const spec = new Spec();
 
 #### Testing features
 
-The Spec instance provides methods that you can use when writting tests. Most of the time you will use the `test` method which performs the test you write.
+The Spec instance provides methods that you can use when writing tests. Most of the time you will use the `test` method which performs the test you write.
 
 ```ts
 spec.test('is true', async (ctx) => { // promise | function
