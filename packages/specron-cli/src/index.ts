@@ -20,6 +20,11 @@ const { argv } = yargs
       string: true,
       description: 'Build folder path',
       default: './build',
+    })
+    .option('severities', {
+      array: true,
+      description: 'Toggle error and warnings visibility',
+      default: ['error', 'warning'],
     }),
     compileHandler)
   .command('init', 'Initializes project directory.',  (yargs) => yargs
