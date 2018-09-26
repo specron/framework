@@ -1,6 +1,6 @@
 import test from 'ava';
 import * as request from 'supertest';
-import { Sandbox } from '../sandbox';
+import { Sandbox } from '../../core/sandbox';
 
 const sandbox = new Sandbox();
 
@@ -12,8 +12,6 @@ test.after(async () => {
 });
 
 test('listens for requests', async (t) => {
-  const res = await request('http://localhost:8911')
-    .get('/')
-    .catch((e) => e.response);
+  const res = await request('http://localhost:8911').get('/').catch((e) => e.response);
   t.is(res.status, 400);
 });

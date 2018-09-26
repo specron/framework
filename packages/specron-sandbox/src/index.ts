@@ -1,1 +1,1 @@
-export * from './sandbox';
+export * from './core/sandbox';
