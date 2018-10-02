@@ -39,7 +39,7 @@ export const files = [
       `    "compile": "specron compile",`,
       `    "sandbox": "specron sandbox",`,
       `    "prepublishOnly": "specron compile",`,
-      `    "test": "specron compile && specron test --require ts-node/register --match ./src/tests/**/*.test.ts"`,
+      `    "test": "specron compile && specron test --require ts-node/register --match './src/tests/**/*.test.ts'"`,
       `  },`,
       `  "license": "MIT",`,
       `  "dependencies": {`,
