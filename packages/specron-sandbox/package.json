@@ -1,7 +1,7 @@
 {
   "name": "@specron/sandbox",
-  "version": "0.0.46",
-  "description": "Ethereum sandbox server for ChainSpin framework.",
+  "version": "0.1.2",
+  "description": "Ethereum sandbox server for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
