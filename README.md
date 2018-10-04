@@ -183,6 +183,44 @@ Install the [ts-node](https://www.npmjs.com/package/ts-node) NPM package then us
 specron --require ts-node/register
 ```
 
+#### Project configuration
+
+Specron configuration options can be saved inside the package.json file under the the `specron` key.
+
+```json
+{
+  "specron": {
+    "compiler": {
+      "build": "./build",
+      "match": [
+        "./src/**/*.sol"
+      ],
+      "severities": [
+        "error",
+        "warning"
+      ]
+    },
+    "sandbox": {
+      "port": 8545,
+      "host": "localhost"
+    },
+    "test": {
+      "server": true,
+      "port": 8545,
+      "host": "localhost",
+      "match": [
+        "./src/**/*.test.*"
+      ]
+    },
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
+```
+
+Note that these options can be overriden by providing CLI arguments.
+
 ## Packages
 
 | Package | Description | Version

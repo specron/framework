@@ -1,15 +1,16 @@
 import { Compiler, DefaultReporter } from '@specron/compiler';
+import { getConfig } from '../lib/env';
 
 /**
  * Compiles solidity contracts.
  */
 export default async function (argv) {
-  const { match, build, severities } = argv;
+  const confog = getConfig(argv);
 
   const compiler = new Compiler({
-    reporter: new DefaultReporter(severities),
+    reporter: new DefaultReporter(confog.compiler.severities),
   });
-  compiler.source(...match);
+  compiler.source(...confog.compiler.match);
   compiler.compile();
-  compiler.save(build);
+  compiler.save(confog.compiler.build);
 }
