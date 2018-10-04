@@ -17,7 +17,7 @@ export default async function deploy(config: {
   const abi = config.contract ? data[config.contract].abi : data.abi;
   const bytecode = config.contract ? data[config.contract].evm.bytecode.object : data.bytecode;
   const contract = new config.web3.eth.Contract(abi);
-  const deploy = await contract.deploy({
+  const receipt = await contract.deploy({
     data: bytecode,
     arguments: config.args,
   }).send({
@@ -25,12 +25,13 @@ export default async function deploy(config: {
     gas: config.gas,
     gasPrice: config.gasPrice,
   });
-  return new config.web3.eth.Contract(
+  const instance = new config.web3.eth.Contract(
     abi,
-    deploy.options.address,
+    receipt.options.address,
     {
       gas: config.gas,
       from: config.from,
     },
   );
+  return { instance, receipt };
 }

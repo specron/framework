@@ -30,10 +30,10 @@ test('method `deploy` deploys contract from JSON file', async (t) => {
     contract: 'Main',
   });
   
-  t.is(contact.options.gas, 6000000);
-  t.is(contact.options.from, await stage.web3.eth.getAccounts().then((a) => a[0]));
+  t.is(contact.instance.options.gas, 6000000);
+  t.is(contact.instance.options.from, await stage.web3.eth.getAccounts().then((a) => a[0]));
   
-  const res = await contact.methods.test().call();
+  const res = await contact.instance.methods.test().call();
   t.is(res, '100');
 });
 
