@@ -37,7 +37,5 @@ export default async function (argv) {
     await sandbox.close();
   }
 
-  console.log('XXXXXX: reporter.failedCount', reporter.failedCount);
-
   process.exit(reporter.failedCount ? 1 : 0);
 }

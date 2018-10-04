@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Test suits for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -38,7 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "@0xcert/ethereum-utils": "1.0.1",
-    "@specron/sandbox": "^0.1.2",
+    "@specron/sandbox": "^0.2.0",
     "@types/node": "^10.3.2",
     "ava": "^1.0.0-beta.6",
     "nyc": "^12.0.2",
