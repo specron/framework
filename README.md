@@ -145,7 +145,7 @@ Stage and context both provide a series of different helper methods.
 A very important method is the `deploy()` method which deploys a contract to a local blockchain process in the background and returns a contract instance. 
 
 ```ts
-const contract = await ctx.deploy({
+const { instance, receipt } = await ctx.deploy({
   src: './contracts.json',
   contract: 'Main',
 });

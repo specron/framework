@@ -23,7 +23,7 @@ test('deploys contract from specron file', async (t) => {
     src: './src/tests/assets/scaffold-b.json',
     contract: 'Main',
   });
-  const res = await contact.methods.test().call();
+  const res = await contact.instance.methods.test().call();
   t.is(res, '100');
 });
 
@@ -35,7 +35,7 @@ test('deploys contract from truffle file', async (t) => {
     gasPrice: 1,
     src: './src/tests/assets/scaffold-a.json',
   });
-  const res = await contact.methods.test().call();
+  const res = await contact.instance.methods.test().call();
   t.is(res, '123457');
 });
 

@@ -99,7 +99,7 @@ export const files = [
       `    src: './build/main.json',`,
       `    contract: 'Main',`,
       `  });`,
-      `  const value = await main.methods.works().call();`,
+      `  const value = await main.instance.methods.works().call();`,
       `  ctx.is(value, '100');`,
       `});`,
       ``,
