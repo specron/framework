@@ -25,9 +25,19 @@ export default async function (argv) {
     const message = result.file.substr(process.cwd().length + 1);
     test.spec(message, result.spec);
   });
-  await test.perform();
+
+  try {
+    await test.perform();
+  } catch (e) {
+    console.log(e);
+    process.exit(2);
+  }
 
   if (config.test.server) {
     await sandbox.close();
   }
+
+  console.log('XXXXXX: reporter.failedCount', reporter.failedCount);
+
+  process.exit(reporter.failedCount ? 1 : 0);
 }

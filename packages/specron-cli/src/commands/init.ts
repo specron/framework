@@ -55,8 +55,10 @@ export default async function (argv) {
       printer.colorize('gray', `$ npm test`)
     );
     printer.end();
+    process.exit(0);
 
   } catch (e) {
     console.error(e);
+    process.exit(2);
   }
 }
