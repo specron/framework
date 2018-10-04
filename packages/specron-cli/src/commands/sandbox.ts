@@ -24,6 +24,7 @@ export default async function (argv) {
     printer.end();
   } catch (e) {
     console.error(e);
+    process.exit(2);
   }
 
   if (config.sandbox.ttl) {

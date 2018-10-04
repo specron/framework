@@ -11,6 +11,13 @@ export default async function (argv) {
     reporter: new DefaultReporter(confog.compiler.severities),
   });
   compiler.source(...confog.compiler.match);
-  compiler.compile();
-  compiler.save(confog.compiler.build);
+
+  try {
+    compiler.compile();
+    compiler.save(confog.compiler.build);
+    process.exit(0);
+  } catch (e) {
+    console.log(e);
+    process.exit(2);
+  }
 }
