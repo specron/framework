@@ -1,6 +1,6 @@
 {
   "name": "@specron/sandbox",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Ethereum sandbox server for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -43,7 +43,7 @@
     "nyc": "^12.0.2",
     "supertest": "^3.1.0",
     "ts-node": "^7.0.1",
-    "typescript": "^3.0.1"
+    "typescript": "^3.1.1"
   },
   "dependencies": {
     "ganache-cli": "^6.1.8"
