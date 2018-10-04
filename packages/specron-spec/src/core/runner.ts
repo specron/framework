@@ -16,15 +16,13 @@ export class Runner extends runner.Runner {
 
   /**
    * 
-   * NOTE: Due to different NPM package managers, the `instanceof` check my be
-   * inconsistent thus the function checks for presence of the `test` method.
    */
   protected loadSpec(file: string) {
     const spec = require(file);
 
-    if (typeof spec.test !== 'undefined') {
+    if (spec instanceof Spec) {
       this.results.push({ file, spec });
-    } else if (spec.default && typeof spec.default.test !== 'undefined') {
+    } else if (spec.default  instanceof Spec) {
       this.results.push({ file, spec: spec.default });
     }
   }
