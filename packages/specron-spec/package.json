@@ -1,7 +1,7 @@
 {
   "name": "@specron/spec",
-  "version": "0.0.46",
-  "description": "Test suits for ChainSpin framework.",
+  "version": "0.1.3",
+  "description": "Test suits for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -38,7 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "@0xcert/ethereum-utils": "1.0.1",
-    "@specron/sandbox": "latest",
+    "@specron/sandbox": "^0.1.2",
     "@types/node": "^10.3.2",
     "ava": "^1.0.0-beta.6",
     "nyc": "^12.0.2",
@@ -50,8 +50,8 @@
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.4.21",
-    "@hayspec/runner": "^0.4.21",
-    "@hayspec/spec": "^0.4.21"
+    "@hayspec/reporter": "^0.7.0",
+    "@hayspec/runner": "^0.7.0",
+    "@hayspec/spec": "^0.7.0"
   }
 }

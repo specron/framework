@@ -1,33 +1,37 @@
 import * as inquirer from 'inquirer';
 import { Generator } from '@specron/init';
 import { Printer } from '@hayspec/reporter';
+import { getConfig } from '../lib/env';
 
 /**
  * Initializes project directory.
  */
 export default async function (argv) {
-  const { name, description } = argv;
+  const config = getConfig(argv);
   const root = process.cwd();
   const printer = new Printer();
   
   let answers = {};
-  if (!(name && description)) {
+  if (!(config.name && config.description)) {
     answers = await inquirer.prompt([
       {
         type: 'input',
         name: 'name',
         message: "Project name:",
-        default: name || 'myproject',
+        default: config.name || 'myproject',
       },
       {
         type: 'input',
         name: 'description',
         message: "Project description:",
-        default: description || '.',
+        default: config.description || '.',
       },
     ]);
   } else {
-    answers = { name, description };
+    answers = {
+      name: config.name,
+      description: config.description,
+    };
   }
   
   const generator = new Generator({
