@@ -3,7 +3,6 @@
 .nyc_output
 node_modules
 lerna-debug.log
-package-lock.json
 _site
 GemFile
 GemFile.lock
