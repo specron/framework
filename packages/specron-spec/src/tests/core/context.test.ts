@@ -3,7 +3,7 @@ import { Sandbox } from '@specron/sandbox';
 import * as Web3 from 'web3';
 import { Context, Stage, Reporter } from '../..';
 
-const web3 = new (Web3 as any)('http://localhost:8545') as Web3.default;
+const web3 = new Web3(Sandbox.createProvider());
 const reporter = new Reporter({ mute: true });
 const stage = new Stage(web3, reporter);
 const sandbox = new Sandbox();

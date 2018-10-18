@@ -1,8 +1,9 @@
 import test from 'ava';
 import * as Web3 from 'web3';
+import { Sandbox } from '@specron/sandbox';
 import { Stage, Reporter } from '../..';
 
-const web3 = new (Web3 as any)('http://localhost:8545') as Web3.default;
+const web3 = new Web3(Sandbox.createProvider());
 const reporter = new Reporter();
 
 test('variable `web3` exposes the web3 instance', async (t) => {

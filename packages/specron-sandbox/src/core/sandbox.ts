@@ -1,19 +1,37 @@
 import * as ganache from 'ganache-cli';
 
 /**
+ * Sandbox configuration options.
+ */
+export interface SandboxOptions {
+  port?: number;
+  blockTime?: number;
+}
+
+/**
  * Sandbox server for testing Ethereum code.
  */
 export class Sandbox {
   protected server: any;
 
   /**
+   * Returns and instance of a sandbox Web3 provider.
+   * @param options Sandbox configuration options.
+   */
+  public static createProvider(options?: SandboxOptions) {
+    const provider = ganache.provider(options);
+    provider.setMaxListeners(300);
+    return provider;
+  }
+
+  /**
    * Starts the server.
    */
-  public async listen(port = 8545, host = '127.0.0.1') {
+  public async listen(port = 8545) {
 
     await new Promise((resolve, reject) => {
       this.server = ganache.server();
-      this.server.listen(port, host, (e) => e ? reject(e) : resolve());
+      this.server.listen(port, (e) => e ? reject(e) : resolve());
     });
 
     return this;

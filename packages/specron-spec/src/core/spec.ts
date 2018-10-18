@@ -1,5 +1,6 @@
 import { Spec as SpecBase } from '@hayspec/spec';
 import { DefaultReporter } from '@hayspec/reporter';
+import { Sandbox } from '@specron/sandbox';
 import { Stage } from './stage';
 import { Context } from './context';
 import * as Web3 from 'web3';
@@ -117,7 +118,7 @@ export class Spec<Data = {}> extends SpecBase<Data> {
    * 
    */
   protected createStage() {
-    const web3 = new (Web3 as any)('http://localhost:8545');
+    const web3 = new Web3(Sandbox.createProvider());
     const reporter = new DefaultReporter();
     return new Stage<Data>(web3, reporter);
   }

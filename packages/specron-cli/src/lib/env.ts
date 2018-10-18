@@ -33,14 +33,13 @@ export function getConfig(argv?: any) {
     },
     sandbox: {
       port: custom['port'] || defaults['sandbox']['port'] || 8545,
-      host: custom['host'] || defaults['sandbox']['host'] || 'localhost',
       ttl: custom['ttl'] || defaults['sandbox']['ttl'] || 0,
     },
     test: {
       server: custom['server'] !== false && defaults['test']['server'] !== false,
       port: custom['port'] || defaults['test']['port'] || 8545,
-      host: custom['host'] || defaults['test']['host'] || 'localhost',
       match: custom['match'] || defaults['test']['match'] || [],
+      blockTime: custom['blockTime'] || defaults['test']['blockTime'] || null,
     },
     require: custom['require'] || defaults['require'] || [],
   };

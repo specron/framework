@@ -11,7 +11,7 @@ export default async function (argv) {
 
   const sandbox = new Sandbox();
   try {
-    await sandbox.listen(config.sandbox.port, config.sandbox.host);
+    await sandbox.listen(config.sandbox.port);
     printer.end();
     printer.end(
       printer.indent(1, ''),
@@ -19,7 +19,7 @@ export default async function (argv) {
     );
     printer.end(
       printer.indent(2, ''),
-      printer.colorize('gray', `Listening at ${config.sandbox.host}:${config.sandbox.port} ...`)
+      printer.colorize('gray', `Listening at localhost:${config.sandbox.port} ...`)
     );
     printer.end();
   } catch (e) {
