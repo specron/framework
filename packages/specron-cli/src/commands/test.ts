@@ -10,13 +10,13 @@ export default async function (argv) {
   const config = getConfig(argv);
 
   const sandbox = new Sandbox();
-  const web3 = new (Web3 as any)(`http://${config.test.host}:${config.test.port}`);
+  const web3 = new Web3(Sandbox.createProvider(config.test));
   const reporter = new Reporter();
   const stage = new Stage(web3, reporter);
   const test = new Spec(stage);
 
   if (config.test.server) {
-    await sandbox.listen(config.test.port, config.test.host);
+    await sandbox.listen(config.test.port);
   }
 
   const runner = new Runner();

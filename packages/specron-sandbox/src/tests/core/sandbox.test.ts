@@ -11,7 +11,12 @@ test.after(async () => {
   sandbox.close();
 });
 
-test('listens for requests', async (t) => {
+test('server listens for requests', async (t) => {
   const res = await request('http://localhost:8911').get('/').catch((e) => e.response);
   t.is(res.status, 400);
+});
+
+test('creates a sandbox Web3 provider', async (t) => {
+  const res = Sandbox.createProvider();
+  t.true(!!res);
 });

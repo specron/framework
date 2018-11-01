@@ -5,9 +5,9 @@ import * as cproc from 'child_process';
 const exec = util.promisify(cproc.exec);
 
 test('starts sandbox server', async (t) => {
-  const command = `./bin/specron sandbox --port 8546 --host 127.0.0.1 --ttl 1000`;
+  const command = `./bin/specron sandbox --port 8546 --ttl 1000`;
   const { stdout, stderr } = await exec(command);
-  t.true(stdout.indexOf('127.0.0.1:8546') !== -1);
+  t.true(stdout.indexOf('localhost:8546') !== -1);
   t.true(stderr === '');
 });
 

@@ -3,7 +3,7 @@ import { Sandbox } from '@specron/sandbox';
 import * as Web3 from 'web3';
 import deploy from '../../methods/deploy';
 
-const web3 = new (Web3 as any)('http://localhost:8545') as Web3.default;
+const web3 = new Web3(Sandbox.createProvider({ port: 8545 }));
 const sandbox = new Sandbox();
 
 test.before(async () => {

@@ -39,10 +39,6 @@ const { argv } = yargs
     .option('port', {
       number: true,
       description: 'Server port number',
-    })
-    .option('host', {
-      string: true,
-      description: 'Server host name',
     }),
     sandboxHandler)
   .command('test', 'Runs tests', (yargs) => yargs
@@ -62,9 +58,9 @@ const { argv } = yargs
       number: true,
       description: 'Server port number',
     })
-    .option('host', {
-      string: true,
-      description: 'Server host name',
+    .option('blockTime', {
+      number: true,
+      description: 'Seconds for automatic mining',
     }),
     testHandler)
   .epilog('Copyright © Xpepermint 2018.')
