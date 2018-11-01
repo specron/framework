@@ -20,7 +20,7 @@ export class Sandbox {
    */
   public static createProvider(options?: SandboxOptions) {
     const provider = ganache.provider(options);
-    provider.setMaxListeners(300);
+    provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
     return provider;
   }
 
