@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Test suits for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -49,9 +49,9 @@
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.7.4",
-    "@hayspec/runner": "^0.7.4",
-    "@hayspec/spec": "^0.7.4",
-    "@specron/sandbox": "^0.2.6"
+    "@hayspec/reporter": "^0.7.6",
+    "@hayspec/runner": "^0.7.6",
+    "@hayspec/spec": "^0.7.6",
+    "@specron/sandbox": "^0.2.7"
   }
 }

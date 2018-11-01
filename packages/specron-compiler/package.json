@@ -1,6 +1,6 @@
 {
   "name": "@specron/compiler",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Solidity contract compiler for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -46,7 +46,7 @@
     "typescript": "^3.1.1"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.7.4",
+    "@hayspec/reporter": "^0.7.6",
     "fast-glob": "^2.2.3",
     "fs-extra": "^7.0.0"
   },
