@@ -8,10 +8,8 @@
     "specron": "./bin/specron"
   },
   "scripts": {
-    "clean": "rm -Rf ./dist; rm -Rf ./build",
-    "transpile": "npm run clean; tsc",
-    "prepare": "npm run transpile",
-    "test": "npm run transpile && nyc ava --verbose"
+    "build": "npx tsc",
+    "test": "npx nyc npx ava --verbose"
   },
   "specron": {
     "compiler": {

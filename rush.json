@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.5.1",
+  "npmVersion": "6.4.1",
+  "nodeSupportedVersionRange": ">=11.0.0",
+  "gitPolicy": {},
+  "repository": {},
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "projects": [
+    {
+      "packageName": "@specron/cli",
+      "projectFolder": "packages/specron-cli",
+      "versionPolicyName": "patchAll"
+    },
+    {
+      "packageName": "@specron/compiler",
+      "projectFolder": "packages/specron-compiler",
+      "versionPolicyName": "patchAll"
+    },
+    {
+      "packageName": "@specron/init",
+      "projectFolder": "packages/specron-init",
+      "versionPolicyName": "patchAll"
+    },
+    {
+      "packageName": "@specron/sandbox",
+      "projectFolder": "packages/specron-sandbox",
+      "versionPolicyName": "patchAll"
+    },
+    {
+      "packageName": "@specron/spec",
+      "projectFolder": "packages/specron-spec",
+      "versionPolicyName": "patchAll"
+    }
+  ]
+}
