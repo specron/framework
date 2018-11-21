@@ -16,8 +16,4 @@ Please follow the [TypeScript coding guidelines](https://github.com/Microsoft/Ty
 
 ## Development
 
-* Don't use lerna commands. Use npm commands instead.
-* Run `npm install` to install main dependencies.
-* Run `npm run bootstrap` to install the packages in all the subpackages.
-* Run `npm test` to run tests in all the subpackages.
-* Run `npm publish` to publish all the subpackages.
+* https://gist.github.com/xpepermint/eecfc6ad6cd7c9f5dcda381aa255738d

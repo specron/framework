@@ -1,6 +1,6 @@
 {
   "name": "@specron/cli",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "Command-line tool for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,10 +8,8 @@
     "specron": "./bin/specron"
   },
   "scripts": {
-    "clean": "rm -Rf ./dist; rm -Rf ./build",
-    "transpile": "npm run clean; tsc",
-    "prepare": "npm run transpile",
-    "test": "npm run transpile && nyc ava --verbose"
+    "build": "npx tsc",
+    "test": "npx nyc npx ava --verbose"
   },
   "specron": {
     "compiler": {
@@ -66,10 +64,10 @@
   },
   "dependencies": {
     "@hayspec/reporter": "^0.7.6",
-    "@specron/compiler": "^0.2.8",
-    "@specron/init": "^0.2.8",
-    "@specron/sandbox": "^0.2.8",
-    "@specron/spec": "^0.2.8",
+    "@specron/compiler": "^0.3.0",
+    "@specron/init": "^0.3.0",
+    "@specron/sandbox": "^0.3.0",
+    "@specron/spec": "^0.3.0",
     "inquirer": "^6.2.0",
     "yargs": "^12.0.2"
   },

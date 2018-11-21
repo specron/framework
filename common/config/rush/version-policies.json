@@ -1,0 +1,8 @@
+[
+  {
+    "policyName": "patchAll",
+    "definitionName": "lockStepVersion",
+    "version": "0.3.0",
+    "nextBump": "patch"
+  }
+]

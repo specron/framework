@@ -1,14 +1,12 @@
 {
   "name": "@specron/spec",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "Test suits for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "clean": "rm -Rf ./dist",
-    "transpile": "npm run clean; tsc",
-    "prepare": "npm run transpile",
-    "test": "nyc ava --verbose"
+    "build": "npx tsc",
+    "test": "npx nyc npx ava --verbose"
   },
   "ava": {
     "concurrency": 1,
@@ -52,6 +50,6 @@
     "@hayspec/reporter": "^0.7.6",
     "@hayspec/runner": "^0.7.6",
     "@hayspec/spec": "^0.7.6",
-    "@specron/sandbox": "^0.2.8"
+    "@specron/sandbox": "^0.3.0"
   }
 }
