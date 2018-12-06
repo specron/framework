@@ -1,6 +1,6 @@
 /**
  * Solc compiler configuration input.
- * @see http://solidity.readthedocs.io/en/v0.4.21/using-the-compiler.html
+ * @see http://solidity.readthedocs.io/en/v0.4.31/using-the-compiler.html
  */
 export interface SolcInput {
   // Source code language.
@@ -56,7 +56,7 @@ export interface SolcInput {
 
 /**
  * Solc compiler output object.
- * @see http://solidity.readthedocs.io/en/v0.4.21/using-the-compiler.html
+ * @see http://solidity.readthedocs.io/en/v0.4.31/using-the-compiler.html
  */
 export interface SolcOutput {
   // Optional: not present if no errors/warnings were encountered

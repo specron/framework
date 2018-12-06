@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/specron/framework.svg?branch=master)](https://travis-ci.org/specron/framework)&nbsp;[![codecov](https://codecov.io/gh/specron/framework/branch/master/graph/badge.svg)](https://codecov.io/gh/specron/framework)
 
-Specron is a lightweight, open source, magic-free framework for testing smart contracts written in [solidity](https://solidity.readthedocs.io/en/v0.4.24/). The testing suite is built on top of the [Hayspec framework](https://github.com/specron/framework) thus using [TypeScript](https://www.typescriptlang.org/) is supported.
+Specron is a lightweight, open source, magic-free framework for testing smart contracts written in [solidity](https://solidity.readthedocs.io/en/v0.4.34/). The testing suite is built on top of the [Hayspec framework](https://github.com/specron/framework) thus using [TypeScript](https://www.typescriptlang.org/) is supported.
 
 Specron provides development environment for the Ethereum blockchain and includes useful tools which enable developers to easily write tests for smart contracts.
 
@@ -13,10 +13,10 @@ The source code is available on [GitHub](https://github.com/specron/framework) w
 Start by installing the Specron command-line tool.
 
 ```bash
-$ npm install -g @specron/cli web3@1.0.0-beta.36 solc
+$ npm install -g @specron/cli web3@1.0.0-beta.36 solc@0.5.1
 ```
 
-Specron depends on the latest [web3](https://www.npmjs.com/package/web3) and [solc](https://www.npmjs.com/package/solc) packages so make sure you have them globally installed. Specron also uses promises thus you need to use [Promise polyfill](https://github.com/taylorhakes/promise-polyfill) when promises are not supported.
+Specron depends on the latest [web3](https://www.npmjs.com/package/web3) and [solc](https://www.npmjs.com/package/solc) packages, so make sure you have them globally installed. Specron also uses promises thus you need to use [Promise polyfill](https://github.com/taylorhakes/promise-polyfill) when promises are not supported.
 
 ## Getting started
 

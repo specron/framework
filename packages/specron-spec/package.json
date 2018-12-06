@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.3.1",
+  "version": "0.4.3",
   "description": "Test suits for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -50,6 +50,6 @@
     "@hayspec/reporter": "^0.8.0",
     "@hayspec/runner": "^0.8.0",
     "@hayspec/spec": "^0.8.0",
-    "@specron/sandbox": "^0.3.1"
+    "@specron/sandbox": "^0.4.3"
   }
 }

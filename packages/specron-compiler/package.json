@@ -1,6 +1,6 @@
 {
   "name": "@specron/compiler",
-  "version": "0.3.1",
+  "version": "0.4.3",
   "description": "Solidity contract compiler for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -49,6 +49,6 @@
     "fs-extra": "^7.0.1"
   },
   "peerDependencies": {
-    "solc": "^0.4.24"
+    "solc": "*"
   }
 }
