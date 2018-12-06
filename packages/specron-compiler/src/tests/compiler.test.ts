@@ -22,7 +22,7 @@ test('compiles source files', (t) => {
     './src/tests/assets/token-a.sol',
     './src/tests/assets/token-b.sol',
     './src/tests/assets/token-c.sol',
-    '@0xcert/ethereum-utils/contracts/math/SafeMath.sol',
+    '@0xcert/ethereum-utils-contracts/src/contracts/math/safe-math.sol',
   ]);
 });
 

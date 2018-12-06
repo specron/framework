@@ -43,6 +43,6 @@
     "typescript": "^3.2.1"
   },
   "dependencies": {
-    "ganache-cli": "6.1.8"
+    "ganache-cli": "6.2.3"
   }
 }

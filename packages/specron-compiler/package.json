@@ -34,12 +34,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@0xcert/ethereum-utils": "1.1.0",
+    "@0xcert/ethereum-utils-contracts": "0.0.0-alpha",
     "@types/fs-extra": "^5.0.4",
     "@types/node": "^10.12.12",
     "ava": "^1.0.0-rc.2",
     "nyc": "^13.1.0",
-    "solc": "^0.4.25",
+    "solc": "^0.5.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.1"
   },
