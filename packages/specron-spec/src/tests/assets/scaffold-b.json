@@ -544,7 +544,7 @@
     },
     "metadata": {
       "compiler": {
-        "version": "0.4.24+commit.e67f0147"
+        "version": "0.4.34+commit.e67f0147"
       },
       "language": "Solidity",
       "output": {

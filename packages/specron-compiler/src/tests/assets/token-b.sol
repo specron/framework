@@ -1,6 +1,6 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.1;
 
-import "@0xcert/ethereum-utils/contracts/math/SafeMath.sol";
+import "@0xcert/ethereum-utils-contracts/src/contracts/math/safe-math.sol";
 
 contract Token2 {
   using SafeMath for uint256;
