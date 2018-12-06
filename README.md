@@ -10,10 +10,10 @@ The source code is available on [GitHub](https://github.com/specron/framework) w
 
 ## Installation
 
-Start by installing the specron command-line tool.
+Start by installing the Specron command-line tool.
 
 ```bash
-$ npm install -g @specron/cli web3 solc
+$ npm install -g @specron/cli web3@1.0.0-beta.36 solc
 ```
 
 Specron depends on the latest [web3](https://www.npmjs.com/package/web3) and [solc](https://www.npmjs.com/package/solc) packages so make sure you have them globally installed. Specron also uses promises thus you need to use [Promise polyfill](https://github.com/taylorhakes/promise-polyfill) when promises are not supported.
@@ -29,8 +29,8 @@ The Specron interface is designed to fully support the power of [TypeScript](htt
 Start by creating a new project folder.
 
 ```bash
-$ mkdir myProject
-$ cd myProject
+$ mkdir myproject
+$ cd myproject
 ```
 
 Initialize the project and install the dependencies.

@@ -63,7 +63,7 @@ export const files = [
       `    "@specron/spec": "latest",`,
       `    "solc": "^0.4.25",`,
       `    "ts-node": "^7.0.1",`,
-      `    "typescript": "^3.1.1",`,
+      `    "typescript": "^3.2.1",`,
       `    "web3": "^1.0.0-beta.36"`,
       `  }`,
       `}`,

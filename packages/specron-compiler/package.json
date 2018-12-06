@@ -1,6 +1,6 @@
 {
   "name": "@specron/compiler",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Solidity contract compiler for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -34,19 +34,19 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@0xcert/ethereum-utils": "^1.1.0",
+    "@0xcert/ethereum-utils": "1.1.0",
     "@types/fs-extra": "^5.0.4",
-    "@types/node": "^10.11.4",
-    "ava": "^1.0.0-beta.8",
-    "nyc": "^13.0.1",
+    "@types/node": "^10.12.12",
+    "ava": "^1.0.0-rc.2",
+    "nyc": "^13.1.0",
     "solc": "^0.4.25",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.1"
+    "typescript": "^3.2.1"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.7.6",
-    "fast-glob": "^2.2.3",
-    "fs-extra": "^7.0.0"
+    "@hayspec/reporter": "^0.8.0",
+    "fast-glob": "^2.2.4",
+    "fs-extra": "^7.0.1"
   },
   "peerDependencies": {
     "solc": "^0.4.24"

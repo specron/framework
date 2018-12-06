@@ -1,6 +1,6 @@
 {
   "name": "@specron/spec",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Test suits for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -35,21 +35,21 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@0xcert/ethereum-utils": "^1.1.0",
-    "@types/node": "^10.11.4",
-    "ava": "^1.0.0-beta.8",
-    "nyc": "^13.0.1",
+    "@0xcert/ethereum-utils": "1.1.0",
+    "@types/node": "^10.12.12",
+    "ava": "^1.0.0-rc.2",
+    "nyc": "^13.1.0",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.1",
+    "typescript": "^3.2.1",
     "web3": "^1.0.0-beta.36"
   },
   "peerDependencies": {
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.7.6",
-    "@hayspec/runner": "^0.7.6",
-    "@hayspec/spec": "^0.7.6",
-    "@specron/sandbox": "^0.3.0"
+    "@hayspec/reporter": "^0.8.0",
+    "@hayspec/runner": "^0.8.0",
+    "@hayspec/spec": "^0.8.0",
+    "@specron/sandbox": "^0.3.1"
   }
 }
