@@ -47,6 +47,21 @@ test('method `tuple` transforms an object to tuple type', async (t) => {
   ]);
 });
 
+test('method `sign` creates a signature and validates it', async (t) => {
+  const ctx = new Context(stage);
+  const data = web3.utils.randomHex(32);
+
+  const signatureData = await ctx.sign({ data });
+
+  const recover = await ctx.deploy({
+    src: './src/tests/assets/scaffold-ecrecover.json',
+    contract: 'recoverContract',
+  });
+
+  const address = await recover.instance.methods.recover(data, signatureData.r, signatureData.s, signatureData.v).call();
+  t.is(address, await stage.web3.eth.getAccounts().then((a) => a[0]));
+});
+
 test('method `reverts` asserts that function throws a revert error', async (t) => {
   const ctx = new Context(stage);
   const results = [

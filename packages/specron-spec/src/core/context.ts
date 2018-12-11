@@ -3,6 +3,8 @@ import { Stage } from './stage';
 import reverts from '../asserts/reverts';
 import deploy from '../methods/deploy';
 import tuple from '../methods/tuple';
+import sign from '../methods/sign';
+import { SignatureKind } from './types';
 
 /**
  * 
@@ -63,4 +65,23 @@ export class Context<Data = {}> extends ContextBase<Data> {
     return tuple(obj);
   }
 
+  /**
+   * 
+   */
+  public async sign(options: {
+    data: string;
+    kind?: SignatureKind;
+    signer?: string;
+  }) {
+    return sign({
+      web3: this.stage.web3,
+      signer: options.signer === undefined
+        ? await this.stage.web3.eth.getAccounts().then((a) => a[0])
+        : options.signer,
+      kind: options.kind === undefined 
+        ? SignatureKind.ETH_SIGN
+        : options.kind,
+      ...options,
+    });
+  }
 }
