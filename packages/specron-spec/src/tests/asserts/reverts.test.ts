@@ -1,5 +1,5 @@
 import test from 'ava';
-import reverts from '../../asserts/reverts';
+import { reverts } from '../../asserts/reverts';
 
 test('succeeds for values that revert', async (t) => {
   t.true(reverts(() => { throw new Error('revert') }));

@@ -1,9 +1,9 @@
 import test from 'ava';
-import { Sandbox } from '@specron/sandbox';
 import * as Web3 from 'web3';
-import sign from '../../methods/sign';
+import { Sandbox } from '@specron/sandbox';
 import { SignatureKind } from '../../core/types';
-import deploy from '../../methods/deploy';
+import { sign } from '../../methods/sign';
+import { deploy } from '../../methods/deploy';
 
 const web3 = new Web3(Sandbox.createProvider({ port: 8545 }));
 const sandbox = new Sandbox();

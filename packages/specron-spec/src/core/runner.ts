@@ -22,7 +22,8 @@ export class Runner extends runner.Runner {
 
     if (spec instanceof Spec) {
       this.results.push({ file, spec });
-    } else if (spec.default  instanceof Spec) {
+    }
+    else if (spec.default  instanceof Spec) {
       this.results.push({ file, spec: spec.default });
     }
   }

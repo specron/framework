@@ -1,5 +1,5 @@
 import test from 'ava';
-import tuple from '../../methods/tuple';
+import { tuple } from '../../methods/tuple';
 
 test('transforms an object to tuple', async (t) => {
   const res = tuple({
