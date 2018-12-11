@@ -39,3 +39,17 @@ test('performs eth sign', async (t) => {
 
   t.is(address, signer);
 });
+
+test('performs eth sign with string data', async (t) => {
+  const signer = await web3.eth.getAccounts().then((a) => a[0]);
+  const data = 'test';
+
+  const signatureData = await sign({
+    web3,
+    kind: SignatureKind.ETH_SIGN,
+    data,
+    signer
+  });
+
+  t.not(signatureData, null);
+});
