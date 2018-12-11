@@ -35,7 +35,8 @@ export class Spec<Data = {}> extends SpecBase<Data> {
   public set stage(s: Stage<Data>) {
     if (this.parent) {
       this.parent.stage = s;
-    } else {
+    }
+    else {
       this._stage = s;
     }
   }
@@ -46,7 +47,8 @@ export class Spec<Data = {}> extends SpecBase<Data> {
   public get stage() {
     if (this.parent) {
       return this.parent.stage;
-    } else {
+    }
+    else {
       return this._stage;
     }
   }

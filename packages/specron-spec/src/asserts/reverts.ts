@@ -3,7 +3,7 @@
  */
 function isRevertError(e, message?: string) {
   const isRevert = String(e).includes('revert') || (e.message !== undefined && e.message.includes('revert'));
-  if(isRevert && message !== undefined) {
+  if (isRevert && message !== undefined) {
     return String(e).includes(message) || (e.message !== undefined && e.message.includes(message));
   }
   return isRevert;
@@ -12,15 +12,17 @@ function isRevertError(e, message?: string) {
 /**
  * 
  */
-export default function reverts (fn: () => any, message?: string) {
+export function reverts(fn: () => any, message?: string) {
   try {
     const res = fn();
     if (res instanceof Promise) {
       return res.then(() => false).catch((e) => isRevertError(e, message));
-    } else {
+    }
+    else {
       return false;
     }
-  } catch (e) {
+  }
+  catch (e) {
     return isRevertError(e, message);
   }
 }

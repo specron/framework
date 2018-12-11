@@ -44,7 +44,7 @@
     "typescript": "^3.2.1"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.8.0",
+    "@hayspec/reporter": "^0.8.2",
     "fast-glob": "^2.2.4",
     "fs-extra": "^7.0.1"
   },

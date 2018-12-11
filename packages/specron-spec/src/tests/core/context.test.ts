@@ -1,6 +1,6 @@
 import test from 'ava';
-import { Sandbox } from '@specron/sandbox';
 import * as Web3 from 'web3';
+import { Sandbox } from '@specron/sandbox';
 import { Context, Stage, Reporter } from '../..';
 
 const web3 = new Web3(Sandbox.createProvider());
@@ -57,7 +57,6 @@ test('method `sign` creates a signature and validates it', async (t) => {
     src: './src/tests/assets/scaffold-ecrecover.json',
     contract: 'recoverContract',
   });
-
   const address = await recover.instance.methods.recover(data, signatureData.r, signatureData.s, signatureData.v).call();
   t.is(address, await stage.web3.eth.getAccounts().then((a) => a[0]));
 });

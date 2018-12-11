@@ -1,10 +1,10 @@
 import { Context as ContextBase, AssertionNote } from '@hayspec/spec';
 import { Stage } from './stage';
-import reverts from '../asserts/reverts';
-import deploy from '../methods/deploy';
-import tuple from '../methods/tuple';
-import sign from '../methods/sign';
 import { SignatureKind } from './types';
+import { reverts } from '../asserts/reverts';
+import { deploy } from '../methods/deploy';
+import { tuple } from '../methods/tuple';
+import { sign } from '../methods/sign';
 
 /**
  * 

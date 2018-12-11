@@ -3,7 +3,7 @@ import * as path from 'path';
 /**
  * 
  */
-export default async function deploy(config: {
+export async function deploy(config: {
   src: string;
   contract?: string;
   web3: any;

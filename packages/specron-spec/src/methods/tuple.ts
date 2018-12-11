@@ -2,16 +2,17 @@
  * Transforms an object into web3 tuple type.
  * @param obj Web3 structure as object.
  */
-export default function tuple(obj) {
+export function tuple(obj) {
   if (!(obj instanceof Object)) {
     return [];
   }
   var output = [];
   var i = 0;
   Object.keys(obj).forEach((k) => {
-      if (obj[k] instanceof Object) {
+    if (obj[k] instanceof Object) {
       output[i] = tuple(obj[k]);
-      } else if (obj[k] instanceof Array) {
+    }
+    else if (obj[k] instanceof Array) {
       let j1 = 0;
       let temp1 = [];
       obj[k].forEach((ak) => {
@@ -19,10 +20,11 @@ export default function tuple(obj) {
           j1++;
       });
       output[i] = temp1;
-      } else {
+    }
+    else {
       output[i] = obj[k];
-      }
-      i++;
+    }
+    i++;
   });
   return output;
 }

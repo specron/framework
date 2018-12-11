@@ -2,7 +2,7 @@ import test from 'ava';
 import * as Web3 from 'web3';
 import { Sandbox } from '@specron/sandbox';
 import { Stage, Reporter } from '../..';
-import deploy from '../../methods/deploy';
+import { deploy } from '../../methods/deploy';
 
 const web3 = new Web3(Sandbox.createProvider());
 const reporter = new Reporter();

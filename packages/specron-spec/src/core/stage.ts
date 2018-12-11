@@ -1,8 +1,8 @@
 import { DefaultReporter } from "@hayspec/reporter";
 import * as core from "@hayspec/spec";
-import tuple from '../methods/tuple';
 import { SignatureKind } from "./types";
-import sign from "../methods/sign";
+import { sign } from "../methods/sign";
+import { tuple } from '../methods/tuple';
 
 /**
  * 
