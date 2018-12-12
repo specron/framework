@@ -221,6 +221,10 @@ Specron configuration options can be saved inside the package.json file under th
 
 Note that these options can be overriden by providing CLI arguments.
 
+### Using continuous integration
+
+For a full example of a Solidity contract repository including continuous integration using Travis and Specron, see https://github.com/xpepermint/specron-example.
+
 ## Packages
 
 | Package | Description | Version
