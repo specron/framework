@@ -47,9 +47,9 @@
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.8.2",
-    "@hayspec/runner": "^0.8.2",
-    "@hayspec/spec": "^0.8.2",
+    "@hayspec/reporter": "^0.8.3",
+    "@hayspec/runner": "^0.8.3",
+    "@hayspec/spec": "^0.8.3",
     "@specron/sandbox": "^0.5.0"
   }
 }

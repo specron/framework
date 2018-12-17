@@ -21,10 +21,10 @@ export class Runner extends runner.Runner {
     const spec = require(file);
 
     if (spec instanceof Spec) {
-      this.results.push({ file, spec });
+      return { file, spec };
     }
     else if (spec.default  instanceof Spec) {
-      this.results.push({ file, spec: spec.default });
+      return { file, spec: spec.default };
     }
   }
 

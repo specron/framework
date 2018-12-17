@@ -63,7 +63,7 @@
     "web3": "^1.0.0-beta.36"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.8.2",
+    "@hayspec/reporter": "^0.8.3",
     "@specron/compiler": "^0.5.0",
     "@specron/init": "^0.5.0",
     "@specron/sandbox": "^0.5.0",
