@@ -1,6 +1,11 @@
 # Change Log - @specron/spec
 
-This log was last generated on Tue, 11 Dec 2018 15:26:27 GMT and should not be manually modified.
+This log was last generated on Mon, 17 Dec 2018 19:08:51 GMT and should not be manually modified.
+
+## 0.5.1
+Mon, 17 Dec 2018 19:08:51 GMT
+
+*Version update only*
 
 ## 0.5.0
 Tue, 11 Dec 2018 15:26:27 GMT
