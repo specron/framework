@@ -2,5 +2,5 @@
  * 
  */
 export enum SignatureKind {
-  ETH_SIGN = 1,
+  ETH_SIGN = 0,
 }

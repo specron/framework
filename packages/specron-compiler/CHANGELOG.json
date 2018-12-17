@@ -2,6 +2,18 @@
   "name": "@specron/compiler",
   "entries": [
     {
+      "version": "0.5.1",
+      "tag": "@specron/compiler_v0.5.1",
+      "date": "Mon, 17 Dec 2018 19:08:51 GMT",
+      "comments": {}
+    },
+    {
+      "version": "0.5.0",
+      "tag": "@specron/compiler_v0.5.0",
+      "date": "Tue, 11 Dec 2018 15:26:27 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.4.3",
       "tag": "@specron/compiler_v0.4.3",
       "date": "Thu, 06 Dec 2018 13:22:22 GMT",
