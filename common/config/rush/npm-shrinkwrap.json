@@ -3668,7 +3668,7 @@
           }
         },
         "deep-extend": {
-          "version": "0.5.1",
+          "version": "0.5.2",
           "resolved": "https://registry.npmjs.org/deep-extend/-/deep-extend-0.5.1.tgz",
           "integrity": "sha512-N8vBdOa+DF7zkRrDCsaOXoCs/E2fJfx9B9MrKnnSiHNh4ws7eSys6YQE4KvT1cecKmOASYQBhbKjeuDD9lT81w==",
           "optional": true
@@ -3821,7 +3821,7 @@
           }
         },
         "mkdirp": {
-          "version": "0.5.1",
+          "version": "0.5.2",
           "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
           "integrity": "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=",
           "requires": {
@@ -5292,7 +5292,7 @@
       }
     },
     "mkdirp": {
-      "version": "0.5.1",
+      "version": "0.5.2",
       "resolved": "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
       "integrity": "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=",
       "requires": {
@@ -6005,7 +6005,7 @@
           "integrity": "sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8="
         },
         "mkdirp": {
-          "version": "0.5.1",
+          "version": "0.5.2",
           "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
           "integrity": "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=",
           "requires": {
@@ -7803,7 +7803,7 @@
       }
     },
     "solc": {
-      "version": "0.5.1",
+      "version": "0.5.2",
       "resolved": "https://registry.npmjs.org/solc/-/solc-0.5.1.tgz",
       "integrity": "sha512-+RJfa5zRpWBm8DhEiEScIzEzPHWppwHSp/2yV9qvM/lNr0Y8cCv2mcNiXy+R6SSV0OoskhPEfe6Fwa4QQEgxlg==",
       "requires": {
