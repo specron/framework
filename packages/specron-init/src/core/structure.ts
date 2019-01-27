@@ -72,7 +72,7 @@ export const files = [
   {
     path: ['src', 'contracts', 'main.sol'],
     content: [
-      `pragma solidity ^0.5.1;`,
+      `pragma solidity ^0.5.3;`,
       ``,
       `contract Main {`,
       ``,
