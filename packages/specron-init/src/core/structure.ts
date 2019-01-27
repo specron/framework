@@ -64,7 +64,7 @@ export const files = [
       `    "solc": "^0.5.1",`,
       `    "ts-node": "^7.0.1",`,
       `    "typescript": "^3.2.1",`,
-      `    "web3": "^1.0.0-beta.36"`,
+      `    "web3": "1.0.0-beta.36"`,
       `  }`,
       `}`,
     ],
