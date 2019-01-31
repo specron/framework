@@ -5,16 +5,16 @@ import { getConfig } from '../lib/env';
  * Compiles Solidity contracts.
  */
 export default async function (argv) {
-  const confog = getConfig(argv);
+  const config = getConfig(argv);
 
   const compiler = new Compiler({
-    reporter: new DefaultReporter(confog.compiler.severities),
+    reporter: new DefaultReporter(config.compiler.severities),
   });
-  compiler.source(...confog.compiler.match);
+  compiler.source(...config.compiler.match);
 
   try {
     compiler.compile();
-    compiler.save(confog.compiler.build);
+    compiler.save(config.compiler.build);
     process.exit(0);
   } catch (e) {
     console.log(e);
