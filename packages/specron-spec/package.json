@@ -50,6 +50,6 @@
     "@hayspec/reporter": "^0.8.3",
     "@hayspec/runner": "^0.8.3",
     "@hayspec/spec": "^0.8.3",
-    "@specron/sandbox": "^0.5.1"
+    "@specron/sandbox": "^0.5.3"
   }
 }

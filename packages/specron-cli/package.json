@@ -57,17 +57,17 @@
     "@types/yargs": "^12.0.1",
     "ava": "^1.0.0-rc.2",
     "nyc": "^13.1.0",
-    "solc": "^0.5.1",
+    "solc": "^0.5.3",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.1",
     "web3": "1.0.0-beta.36"
   },
   "dependencies": {
     "@hayspec/reporter": "^0.8.3",
-    "@specron/compiler": "^0.5.1",
-    "@specron/init": "^0.5.1",
-    "@specron/sandbox": "^0.5.1",
-    "@specron/spec": "^0.5.1",
+    "@specron/compiler": "^0.5.3",
+    "@specron/init": "^0.5.3",
+    "@specron/sandbox": "^0.5.3",
+    "@specron/spec": "^0.5.3",
     "inquirer": "^6.2.1",
     "yargs": "^12.0.5"
   },
