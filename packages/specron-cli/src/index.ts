@@ -23,6 +23,10 @@ const { argv } = yargs
     .option('severities', {
       array: true,
       description: 'Toggle error and warnings visibility',
+    })
+    .option('optimization', {
+      number: true,
+      description: 'Code optimization level',
     }),
     compileHandler)
   .command('init', 'Initializes project directory.',  (yargs) => yargs
