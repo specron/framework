@@ -10,6 +10,9 @@ test('method `getConfig` returns package.json specron configuration', async (t) 
       match: ['./src/**/*.sol'],
       severities: ['error', 'warning'],
     },
+    settings: {
+      optimization: 200,
+    },
     sandbox: {
       port: 8545,
       ttl: 0,
@@ -30,6 +33,7 @@ test('method `getConfig` merges received configuration', async (t) => {
     port: 100,
     require: ['bar'],
     blockTime: 1,
+    optimization: 0,
   }), {
     name: '',
     description: '',
@@ -37,6 +41,9 @@ test('method `getConfig` merges received configuration', async (t) => {
       build: './build',
       match: ['foo'],
       severities: ['error', 'warning'],
+    },
+    settings: {
+      optimization: 0,
     },
     sandbox: {
       port: 100,
