@@ -9,14 +9,14 @@ import { getConfig } from '../lib/env';
 export default async function (argv) {
   const config = getConfig(argv);
 
-  const sandbox = new Sandbox();
-  const web3 = new Web3(Sandbox.createProvider(config.test));
+  const sandbox = new Sandbox(config.test);
+  const web3 = new Web3(sandbox.provider);
   const reporter = new Reporter();
   const stage = new Stage(web3, reporter);
   const test = new Spec(stage);
 
   if (config.test.server) {
-    await sandbox.listen(config.test.port);
+    await sandbox.listen();
   }
 
   const runner = new Runner();

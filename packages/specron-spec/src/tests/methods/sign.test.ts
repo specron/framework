@@ -6,15 +6,6 @@ import { sign } from '../../methods/sign';
 import { deploy } from '../../methods/deploy';
 
 const web3 = new Web3(Sandbox.createProvider({ port: 8545 }));
-const sandbox = new Sandbox();
-
-test.before(async () => {
-  sandbox.listen(8545);
-});
-
-test.after(async () => {
-  sandbox.close();
-});
 
 test('performs eth sign', async (t) => {
   const signer = await web3.eth.getAccounts().then((a) => a[0]);

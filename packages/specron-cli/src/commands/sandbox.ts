@@ -9,9 +9,9 @@ export default async function (argv) {
   const config = getConfig(argv);
   const printer = new Printer();
 
-  const sandbox = new Sandbox();
+  const sandbox = new Sandbox(config.sandbox);
   try {
-    await sandbox.listen(config.sandbox.port);
+    await sandbox.listen();
     printer.end();
     printer.end(
       printer.indent(1, ''),

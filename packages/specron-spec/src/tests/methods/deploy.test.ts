@@ -4,15 +4,6 @@ import { Sandbox } from '@specron/sandbox';
 import { deploy } from '../../methods/deploy';
 
 const web3 = new Web3(Sandbox.createProvider({ port: 8545 }));
-const sandbox = new Sandbox();
-
-test.before(async () => {
-  sandbox.listen(8545);
-});
-
-test.after(async () => {
-  sandbox.close();
-});
 
 test('deploys contract from specron file', async (t) => {
   const contact = await deploy({

@@ -6,15 +6,6 @@ import { Context, Stage, Reporter } from '../..';
 const web3 = new Web3(Sandbox.createProvider());
 const reporter = new Reporter({ mute: true });
 const stage = new Stage(web3, reporter);
-const sandbox = new Sandbox();
-
-test.before(async () => {
-  sandbox.listen(8545);
-});
-
-test.after(async () => {
-  sandbox.close();
-});
 
 test('variable `web3` exposes the web3 instance', async (t) => {
   const stage = new Stage(web3, reporter);

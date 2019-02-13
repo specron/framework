@@ -12,10 +12,11 @@ export interface SandboxOptions {
  * Sandbox server for testing Ethereum code.
  */
 export class Sandbox {
-  protected server: any;
+  protected _server: any;
+  protected options: SandboxOptions;
 
   /**
-   * Returns and instance of a sandbox Web3 provider.
+   * Returns and instance of a sandbox provider.
    * @param options Sandbox configuration options.
    */
   public static createProvider(options?: SandboxOptions) {
@@ -25,13 +26,50 @@ export class Sandbox {
   }
 
   /**
+   * Returns and instance of a sandbox server.
+   * @param options Sandbox configuration options.
+   */
+  public static createServer(options?: SandboxOptions) {
+    const server = ganache.server(options);
+    server.provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
+    return server;
+  }
+
+  /**
+   * 
+   * @param options Ganache configuration options.
+   */
+  public constructor(options?: SandboxOptions) {
+    this.options = {
+      port: 8545,
+      ...options,
+    };
+
+    this._server = ganache.server(this.options);
+    this._server.provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
+  }
+
+  /**
+   * Returns Web3 provider instance.
+   */
+  public get provider() {
+    return this.server.provider;
+  }
+
+  /**
+   * Returns Web3 provider instance.
+   */
+  public get server() {
+    return this._server;
+  }
+
+  /**
    * Starts the server.
    */
-  public async listen(port = 8545) {
+  public async listen() {
 
     await new Promise((resolve, reject) => {
-      this.server = ganache.server();
-      this.server.listen(port, (e) => e ? reject(e) : resolve());
+      this.server.listen(this.options.port, (e) => e ? reject(e) : resolve());
     });
 
     return this;
@@ -42,10 +80,7 @@ export class Sandbox {
    */
   public async close () {
 
-    if (this.server) {
-      this.server.close();
-      this.server = null;
-    }
+    this._server.close();
 
     return this;
   }
