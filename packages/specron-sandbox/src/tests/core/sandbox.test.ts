@@ -2,10 +2,10 @@ import test from 'ava';
 import * as request from 'supertest';
 import { Sandbox } from '../../core/sandbox';
 
-const sandbox = new Sandbox();
+const sandbox = new Sandbox({ port: 8911 });
 
 test.before(async () => {
-  await sandbox.listen(8911);
+  await sandbox.listen();
 })
 test.after(async () => {
   sandbox.close();
