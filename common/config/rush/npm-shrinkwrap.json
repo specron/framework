@@ -443,7 +443,7 @@
     },
     "@rush-temp/cli": {
       "version": "file:projects/cli.tgz",
-      "integrity": "sha512-3WeV+01kU66dT0qfs51yUeStZ6L5H3Ly/JA8Vh3T+LUuRPFZcTXoLpbXllTDH2tV5f5dUoqAGt5m0yRXhufKwg==",
+      "integrity": "sha512-kcO2T0snwdsUeCM4zuNEqpFL59wQhZeMG431uZbwjinpJxLKDHshn+M7DgFQSvLB7TUXUQQCKpXswx+c+YrkTQ==",
       "requires": {
         "@hayspec/reporter": "^0.8.3",
         "@types/inquirer": "0.0.43",
@@ -505,7 +505,7 @@
     },
     "@rush-temp/spec": {
       "version": "file:projects/spec.tgz",
-      "integrity": "sha512-kbjFqmiwmGydmNenzg/74VjiGikAbTNwFU3PhhEfoyjybJvDiKbQxJ7OM7EFfI3VsVQpmcpjdwjMQufRGOA+Og==",
+      "integrity": "sha512-nwKurb53nf+z8SXU1Bsjl+PkKk3U1XbRKKfToQVOdwNhzFn9TqZ1aqVmOzvz+6+ZxZM3agAitB4Sss1ujScl1g==",
       "requires": {
         "@0xcert/ethereum-utils": "1.1.0",
         "@hayspec/reporter": "^0.8.3",
