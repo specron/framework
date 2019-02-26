@@ -1,0 +1,51 @@
+{
+  "name": "@specron/flattener",
+  "version": "0.5.4",
+  "description": "Solidity files flattener for Specron framework.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "npx nyc npx ava --verbose"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "files": [
+      "src/tests/*.test.ts",
+      "src/tests/**/*.test.ts"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "exclude": [
+      "src/tests"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@0xcert/ethereum-utils-contracts": "0.0.0-alpha",
+    "@types/fs-extra": "^5.0.4",
+    "@types/node": "^10.12.12",
+    "ava": "^1.0.0-rc.2",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.1"
+  },
+  "dependencies": {
+    "@hayspec/reporter": "^0.8.3",
+    "deasync": "^0.1.14",
+    "fast-glob": "^2.2.4",
+    "sol-merger": "0.1.3"
+  }
+}
