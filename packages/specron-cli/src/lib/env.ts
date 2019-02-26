@@ -24,6 +24,7 @@ export function getFirstValue(...values) {
 export function getConfig(argv?: any) {
   const defaults = {
     compiler: {},
+    flattener: {},
     settings: {},
     sandbox: {},
     test: {},
@@ -39,6 +40,11 @@ export function getConfig(argv?: any) {
       build: getFirstValue(custom['build'], defaults['compiler']['build'], './build'),
       match: getFirstValue(custom['match'], defaults['compiler']['match'], []),
       severities: getFirstValue(custom['severities'], defaults['compiler']['severities'], ['error', 'warning']),
+    },
+    flattener: {
+      build: getFirstValue(custom['build'], defaults['flattener']['build'], './build'),
+      match: getFirstValue(custom['match'], defaults['flattener']['match'], []),
+      severities: getFirstValue(custom['severities'], defaults['flattener']['severities'], ['error', 'warning']),
     },
     settings: {
       optimization: getFirstValue(custom['optimization'], defaults['compiler']['optimization'], 200),
