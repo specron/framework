@@ -29,6 +29,15 @@ test('compiles smart contracts', async (t) => {
   t.true(stderr === '');
 });
 
+test('flattens smart contracts', async (t) => {
+  const dist = `./node_modules/.tmp/flatten-${Date.now()}`;
+  const command = `./bin/specron flatten --severities error warning --match ./src/tests/assets/*.sol --build ${dist}; echo code: $?`;
+  const { stdout, stderr } = await exec(command);
+  t.true(stdout.indexOf('Contracts') !== -1);
+  t.true(stdout.indexOf('code: 0') !== -1);
+  t.true(stderr === '');
+});
+
 test.serial('runs valid tests', async (t) => {
   const command = `./bin/specron test --match ./src/tests/assets/valid.hay.ts --require ts-node/register; echo code: $?`;
   const { stdout, stderr } = await exec(command)

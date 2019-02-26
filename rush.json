@@ -23,6 +23,11 @@
       "versionPolicyName": "patchAll"
     },
     {
+      "packageName": "@specron/flattener",
+      "projectFolder": "packages/specron-flattener",
+      "versionPolicyName": "patchAll"
+    },
+    {
       "packageName": "@specron/init",
       "projectFolder": "packages/specron-init",
       "versionPolicyName": "patchAll"

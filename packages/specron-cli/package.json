@@ -1,6 +1,6 @@
 {
   "name": "@specron/cli",
-  "version": "0.5.4",
+  "version": "0.5.6",
   "description": "Command-line tool for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,6 +13,16 @@
   },
   "specron": {
     "compiler": {
+      "build": "./build",
+      "match": [
+        "./src/**/*.sol"
+      ],
+      "severities": [
+        "error",
+        "warning"
+      ]
+    },
+    "flattener": {
       "build": "./build",
       "match": [
         "./src/**/*.sol"
@@ -53,23 +63,24 @@
   "license": "MIT",
   "devDependencies": {
     "@types/inquirer": "0.0.43",
-    "@types/node": "^10.12.12",
-    "@types/yargs": "^12.0.1",
-    "ava": "^1.0.0-rc.2",
-    "nyc": "^13.1.0",
-    "solc": "^0.5.3",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.2.1",
+    "@types/node": "^11.9.5",
+    "@types/yargs": "^12.0.9",
+    "ava": "^1.2.1",
+    "nyc": "^13.3.0",
+    "solc": "^0.5.4",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.2.4",
     "web3": "1.0.0-beta.36"
   },
   "dependencies": {
-    "@hayspec/reporter": "^0.8.3",
-    "@specron/compiler": "^0.5.4",
-    "@specron/init": "^0.5.4",
-    "@specron/sandbox": "^0.5.4",
-    "@specron/spec": "^0.5.4",
-    "inquirer": "^6.2.1",
-    "yargs": "^12.0.5"
+    "@hayspec/reporter": "0.8.3",
+    "@specron/compiler": "0.5.6",
+    "@specron/flattener": "0.5.6",
+    "@specron/init": "0.5.6",
+    "@specron/sandbox": "0.5.6",
+    "@specron/spec": "0.5.6",
+    "inquirer": "6.2.2",
+    "yargs": "13.2.1"
   },
   "peerDependencies": {
     "solc": "*",

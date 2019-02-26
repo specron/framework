@@ -1,7 +1,7 @@
 {
-  "name": "@specron/sandbox",
+  "name": "@specron/flattener",
   "version": "0.5.6",
-  "description": "Ethereum sandbox server for Specron framework.",
+  "description": "Solidity files flattener for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -34,15 +34,18 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@0xcert/ethereum-utils-contracts": "0.0.0-alpha",
+    "@types/fs-extra": "^5.0.5",
     "@types/node": "^11.9.5",
-    "@types/supertest": "^2.0.7",
     "ava": "^1.2.1",
     "nyc": "^13.3.0",
-    "supertest": "^3.4.2",
     "ts-node": "^8.0.2",
     "typescript": "^3.2.4"
   },
   "dependencies": {
-    "ganache-cli": "6.1.8"
+    "@hayspec/reporter": "0.8.3",
+    "deasync": "0.1.14",
+    "fast-glob": "2.2.6",
+    "sol-merger": "0.1.3"
   }
 }

@@ -1,4 +1,4 @@
-# Change Log - @specron/init
+# Change Log - @specron/flattener
 
 This log was last generated on Tue, 26 Feb 2019 12:05:55 GMT and should not be manually modified.
 

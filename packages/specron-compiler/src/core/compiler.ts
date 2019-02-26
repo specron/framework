@@ -68,7 +68,7 @@ export class Compiler {
       };
     });
 
-    return Object.keys(this.input.sources).length;
+    return files.length;
   }
 
   /**
@@ -99,7 +99,7 @@ export class Compiler {
   }
 
   /**
-   * Saves memoried compiler output to destination folder.
+   * Saves memorized compiler output to destination folder.
    * @param dist Destination folder.
    */
   public save(dist: string) {
@@ -144,7 +144,7 @@ export class Compiler {
   }
 
   /**
-   *
+   * Reinitializes the class.
    */
   public clear() {
     this.output = {};
@@ -153,7 +153,7 @@ export class Compiler {
 
   /**
    * Converts a file path not starting with a dot to match node_modules.
-   * @param path File path
+   * @param path File path.
    */
   protected normalizePath(path: string) {
     return path.indexOf('./') !== 0 ? `./node_modules/${path}` : path;

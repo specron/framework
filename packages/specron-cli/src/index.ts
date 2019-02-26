@@ -2,6 +2,7 @@ import * as yargs from 'yargs';
 import initHandler from './commands/init';
 import sandboxHandler from './commands/sandbox';
 import compileHandler from './commands/compile';
+import flattenHandler from './commands/flatten';
 import testHandler from './commands/test';
 import { getConfig } from './lib/env';
 
@@ -29,6 +30,21 @@ const { argv } = yargs
       description: 'Code optimization level',
     }),
     compileHandler)
+  .command('flatten', 'Flattens solidity contracts', (yargs) => yargs
+    .usage('Usage: $0 --match *.sol --build ./build')
+    .option('match', {
+      array: true,
+      description: 'Matching pattern',
+    })
+    .option('build', {
+      string: true,
+      description: 'Build folder path',
+    })
+    .option('severities', {
+      array: true,
+      description: 'Toggle error and warnings visibility',
+    }),
+    flattenHandler)
   .command('init', 'Initializes project directory.',  (yargs) => yargs
     .option('name', {
       string: true,
