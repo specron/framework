@@ -1,6 +1,6 @@
 {
   "name": "@specron/init",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Project generator for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -42,6 +42,6 @@
     "typescript": "^3.2.4"
   },
   "dependencies": {
-    "fs-extra": "^7.0.1"
+    "fs-extra": "7.0.1"
   }
 }
