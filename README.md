@@ -200,6 +200,16 @@ Specron configuration options can be saved inside the package.json file under th
         "warning"
       ]
     },
+    "flattener": {
+      "build": "./build",
+      "match": [
+        "./src/**/*.sol"
+      ],
+      "severities": [
+        "error",
+        "warning"
+      ]
+    },
     "sandbox": {
       "port": 8545,
       "host": "localhost"
@@ -231,6 +241,7 @@ For a full example of a Solidity contract repository including continuous integr
 |-|-|-
 | [@specron/cli](https://github.com/specron/framework/tree/master/packages/specron-cli) | Command-line interface. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcli.svg)](https://badge.fury.io/js/%40specron%2Fcli)
 | [@specron/compiler](https://github.com/specron/framework/tree/master/packages/specron-compiler) | Smart contracts compiler. | [![NPM Version](https://badge.fury.io/js/@specron%2Fcompiler.svg)](https://badge.fury.io/js/%40specron%2Fcompiler)
+| [@specron/flattener](https://github.com/specron/framework/tree/master/packages/specron-flattener) | Smart contracts flattener. | [![NPM Version](https://badge.fury.io/js/@specron%2Fflattener.svg)](https://badge.fury.io/js/%40specron%2Fflattener)
 | [@specron/init](https://github.com/specron/framework/tree/master/packages/specron-init) | Project structure initializer. | [![NPM Version](https://badge.fury.io/js/@specron%2Finit.svg)](https://badge.fury.io/js/%40specron%2Finit)
 | [@specron/sandbox](https://github.com/specron/framework/tree/master/packages/specron-sandbox) | Ethereum sandbox server. | [![NPM Version](https://badge.fury.io/js/@specron%2Fsandbox.svg)](https://badge.fury.io/js/%40specron%2Fsandbox)
 | [@specron/spec](https://github.com/specron/framework/tree/master/packages/specron-spec) | Core test suite. | [![NPM Version](https://badge.fury.io/js/@specron%2Fspec.svg)](https://badge.fury.io/js/%40specron%2Fspec)
