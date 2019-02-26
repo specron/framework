@@ -34,13 +34,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^10.12.12",
+    "@types/node": "^11.9.5",
     "@types/supertest": "^2.0.7",
-    "ava": "^1.0.0-rc.2",
-    "nyc": "^13.1.0",
-    "supertest": "^3.3.0",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.2.1"
+    "ava": "^1.2.1",
+    "nyc": "^13.3.0",
+    "supertest": "^3.4.2",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.2.4"
   },
   "dependencies": {
     "ganache-cli": "6.1.8"

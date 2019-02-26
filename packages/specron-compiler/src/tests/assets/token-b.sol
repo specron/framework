@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.4;
 
 import "@0xcert/ethereum-utils-contracts/src/contracts/math/safe-math.sol";
 
