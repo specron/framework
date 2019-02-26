@@ -59,6 +59,10 @@ export class Flattener {
    * Merges imports for all the sources and memorizes the output.
    */
   public flatten() {
+    if (this.reporter) {
+      this.reporter.onCompileStart(this);
+    }
+
     const manager = new Merger();
 
     this.output.errors = [];
@@ -78,6 +82,10 @@ export class Flattener {
       }
     }
 
+    if (this.reporter) {
+      this.reporter.onCompileEnd(this);
+    }
+    
     return !!this.output.errors.length;
   }
 

@@ -22,14 +22,13 @@ export class DefaultReporter {
    */
   public onCompileStart(flattener: Flattener) {
     this.printer.end('');
-    this.onSources(flattener);
   }
 
   /**
    * 
    */
   public onCompileEnd(flattener: Flattener) {
-    if (flattener.output.errors) {
+    if (flattener.output.errors.length) {
       this.onErrors(flattener);
     }
   }
@@ -38,7 +37,7 @@ export class DefaultReporter {
    * 
    */
   public onSaveStart(flattener: Flattener) {
-    if (!flattener.output.errors) {
+    if (!flattener.output.errors.length) {
       this.onContracts(flattener);
     }
   }
@@ -54,26 +53,6 @@ export class DefaultReporter {
   /**
    * 
    */
-  protected onSources(flattener: Flattener) {
-    const sources = flattener.sources;
-
-    if (sources.length) {
-      this.printer.end(
-        this.printer.indent(1, ''),
-        'Sources'
-      );
-      sources.forEach((source) => {
-        this.printer.end(
-          this.printer.indent(2, ''),
-          this.printer.colorize('gray', source),
-        );
-      });
-    }
-  }
-
-  /**
-   * 
-   */
   protected onErrors(flattener: Flattener) {
     
     const failures = flattener.output.errors;
@@ -84,11 +63,11 @@ export class DefaultReporter {
         'Errors',
       );
 
-      failures.filter((e) => e.formattedMessage).forEach((failure) => {
+      failures.filter((e) => !!e.message).forEach((failure) => {
         const color = this.getErrorColor(failure);
         this.printer.end(
           this.printer.indent(2, ''),
-          this.printer.colorize(color, failure.formattedMessage.trim())
+          this.printer.colorize(color, failure.message.trim())
         );
       });
     }
@@ -98,7 +77,7 @@ export class DefaultReporter {
    * 
    */
   protected onContracts(flattener: Flattener) {
-    const contracts = Object.keys(flattener.output.sources || {});
+    const contracts = flattener.sources;
 
     if (contracts.length) {
       this.printer.end(
@@ -108,7 +87,7 @@ export class DefaultReporter {
       contracts.forEach((contract) => {
         this.printer.end(
           this.printer.indent(2, ''),
-          this.printer.colorize('gray', `${contract}: ${Object.keys(flattener.output.sources[contract]).join(', ')}`)
+          this.printer.colorize('gray', contract)
         );
       });
     }
@@ -122,12 +101,12 @@ export class DefaultReporter {
 
     const messages = [];
 
-    const sources = flattener.sources.length;
-    if (sources) {
+    const contracts = Object.keys(flattener.output.sources).length;
+    if (contracts) {
       messages.push(
         this.printer.indent(1, ''),
-        this.printer.colorize('gray', sources),
-        ' sources',
+        this.printer.colorize('gray', contracts),
+        ' contracts',
       );
     }
 

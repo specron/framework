@@ -22,7 +22,6 @@ export class DefaultReporter {
    */
   public onCompileStart(compiler: Compiler) {
     this.printer.end('');
-    this.onSources(compiler);
   }
 
   /**
@@ -49,26 +48,6 @@ export class DefaultReporter {
   public onSaveEnd(compiler: Compiler) {
     this.onOverview(compiler);
     this.printer.end('');
-  }
-
-  /**
-   * 
-   */
-  protected onSources(compiler: Compiler) {
-    const sources = Object.keys(compiler.input.sources || {});
-
-    if (sources.length) {
-      this.printer.end(
-        this.printer.indent(1, ''),
-        'Sources'
-      );
-      sources.forEach((source) => {
-        this.printer.end(
-          this.printer.indent(2, ''),
-          this.printer.colorize('gray', source),
-        );
-      });
-    }
   }
 
   /**
@@ -111,7 +90,7 @@ export class DefaultReporter {
       contracts.forEach((contract) => {
         this.printer.end(
           this.printer.indent(2, ''),
-          this.printer.colorize('gray', `${contract}: ${Object.keys(compiler.output.contracts[contract]).join(', ')}`)
+          this.printer.colorize('gray', contract)
         );
       });
     }
@@ -131,15 +110,6 @@ export class DefaultReporter {
         this.printer.indent(1, ''),
         this.printer.colorize('greenBright', contracts),
         ' contracts',
-      );
-    }
-
-    const sources = Object.keys(compiler.input.sources || {}).length;
-    if (sources) {
-      messages.push(
-        this.printer.indent(1, ''),
-        this.printer.colorize('gray', sources),
-        ' sources',
       );
     }
 
