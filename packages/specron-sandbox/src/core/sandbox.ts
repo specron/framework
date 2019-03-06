@@ -1,4 +1,4 @@
-import * as ganache from 'ganache-cli';
+import * as ganache from 'ganache-core';
 
 /**
  * Sandbox configuration options.
