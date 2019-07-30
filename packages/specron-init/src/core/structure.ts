@@ -61,7 +61,7 @@ export const files = [
       `  "dependencies": {`,
       `    "@specron/cli": "latest",`,
       `    "@specron/spec": "latest",`,
-      `    "solc": "^0.5.4",`,
+      `    "solc": "^0.5.10",`,
       `    "ts-node": "^8.0.2",`,
       `    "typescript": "^3.2.4",`,
       `    "web3": "1.2.0"`,
@@ -72,7 +72,7 @@ export const files = [
   {
     path: ['src', 'contracts', 'main.sol'],
     content: [
-      `pragma solidity ^0.5.4;`,
+      `pragma solidity ^0.5.10;`,
       ``,
       `contract Main {`,
       ``,
