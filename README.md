@@ -13,7 +13,7 @@ The source code is available on [GitHub](https://github.com/specron/framework) w
 Start by installing the Specron command-line tool.
 
 ```bash
-$ npm install -g @specron/cli web3@1.0.0-beta.46 solc@0.5.4
+$ npm install -g @specron/cli web3@1.2.0 solc@0.5.10
 ```
 
 Specron depends on the latest [web3](https://www.npmjs.com/package/web3) and [solc](https://www.npmjs.com/package/solc) packages, so make sure you have them globally installed. Specron also uses promises thus you need to use [Promise polyfill](https://github.com/taylorhakes/promise-polyfill) when promises are not supported.
