@@ -17,3 +17,15 @@ Please follow the [TypeScript coding guidelines](https://github.com/Microsoft/Ty
 ## Development
 
 * https://gist.github.com/xpepermint/eecfc6ad6cd7c9f5dcda381aa255738d
+
+## Release process
+
+The release manager will publish packages to NPM using these commands.
+
+```sh
+$ rush version --bump --override-bump minor
+$ rush update --full
+$ rush rebuild
+$ rush test
+$ rush publish --publish --include-all
+```

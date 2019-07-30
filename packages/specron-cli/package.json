@@ -1,6 +1,6 @@
 {
   "name": "@specron/cli",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "description": "Command-line tool for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -74,11 +74,11 @@
   },
   "dependencies": {
     "@hayspec/reporter": "0.8.3",
-    "@specron/compiler": "0.5.6",
-    "@specron/flattener": "0.5.6",
-    "@specron/init": "0.5.6",
-    "@specron/sandbox": "0.5.6",
-    "@specron/spec": "0.5.6",
+    "@specron/compiler": "0.6.0",
+    "@specron/flattener": "0.6.0",
+    "@specron/init": "0.6.0",
+    "@specron/sandbox": "0.6.0",
+    "@specron/spec": "0.6.0",
     "inquirer": "6.2.2",
     "yargs": "13.2.1"
   },

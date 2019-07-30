@@ -1,6 +1,11 @@
 # Change Log - @specron/cli
 
-This log was last generated on Tue, 26 Feb 2019 12:05:55 GMT and should not be manually modified.
+This log was last generated on Tue, 30 Jul 2019 13:07:02 GMT and should not be manually modified.
+
+## 0.6.0
+Tue, 30 Jul 2019 13:07:02 GMT
+
+*Version update only*
 
 ## 0.5.6
 Tue, 26 Feb 2019 12:05:55 GMT
