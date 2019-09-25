@@ -1,6 +1,6 @@
 {
   "name": "@specron/flattener",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Solidity files flattener for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

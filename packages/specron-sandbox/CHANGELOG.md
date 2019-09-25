@@ -2,7 +2,7 @@
 
 This log was last generated on Tue, 30 Jul 2019 13:07:02 GMT and should not be manually modified.
 
-## 0.6.0
+## 0.7.0
 Tue, 30 Jul 2019 13:07:02 GMT
 
 *Version update only*
