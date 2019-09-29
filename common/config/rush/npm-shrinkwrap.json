@@ -427,7 +427,7 @@
     },
     "@rush-temp/cli": {
       "version": "file:projects/cli.tgz",
-      "integrity": "sha512-WRzx7/3LwwSk7G/oxK+jPf8b/A+7AidjP32Ebyt/GS3MKhC+b1CP9fwq3AE5L1sLUrQUXzv2OvMsxfw5xNFELg==",
+      "integrity": "sha512-zduKJA82muKkRVuTalYvFkkc0dmadt+9Dd2B95cLaBpyX47CQM2mVbkd11I7EmwXuB1HPzoIOoDn2xJpup2PGg==",
       "requires": {
         "@hayspec/reporter": "0.9.0",
         "@types/inquirer": "0.0.43",
@@ -462,14 +462,13 @@
     },
     "@rush-temp/flattener": {
       "version": "file:projects/flattener.tgz",
-      "integrity": "sha512-UQDTR31jok3Dhl98fTvB2eSa4JWmEs4DEqkJHSjnuX4ZYJwuVddOA8/zavRrxhcAcOckwubEz5s8eO8p2OjEvQ==",
+      "integrity": "sha512-kR3ULEgxjrG2sNIvZS0Xs6ddxN17WkoDWY1nOPELvSVKnqq5FrJHCYjWmy/lQTsXRNCIhthn3gU0nVn2lroh8A==",
       "requires": {
         "@0xcert/ethereum-utils-contracts": "0.0.0-alpha",
         "@hayspec/reporter": "0.9.0",
         "@types/fs-extra": "8.0.0",
         "@types/node": "12.7.8",
         "ava": "2.4.0",
-        "deasync": "0.1.15",
         "fast-glob": "3.0.4",
         "nyc": "14.1.1",
         "sol-merger": "1.0.1",
@@ -506,7 +505,7 @@
     },
     "@rush-temp/spec": {
       "version": "file:projects/spec.tgz",
-      "integrity": "sha512-2y3tO1WkRFGq48/6TlPLIi6apBjAQAabfrWDcjhUMzCsVYh9GBrPzQKgJLqlqH0PVFcxLn1D6/Ytz+sSbiU4Qw==",
+      "integrity": "sha512-FIqAvSGitnQ4zBcD3h/a7lyuh+TZWd81e7X9RVHHxMpsezLadkHb0s3hMLBltBlMP3Bs8RaaxzsHtX7Ra/19+Q==",
       "requires": {
         "@0xcert/ethereum-utils": "1.1.0",
         "@hayspec/reporter": "0.9.0",
@@ -1649,11 +1648,6 @@
       "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.0.0.tgz",
       "integrity": "sha512-Phlt0plgpIIBOGTT/ehfFnbNlfsDEiqmzE2KRXoX1bLIlir4X/MR+zSyBEkL05ffWgnRSf/DXv+WrUAVr93/ow=="
     },
-    "bindings": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz",
-      "integrity": "sha1-FK1hE4EtLTfXLme0ystLtyZQXxE="
-    },
     "bl": {
       "version": "1.2.2",
       "resolved": "https://registry.npmjs.org/bl/-/bl-1.2.2.tgz",
@@ -2569,15 +2563,6 @@
       "integrity": "sha512-/9+C44X7lot0IeiyfgJmETtRMhBidBYM2QFFIkGa0U1k+hSyY87Nw7PY3eDqpvCBm7I3WCSfPeZskW/YYq6m4g==",
       "requires": {
         "time-zone": "^1.0.0"
-      }
-    },
-    "deasync": {
-      "version": "0.1.15",
-      "resolved": "https://registry.npmjs.org/deasync/-/deasync-0.1.15.tgz",
-      "integrity": "sha512-pxMaCYu8cQIbGkA4Y1R0PLSooPIpH1WgFBLeJ+zLxQgHfkZG86ViJSmZmONSjZJ/R3NjwkMcIWZAzpLB2G9/CA==",
-      "requires": {
-        "bindings": "~1.2.1",
-        "node-addon-api": "^1.6.0"
       }
     },
     "debug": {
@@ -6068,11 +6053,6 @@
       "version": "1.0.5",
       "resolved": "https://registry.npmjs.org/nice-try/-/nice-try-1.0.5.tgz",
       "integrity": "sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ=="
-    },
-    "node-addon-api": {
-      "version": "1.7.1",
-      "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-1.7.1.tgz",
-      "integrity": "sha512-2+DuKodWvwRTrCfKOeR24KIc5unKjOh8mz17NCzVnHWfjAdDqbfbjqh7gUT+BkXBRQM52+xCHciKWonJ3CbJMQ=="
     },
     "normalize-package-data": {
       "version": "2.5.0",
