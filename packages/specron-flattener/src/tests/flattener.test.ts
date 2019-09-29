@@ -12,10 +12,10 @@ test('adds new source files', (t) => {
   ]);
 });
 
-test('flattens source files', (t) => {
+test('flattens source files', async (t) => {
   const flattener = new Flattener();
   flattener.source('./src/tests/assets/*.sol');
-  flattener.flatten();
+  await flattener.flatten();
   const files = Object.keys(flattener.output.sources);
   t.deepEqual(files, [
     './src/tests/assets/token-a.sol',
@@ -24,10 +24,10 @@ test('flattens source files', (t) => {
   ]);
 });
 
-test('saves flattened sources to destination', (t) => {
+test('saves flattened sources to destination', async (t) => {
   const flattener = new Flattener();
   flattener.source('./src/tests/assets/*.sol');
-  flattener.flatten();
+  await flattener.flatten();
   flattener.save('./build/bar');
   const files = glob.sync('./build/bar/*.sol') as string[];
   t.deepEqual(files, [

@@ -13,7 +13,7 @@ export default async function (argv) {
   flattener.source(...config.flattener.match);
 
   try {
-    flattener.flatten();
+    await flattener.flatten();
     flattener.save(config.flattener.build);
     process.exit(0);
   } catch (e) {
