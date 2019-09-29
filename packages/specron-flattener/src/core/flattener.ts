@@ -1,9 +1,8 @@
 import * as glob from 'fast-glob';
-import * as Merger from 'sol-merger/lib/merger';
+import { merge } from 'sol-merger';
 import * as fs from 'fs';
 import * as pth from 'path';
 import * as fsx from 'fs-extra';
-import { sleep } from 'deasync';
 import { DefaultReporter } from './reporter';
 
 /**
@@ -58,12 +57,10 @@ export class Flattener {
   /**
    * Merges imports for all the sources and memorizes the output.
    */
-  public flatten() {
+  public async flatten() {
     if (this.reporter) {
       this.reporter.onCompileStart(this);
     }
-
-    const manager = new Merger();
 
     this.output.errors = [];
 
@@ -71,14 +68,13 @@ export class Flattener {
       let running = true;
 
       while(running) {
-        manager.processFile(source, true).then((c) => {
+        await merge(source).then((c) => {
           this.output.sources[source] = c;
           running = false;
         }).catch((e) => {
           this.output.errors.push(e);
           running = false;
         });
-        sleep(300); // sync
       }
     }
 

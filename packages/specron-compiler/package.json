@@ -9,12 +9,13 @@
     "test": "npx nyc npx ava --verbose"
   },
   "ava": {
+    "concurrency": 1,
     "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
     "require": [
       "ts-node/register"
+    ],
+    "extensions": [
+      "ts"
     ],
     "files": [
       "src/tests/*.test.ts",
