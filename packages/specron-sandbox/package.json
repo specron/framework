@@ -1,6 +1,6 @@
 {
   "name": "@specron/sandbox",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Ethereum sandbox server for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -36,7 +36,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "12.7.8",
-    "@types/supertest": "^2.0.8",
+    "@types/supertest": "2.0.8",
     "ava": "2.4.0",
     "nyc": "14.1.1",
     "supertest": "4.0.2",

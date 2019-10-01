@@ -1,6 +1,6 @@
 {
   "name": "@specron/compiler",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Solidity contract compiler for Specron framework.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -40,7 +40,7 @@
     "@types/node": "12.7.8",
     "ava": "2.4.0",
     "nyc": "14.1.1",
-    "solc": "^0.5.11",
+    "solc": "0.5.11",
     "ts-node": "8.4.1",
     "typescript": "3.6.3"
   },

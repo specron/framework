@@ -1,6 +1,11 @@
 # Change Log - @specron/init
 
-This log was last generated on Sun, 29 Sep 2019 22:26:46 GMT and should not be manually modified.
+This log was last generated on Tue, 01 Oct 2019 18:14:09 GMT and should not be manually modified.
+
+## 0.8.1
+Tue, 01 Oct 2019 18:14:09 GMT
+
+*Version update only*
 
 ## 0.8.0
 Sun, 29 Sep 2019 22:26:46 GMT
