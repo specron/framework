@@ -2,6 +2,24 @@
   "name": "@specron/init",
   "entries": [
     {
+      "version": "0.9.0",
+      "tag": "@specron/init_v0.9.0",
+      "date": "Tue, 01 Oct 2019 18:29:23 GMT",
+      "comments": {}
+    },
+    {
+      "version": "0.8.2",
+      "tag": "@specron/init_v0.8.2",
+      "date": "Tue, 01 Oct 2019 18:27:47 GMT",
+      "comments": {}
+    },
+    {
+      "version": "0.8.1",
+      "tag": "@specron/init_v0.8.1",
+      "date": "Tue, 01 Oct 2019 18:14:09 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.8.0",
       "tag": "@specron/init_v0.8.0",
       "date": "Sun, 29 Sep 2019 22:26:46 GMT",

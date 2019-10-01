@@ -1,10 +1,10 @@
 /**
  * Solc compiler configuration input.
- * @see http://solidity.readthedocs.io/en/v0.4.31/using-the-compiler.html
+ * @see http://solidity.readthedocs.io/en/v0.5.11/using-the-compiler.html
  */
 export interface SolcInput {
   // Source code language.
-  language?: 'Solidity' | 'serpent' | 'lll' | 'assembly';
+  language?: 'Solidity' | 'Yul';
   // Source.
   sources?: {
     [file: string]: {
@@ -22,11 +22,35 @@ export interface SolcInput {
     remappings?: string[];
     // Optimizer settings (enabled defaults to false)
     optimizer?: {
-      enabled: boolean;
-      runs: number;
+      // Disabled by default
+      enabled?: boolean;
+      // Lower values will optimize more.
+      runs?: number;
+      // Switch optimizer components on or off in detail.
+      details?: {
+        // The peephole optimizer is always on if no details are given.
+        peephole?: boolean;
+        // The unused jumpdest remover is always on if no details.
+        jumpdestRemover?: boolean;
+        // Sometimes re-orders literals in commutative operations.
+        orderLiterals?: boolean;
+        // Removes duplicate code blocks.
+        deduplicate?: boolean;
+        // Common subexpression elimination.
+        cse?: boolean;
+        // Optimize representation of literal numbers and strings in code.
+        constantOptimizer?: boolean;
+        // The new Yul optimizer.
+        yul?: boolean,
+        // Tuning options for the Yul optimizer.
+        yulDetails?: {
+          // Improve allocation of stack slots for variables.
+          stackAllocation?: boolean;
+        };
+      };
     };
     // Version of the EVM to compile for. Affects type checking and code generation.
-    evmVersion?: 'homestead' | 'tangerineWhistle' | 'spuriousDragon' | 'byzantium' | 'constantinople';
+    evmVersion?: 'homestead' | 'tangerineWhistle' | 'spuriousDragon' | 'byzantium' | 'constantinople' | 'petersburg';
     // Metadata settings (optional)
     metadata?: {
       // Use only literal content and not URLs (false by default)
@@ -42,12 +66,13 @@ export interface SolcInput {
     outputSelection?: {
       [file: string]: {
         [contract: string]: (
-          'abi' | 'ast' | 'legacyAST' | 'devdoc' | 'userdoc' | 'metadata' 
-          | 'ir' | 'evm' | 'evm.assembly' | 'evm.legacyAssembly' | 'evm.bytecode'
+          'ast' | 'legacyAST' | 'abi' | 'devdoc' | 'userdoc' | 'metadata' 
+          | 'ir' | 'irOptimized' | 'evm.assembly' | 'evm.legacyAssembly'
           | 'evm.bytecode.object' | 'evm.bytecode.opcodes'
           | 'evm.bytecode.sourceMap' | 'evm.bytecode.linkReferences'
-          | 'evm.deployedBytecode' | 'evm.methodIdentifiers'
-          | 'evm.gasEstimates' | 'ewasm' | 'ewasm.wast' | 'ewasm.wasm'
+          | 'evm.deployedBytecode*' | 'evm.methodIdentifiers'
+          | 'evm.gasEstimates'
+          // | 'ewasm.wast' | 'ewasm.wasm' (not  implemented)
         )[];
       };
     };
@@ -67,6 +92,13 @@ export interface SolcOutput {
       start: number;
       end: number;
     };
+    // Optional: Further locations (e.g. places of conflicting declarations)
+    secondarySourceLocations?: {
+      file: string;
+      start: number;
+      end: number;
+      message: string;
+    }[],
     // Error type.
     type: 'TypeError' | 'InternalCompilerError' | 'Exception';
     // Component where the error originated.
