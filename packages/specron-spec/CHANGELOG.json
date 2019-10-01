@@ -2,6 +2,12 @@
   "name": "@specron/spec",
   "entries": [
     {
+      "version": "0.8.2",
+      "tag": "@specron/spec_v0.8.2",
+      "date": "Tue, 01 Oct 2019 18:27:47 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.8.1",
       "tag": "@specron/spec_v0.8.1",
       "date": "Tue, 01 Oct 2019 18:14:09 GMT",
