@@ -17,6 +17,10 @@ const { argv } = yargs
       array: true,
       description: 'Matching pattern',
     })
+    .option('evmVersion', {
+      string: true,
+      description: 'EVM version which will be used',
+    })
     .option('build', {
       string: true,
       description: 'Build folder path',

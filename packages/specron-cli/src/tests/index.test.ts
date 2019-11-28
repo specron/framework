@@ -1,6 +1,7 @@
 import test from 'ava';
 import * as util from 'util';
 import * as cproc from 'child_process';
+import * as pt from 'path';
 
 const exec = util.promisify(cproc.exec);
 
@@ -22,8 +23,10 @@ test('initializes current folder', async (t) => {
 
 test('compiles smart contracts', async (t) => {
   const dist = `./node_modules/.tmp/compile-${Date.now()}`;
-  const command = `./bin/specron compile --severities error warning --match ./src/tests/assets/*.sol --build ${dist}; echo code: $?`;
+  const command = `./bin/specron compile --evmVersion byzantium --severities error warning --match ./src/tests/assets/*.sol --build ${dist}; echo code: $?`;
   const { stdout, stderr } = await exec(command);
+  const tokena = require(pt.join(process.cwd(), dist, 'token-a.json'));
+  t.is(tokena.Token1.metadata.settings.evmVersion, 'byzantium');
   t.true(stdout.indexOf('Contracts') !== -1);
   t.true(stdout.indexOf('code: 0') !== -1);
   t.true(stderr === '');
