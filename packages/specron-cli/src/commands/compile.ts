@@ -6,13 +6,13 @@ import { getConfig } from '../lib/env';
  */
 export default async function (argv) {
   const config = getConfig(argv);
-
   const compiler = new Compiler({
     settings: {
       optimizer: {
         enabled: config.settings.optimization > 0,
         runs: config.settings.optimization,
       },
+      evmVersion: config.compiler.evmVersion,
     },
     reporter: new DefaultReporter(config.compiler.severities),
   });
