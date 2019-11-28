@@ -198,7 +198,8 @@ Specron configuration options can be saved inside the package.json file under th
       "severities": [
         "error",
         "warning"
-      ]
+      ],
+      "evmVersion": "byzantium"
     },
     "flattener": {
       "build": "./build",
