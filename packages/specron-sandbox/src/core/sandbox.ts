@@ -1,4 +1,5 @@
 import * as ganache from 'ganache-cli';
+import * as Web3 from 'web3';
 
 /**
  * Sandbox configuration options.
@@ -6,6 +7,11 @@ import * as ganache from 'ganache-cli';
 export interface SandboxOptions {
   port?: number;
   blockTime?: number;
+  coverage?: boolean;
+}
+
+export interface CoverageOptions {
+  port?: number;
 }
 
 /**
@@ -14,14 +20,20 @@ export interface SandboxOptions {
 export class Sandbox {
   protected _server: any;
   protected options: SandboxOptions;
+  protected static coverageOptions: CoverageOptions;
 
   /**
    * Returns and instance of a sandbox provider.
    * @param options Sandbox configuration options.
    */
   public static createProvider(options?: SandboxOptions) {
-    const provider = ganache.provider(options);
-    provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
+    let provider;
+    if (Sandbox.coverageOptions) {
+      provider = new Web3.providers.HttpProvider(`http://localhost:${Sandbox.coverageOptions.port}`);
+    } else {
+      provider = ganache.provider(options);
+      provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
+    }
     return provider;
   }
 
@@ -45,8 +57,17 @@ export class Sandbox {
       ...options,
     };
 
-    this._server = ganache.server(this.options);
-    this._server.provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
+    if (options.coverage) {
+      Sandbox.coverageOptions = {
+        port: options.port,
+      }
+      this._server = {
+        provider: new Web3.providers.HttpProvider(`http://localhost:${Sandbox.coverageOptions.port}`)
+      }
+    } else {
+      this._server = ganache.server(this.options);
+      this._server.provider.setMaxListeners(999999); // hide MaxListenersExceededWarning produced by ganache provider.
+    }
   }
 
   /**

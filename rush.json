@@ -41,6 +41,11 @@
       "packageName": "@specron/spec",
       "projectFolder": "packages/specron-spec",
       "versionPolicyName": "patchAll"
+    },
+    {
+      "packageName": "specron-example",
+      "projectFolder": "packages/specron-example",
+      "versionPolicyName": "patchAll"
     }
   ]
 }

@@ -59,6 +59,7 @@ export function getConfig(argv?: any) {
       port: getFirstValue(custom['port'], defaults['test']['port'], 8545),
       match: getFirstValue(custom['match'], defaults['test']['match'], []),
       blockTime: getFirstValue(custom['blockTime'], defaults['test']['blockTime'], null),
+      coverage: custom['coverage'] === true || defaults['test']['coverage'] === true,
     },
     require: getFirstValue(custom['require'], defaults['require'], []),
   };
