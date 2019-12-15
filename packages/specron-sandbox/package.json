@@ -41,7 +41,11 @@
     "nyc": "14.1.1",
     "supertest": "4.0.2",
     "ts-node": "8.4.1",
-    "typescript": "3.6.3"
+    "typescript": "3.6.3",
+    "web3": "1.2.1"
+  },
+  "peerDependencies": {
+    "web3": "*"
   },
   "dependencies": {
     "ganache-cli": "6.7.0"
