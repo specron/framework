@@ -61,7 +61,7 @@ export const files = [
       `  "dependencies": {`,
       `    "@specron/cli": "latest",`,
       `    "@specron/spec": "latest",`,
-      `    "solc": "0.5.11",`,
+      `    "solc": "0.6.1",`,
       `    "ts-node": "8.4.1",`,
       `    "typescript": "3.6.3",`,
       `    "web3": "1.2.0"`,

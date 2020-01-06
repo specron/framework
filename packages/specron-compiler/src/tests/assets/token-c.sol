@@ -1,8 +1,8 @@
-pragma solidity ^0.5.11;
+pragma solidity 0.6.1;
 
 contract Main {
 
-  function test () 
+  function test()
     public
     pure
     returns (uint256 _value)
