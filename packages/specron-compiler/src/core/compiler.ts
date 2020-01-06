@@ -71,6 +71,17 @@ export class Compiler {
   }
 
   /**
+   * Finds and reads imports.
+   * @param path Path to file.
+   */
+  public findImports(path) {
+    path = path.indexOf('./') !== 0 ? `./node_modules/${path}` : path;
+    return {
+      contents: fs.readFileSync(path).toString(),
+    };
+  }
+
+  /**
    * Compiles the solc input and memorizes the output.
    */
   public compile() {
@@ -78,16 +89,10 @@ export class Compiler {
       this.reporter.onCompileStart(this);
     }
 
-    const importer = (file: string) => {
-      file = this.normalizePath(file);
-      return {
-        contents: fs.readFileSync(file).toString(),
-      };
-    };
     const input = JSON.stringify(this.input);
 
     this.output = JSON.parse(
-      solc.compileStandardWrapper(input, importer)
+      solc.compile(input, { import: this.findImports })
     );
 
     if (this.reporter) {
