@@ -1,4 +1,4 @@
-pragma solidity ^0.5.11;
+pragma solidity 0.6.1;
 
 import "@0xcert/ethereum-utils-contracts/src/contracts/math/safe-math.sol";
 
@@ -9,7 +9,7 @@ contract Token2 {
    * @dev Returns fake value.
    * @param _value Multiploer value.
    */
-  function test () 
+  function test()
     public
     pure
     returns (uint256 _value)
