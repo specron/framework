@@ -432,47 +432,13 @@
         "typescript": "3.6.3",
         "web3": "1.2.1",
         "yargs": "13.2.1"
-      },
-      "dependencies": {
-        "commander": {
-          "version": "3.0.2",
-          "resolved": "https://registry.npmjs.org/commander/-/commander-3.0.2.tgz",
-          "integrity": "sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow=="
-        },
-        "fs-extra": {
-          "version": "0.30.0",
-          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-0.30.0.tgz",
-          "integrity": "sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=",
-          "requires": {
-            "graceful-fs": "^4.1.2",
-            "jsonfile": "^2.1.0",
-            "klaw": "^1.0.0",
-            "path-is-absolute": "^1.0.0",
-            "rimraf": "^2.2.8"
-          }
-        },
-        "solc": {
-          "version": "0.6.1",
-          "resolved": "https://registry.npmjs.org/solc/-/solc-0.6.1.tgz",
-          "integrity": "sha512-iKqNYps2p++x8L9sBg7JeAJb7EmW8VJ/2asAzwlLYcUhj86AzuWLe94UTSQHv1SSCCj/x6lya8twvXkZtlTbIQ==",
-          "requires": {
-            "command-exists": "^1.2.8",
-            "commander": "3.0.2",
-            "fs-extra": "^0.30.0",
-            "js-sha3": "0.8.0",
-            "memorystream": "^0.3.1",
-            "require-from-string": "^2.0.0",
-            "semver": "^5.5.0",
-            "tmp": "0.0.33"
-          }
-        }
       }
     },
     "@rush-temp/compiler": {
       "version": "file:projects/compiler.tgz",
-      "integrity": "sha512-UrLTD0JfklJx+b9JrJ8jYelpBW/23LNDOM9ekHcMeMB4fAnut8xmIlSybyV+c9Wzwi1tlX9QEYBLI1lvxjqswA==",
+      "integrity": "sha512-0c5ln9UPDKpThIdtDhWNuWuj54dieSVyuLMN9mSe6NHQG2dO/OoJSmEtRMlvnZMONa2Y+LsRLnNxgx6qW5JM8g==",
       "requires": {
-        "@0xcert/ethereum-utils-contracts": "0.0.0-alpha",
+        "@0xcert/ethereum-utils-contracts": "2.0.0-alpha15",
         "@hayspec/reporter": "0.9.0",
         "@types/fs-extra": "8.0.0",
         "@types/node": "12.7.8",
@@ -485,39 +451,10 @@
         "typescript": "3.6.3"
       },
       "dependencies": {
-        "commander": {
-          "version": "3.0.2",
-          "resolved": "https://registry.npmjs.org/commander/-/commander-3.0.2.tgz",
-          "integrity": "sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow=="
-        },
-        "solc": {
-          "version": "0.6.1",
-          "resolved": "https://registry.npmjs.org/solc/-/solc-0.6.1.tgz",
-          "integrity": "sha512-iKqNYps2p++x8L9sBg7JeAJb7EmW8VJ/2asAzwlLYcUhj86AzuWLe94UTSQHv1SSCCj/x6lya8twvXkZtlTbIQ==",
-          "requires": {
-            "command-exists": "^1.2.8",
-            "commander": "3.0.2",
-            "fs-extra": "^0.30.0",
-            "js-sha3": "0.8.0",
-            "memorystream": "^0.3.1",
-            "require-from-string": "^2.0.0",
-            "semver": "^5.5.0",
-            "tmp": "0.0.33"
-          },
-          "dependencies": {
-            "fs-extra": {
-              "version": "0.30.0",
-              "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-0.30.0.tgz",
-              "integrity": "sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=",
-              "requires": {
-                "graceful-fs": "^4.1.2",
-                "jsonfile": "^2.1.0",
-                "klaw": "^1.0.0",
-                "path-is-absolute": "^1.0.0",
-                "rimraf": "^2.2.8"
-              }
-            }
-          }
+        "@0xcert/ethereum-utils-contracts": {
+          "version": "2.0.0-alpha15",
+          "resolved": "https://registry.npmjs.org/@0xcert/ethereum-utils-contracts/-/ethereum-utils-contracts-2.0.0-alpha15.tgz",
+          "integrity": "sha512-YMgcksbdlIRbjhOjV8UjejtmioJZ4iepDBelIDzHQ+x+yoXYycddBg6AvI/AoH4KcH4y92HZK1vLLXIYECBF9Q=="
         }
       }
     },
@@ -6360,6 +6297,40 @@
           "version": "3.0.1",
           "resolved": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.0.1.tgz",
           "integrity": "sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw=="
+        }
+      }
+    },
+    "solc": {
+      "version": "0.6.1",
+      "resolved": "https://registry.npmjs.org/solc/-/solc-0.6.1.tgz",
+      "integrity": "sha512-iKqNYps2p++x8L9sBg7JeAJb7EmW8VJ/2asAzwlLYcUhj86AzuWLe94UTSQHv1SSCCj/x6lya8twvXkZtlTbIQ==",
+      "requires": {
+        "command-exists": "^1.2.8",
+        "commander": "3.0.2",
+        "fs-extra": "^0.30.0",
+        "js-sha3": "0.8.0",
+        "memorystream": "^0.3.1",
+        "require-from-string": "^2.0.0",
+        "semver": "^5.5.0",
+        "tmp": "0.0.33"
+      },
+      "dependencies": {
+        "commander": {
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/commander/-/commander-3.0.2.tgz",
+          "integrity": "sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow=="
+        },
+        "fs-extra": {
+          "version": "0.30.0",
+          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-0.30.0.tgz",
+          "integrity": "sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=",
+          "requires": {
+            "graceful-fs": "^4.1.2",
+            "jsonfile": "^2.1.0",
+            "klaw": "^1.0.0",
+            "path-is-absolute": "^1.0.0",
+            "rimraf": "^2.2.8"
+          }
         }
       }
     },
