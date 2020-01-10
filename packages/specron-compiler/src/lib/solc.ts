@@ -50,7 +50,7 @@ export interface SolcInput {
       };
     };
     // Version of the EVM to compile for. Affects type checking and code generation.
-    evmVersion?: 'homestead' | 'tangerineWhistle' | 'spuriousDragon' | 'byzantium' | 'constantinople' | 'petersburg';
+    evmVersion?: 'homestead' | 'tangerineWhistle' | 'spuriousDragon' | 'byzantium' | 'constantinople' | 'petersburg' | 'istanbul' | 'berlin';
     // Metadata settings (optional)
     metadata?: {
       // Use only literal content and not URLs (false by default)
