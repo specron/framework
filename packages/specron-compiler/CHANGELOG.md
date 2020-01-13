@@ -1,6 +1,11 @@
 # Change Log - @specron/compiler
 
-This log was last generated on Tue, 07 Jan 2020 09:53:08 GMT and should not be manually modified.
+This log was last generated on Mon, 13 Jan 2020 09:39:01 GMT and should not be manually modified.
+
+## 0.12.0
+Mon, 13 Jan 2020 09:39:01 GMT
+
+*Version update only*
 
 ## 0.11.0
 Tue, 07 Jan 2020 09:53:08 GMT
