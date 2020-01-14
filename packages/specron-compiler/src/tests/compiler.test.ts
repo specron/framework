@@ -2,9 +2,9 @@ import test from 'ava';
 import * as glob from 'fast-glob';
 import { Compiler } from '..';
 
-test('adds new source files', (t) => {
+test('adds new source files', async (t) => {
   const compiler = new Compiler();
-  compiler.source('./src/tests/assets/*.sol');
+  await compiler.source('./src/tests/assets/*.sol');
   const files = Object.keys(compiler.input.sources);
   t.deepEqual(files, [
     './src/tests/assets/token-a.sol',
@@ -13,23 +13,22 @@ test('adds new source files', (t) => {
   ]);
 });
 
-test('compiles source files', (t) => {
+test('compiles source files', async (t) => {
   const compiler = new Compiler();
-  compiler.source('./src/tests/assets/*.sol');
-  compiler.compile();
+  await compiler.source('./src/tests/assets/*.sol');
+  await compiler.compile();
   const contracts = Object.keys(compiler.output.contracts);
   t.deepEqual(contracts, [
     './src/tests/assets/token-a.sol',
     './src/tests/assets/token-b.sol',
     './src/tests/assets/token-c.sol',
-    '@0xcert/ethereum-utils-contracts/src/contracts/math/safe-math.sol',
   ]);
 });
 
 test('saves compiled sources to destination', async (t) => {
   const compiler = new Compiler();
-  compiler.source('./src/tests/assets/*.sol');
-  compiler.compile();
+  await compiler.source('./src/tests/assets/*.sol');
+  await compiler.compile();
   compiler.save('./build/foo');
   const files = glob.sync('./build/foo/*.json') as string[];
   t.deepEqual(files, [

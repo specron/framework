@@ -5,6 +5,7 @@ import * as pth from 'path';
 import * as glob from 'fast-glob';
 import { SolcInput, SolcOutput } from '../lib/solc';
 import { DefaultReporter } from './reporter';
+import { Flattener } from '@specron/flattener';
 
 /**
  * Solidity compiler configuration object.
@@ -56,18 +57,19 @@ export class Compiler {
    * Loads sources by pattern.
    * @param patterns File search patterns.
    */
-  public source(...patterns: string[]) {
-    const files = glob.sync(patterns, { cwd: this.cwd })
-      .map((f) => f.toString());
- 
-    files.forEach((file) => {
-      file = this.normalizePath(file);
-      this.input.sources[file] = {
-        content: fs.readFileSync(file).toString(),
-      };
+  public async source(...patterns: string[]) {
+    const flattener = new Flattener();
+    flattener.source(...patterns);
+    await flattener.flatten();
+
+    const keys = Object.keys(flattener.output.sources);
+    keys.forEach(element => {
+      this.input.sources[element] = {
+        content: flattener.output.sources[element]
+      }
     });
 
-    return files.length;
+    return keys.length;
   }
 
   /**
@@ -88,7 +90,7 @@ export class Compiler {
     if (this.reporter) {
       this.reporter.onCompileStart(this);
     }
-
+    
     const input = JSON.stringify(this.input);
 
     this.output = JSON.parse(

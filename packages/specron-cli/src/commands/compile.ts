@@ -16,7 +16,7 @@ export default async function (argv) {
     },
     reporter: new DefaultReporter(config.compiler.severities),
   });
-  compiler.source(...config.compiler.match);
+  await compiler.source(...config.compiler.match);
 
   try {
     compiler.compile();
