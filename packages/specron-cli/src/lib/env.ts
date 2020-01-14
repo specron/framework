@@ -40,7 +40,7 @@ export function getConfig(argv?: any) {
       build: getFirstValue(custom['build'], defaults['compiler']['build'], './build'),
       match: getFirstValue(custom['match'], defaults['compiler']['match'], []),
       severities: getFirstValue(custom['severities'], defaults['compiler']['severities'], ['error', 'warning']),
-      evmVersion: getFirstValue(custom['evmVersion'], defaults['compiler']['evmVersion'], 'constantinople'),
+      evmVersion: getFirstValue(custom['evmVersion'], defaults['compiler']['evmVersion'], 'istanbul'),
     },
     flattener: {
       build: getFirstValue(custom['build'], defaults['flattener']['build'], './build'),
