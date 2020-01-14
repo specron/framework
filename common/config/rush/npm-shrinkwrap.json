@@ -436,7 +436,7 @@
     },
     "@rush-temp/compiler": {
       "version": "file:projects/compiler.tgz",
-      "integrity": "sha512-0c5ln9UPDKpThIdtDhWNuWuj54dieSVyuLMN9mSe6NHQG2dO/OoJSmEtRMlvnZMONa2Y+LsRLnNxgx6qW5JM8g==",
+      "integrity": "sha512-3KqWajovMvImlGTWfJYzR17pRy8sRffoRh5UowiWx/a/huW73WpQkgt4hYPAtWBU2KiyeNgHacFs4+wF2A95AQ==",
       "requires": {
         "@0xcert/ethereum-utils-contracts": "2.0.0-alpha15",
         "@hayspec/reporter": "0.9.0",

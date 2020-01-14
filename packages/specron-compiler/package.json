@@ -45,6 +45,7 @@
     "typescript": "3.6.3"
   },
   "dependencies": {
+    "@specron/flattener": "0.10.0",
     "@hayspec/reporter": "0.9.0",
     "fast-glob": "3.0.4",
     "fs-extra": "8.1.0"
