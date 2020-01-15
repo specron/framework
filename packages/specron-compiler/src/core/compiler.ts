@@ -39,10 +39,7 @@ export class Compiler {
         outputSelection: {
           '*': {
             '*': [
-              'ast', 'abi', 'devdoc', 'userdoc', 'metadata',
-              'evm.assembly', 'evm.bytecode.object', 'evm.bytecode.opcodes',
-              'evm.bytecode.sourceMap', 'evm.bytecode.linkReferences',
-              'evm.deployedBytecode*', 'evm.methodIdentifiers', 'evm.gasEstimates',
+              'ast', 'abi', 'metadata', 'evm.bytecode.object', 'evm.methodIdentifiers',
             ],
           },
         },
