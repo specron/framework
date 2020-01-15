@@ -460,7 +460,7 @@
     },
     "@rush-temp/flattener": {
       "version": "file:projects/flattener.tgz",
-      "integrity": "sha512-kR3ULEgxjrG2sNIvZS0Xs6ddxN17WkoDWY1nOPELvSVKnqq5FrJHCYjWmy/lQTsXRNCIhthn3gU0nVn2lroh8A==",
+      "integrity": "sha512-qNf6AntseWf2qLesgQiYeJ7jmooLjoary3pgP8+fBCUxZ51w1ifPaY7lvBzoQY1QD6zyN7G9SquEtzuFMX+i2A==",
       "requires": {
         "@0xcert/ethereum-utils-contracts": "0.0.0-alpha",
         "@hayspec/reporter": "0.9.0",
@@ -469,7 +469,7 @@
         "ava": "2.4.0",
         "fast-glob": "3.0.4",
         "nyc": "14.1.1",
-        "sol-merger": "1.0.1",
+        "sol-merger": "1.2.2",
         "ts-node": "8.4.1",
         "typescript": "3.6.3"
       }
@@ -1652,7 +1652,8 @@
     "commander": {
       "version": "2.20.3",
       "resolved": "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz",
-      "integrity": "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
+      "integrity": "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==",
+      "optional": true
     },
     "common-path-prefix": {
       "version": "1.0.0",
@@ -2633,9 +2634,9 @@
       }
     },
     "ext": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/ext/-/ext-1.2.1.tgz",
-      "integrity": "sha512-x+OKKC57tNiLhDW26UmWtvQBpvO+2wxdC/A0jP7RkmjAc4gze9/U98hQyIYJUzo9A+o9ntMHpC+LH3pWMSbrVQ==",
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/ext/-/ext-1.4.0.tgz",
+      "integrity": "sha512-Key5NIsUxdqKg3vIsdw9dSuXpPCQ297y6wBjL30edxwPgt2E44WcWBZey/ZvUc6sERLTxKdyCu4gZFmUbk1Q7A==",
       "requires": {
         "type": "^2.0.0"
       },
@@ -6268,18 +6269,24 @@
       }
     },
     "sol-merger": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/sol-merger/-/sol-merger-1.0.1.tgz",
-      "integrity": "sha512-rzdXxt13H/g7SGcpqkXZkE4icbkE5PtbC1Vlzpnn8lFDS1R/2u0fPYxTDhkJMNa8lkwWpV6HBS7mmTN8yLtOqg==",
+      "version": "1.2.2",
+      "resolved": "https://registry.npmjs.org/sol-merger/-/sol-merger-1.2.2.tgz",
+      "integrity": "sha512-mRwfa+oKPDx/4jqHs4mvTxFNSzbeke3nZgW5001ynEQpqpxbFAf8hrsCLWVeN21RSqxk1AisQKpp0gprFvCrHQ==",
       "requires": {
         "cli-color": "^1.4.0",
-        "commander": "^2.19.0",
+        "commander": "^4.0.1",
         "debug": "^4.1.1",
         "fs-extra": "^8.0.1",
         "glob": "^7.1.2",
+        "solidity-parser-antlr": "^0.4.11",
         "strip-json-comments": "^3.0.1"
       },
       "dependencies": {
+        "commander": {
+          "version": "4.1.0",
+          "resolved": "https://registry.npmjs.org/commander/-/commander-4.1.0.tgz",
+          "integrity": "sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw=="
+        },
         "debug": {
           "version": "4.1.1",
           "resolved": "https://registry.npmjs.org/debug/-/debug-4.1.1.tgz",
@@ -6333,6 +6340,11 @@
           }
         }
       }
+    },
+    "solidity-parser-antlr": {
+      "version": "0.4.11",
+      "resolved": "https://registry.npmjs.org/solidity-parser-antlr/-/solidity-parser-antlr-0.4.11.tgz",
+      "integrity": "sha512-4jtxasNGmyC0midtjH/lTFPZYvTTUMy6agYcF+HoMnzW8+cqo3piFrINb4ZCzpPW+7tTVFCGa5ubP34zOzeuMg=="
     },
     "source-map": {
       "version": "0.5.7",
