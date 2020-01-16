@@ -20,6 +20,9 @@ export default async function (argv) {
 
   try {
     compiler.compile();
+    if (config.compiler.clean) {
+      compiler.clean();
+    }
     compiler.save(config.compiler.build);
     process.exit(0);
   } catch (e) {

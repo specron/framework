@@ -27,6 +27,7 @@ test('compiles smart contracts', async (t) => {
   const { stdout, stderr } = await exec(command);
   const tokena = require(pt.join(process.cwd(), dist, 'token-a.json'));
   t.is(tokena.Token1.metadata.settings.evmVersion, 'byzantium');
+  t.is(Object.keys(tokena).length, 1);
   t.true(stdout.indexOf('Contracts') !== -1);
   t.true(stdout.indexOf('code: 0') !== -1);
   t.true(stderr === '');

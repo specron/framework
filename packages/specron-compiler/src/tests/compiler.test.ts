@@ -25,6 +25,16 @@ test('compiles source files', async (t) => {
   ]);
 });
 
+test('cleans compiled output', async (t) => {
+  const compiler = new Compiler();
+  await compiler.source('./src/tests/assets/*.sol');
+  await compiler.compile();
+  compiler.clean();
+  Object.keys(compiler.output.contracts).forEach((element) => {
+    t.is(Object.keys(compiler.output.contracts[element]).length, 1);
+  });
+});
+
 test('saves compiled sources to destination', async (t) => {
   const compiler = new Compiler();
   await compiler.source('./src/tests/assets/*.sol');

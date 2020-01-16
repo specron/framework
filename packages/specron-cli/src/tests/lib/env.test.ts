@@ -10,6 +10,7 @@ test('method `getConfig` returns package.json specron configuration', async (t) 
       match: ['./src/**/*.sol'],
       severities: ['error', 'warning'],
       evmVersion: 'istanbul',
+      clean: true,
     },
     flattener: {
       build: './build',
@@ -48,6 +49,7 @@ test('method `getConfig` merges received configuration', async (t) => {
       match: ['foo'],
       severities: ['error', 'warning'],
       evmVersion: 'istanbul',
+      clean: true,
     },
     flattener: {
       build: './build',

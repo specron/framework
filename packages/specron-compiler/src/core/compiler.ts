@@ -2,7 +2,6 @@ import * as solc from 'solc';
 import * as fs from 'fs';
 import * as fsx from 'fs-extra';
 import * as pth from 'path';
-import * as glob from 'fast-glob';
 import { SolcInput, SolcOutput } from '../lib/solc';
 import { DefaultReporter } from './reporter';
 import { Flattener } from '@specron/flattener';
@@ -39,10 +38,7 @@ export class Compiler {
         outputSelection: {
           '*': {
             '*': [
-              'ast', 'abi', 'devdoc', 'userdoc', 'metadata',
-              'evm.assembly', 'evm.bytecode.object', 'evm.bytecode.opcodes',
-              'evm.bytecode.sourceMap', 'evm.bytecode.linkReferences',
-              'evm.deployedBytecode*', 'evm.methodIdentifiers', 'evm.gasEstimates',
+              'ast', 'abi', 'metadata', 'evm.bytecode.object', 'evm.methodIdentifiers',
             ],
           },
         },
@@ -104,6 +100,27 @@ export class Compiler {
     return !Array.isArray(this.output.errors);
   }
 
+  /**
+   * Cleans output of unnecessary contracts.
+   */
+  public clean() {
+    Object.keys(this.output.contracts || {}).forEach((file) => {
+      const sourcePath = this.normalizePath(file);
+      const isModule = sourcePath.indexOf('./node_modules') === 0;
+      if (isModule) {
+        return;
+      }
+      const matcher = new RegExp('(?<=contract )(.*?)(?= |{|\n)','gm');
+      const contracts = fs.readFileSync(sourcePath).toString().match(matcher);
+      const json = this.output.contracts[file];
+      Object.keys(json).forEach((contract) => {
+        if (contracts.indexOf(contract) === -1) {
+          delete this.output.contracts[file][contract];
+        }
+      });
+    });
+  }
+  
   /**
    * Saves memorized compiler output to destination folder.
    * @param dist Destination folder.
