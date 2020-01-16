@@ -32,6 +32,10 @@ const { argv } = yargs
     .option('optimization', {
       number: true,
       description: 'Code optimization level',
+    })
+    .option('clean', {
+      boolean: true,
+      description: 'Clean output',
     }),
     compileHandler)
   .command('flatten', 'Flattens solidity contracts', (yargs) => yargs

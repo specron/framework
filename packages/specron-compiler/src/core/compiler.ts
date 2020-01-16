@@ -2,7 +2,6 @@ import * as solc from 'solc';
 import * as fs from 'fs';
 import * as fsx from 'fs-extra';
 import * as pth from 'path';
-import * as glob from 'fast-glob';
 import { SolcInput, SolcOutput } from '../lib/solc';
 import { DefaultReporter } from './reporter';
 import { Flattener } from '@specron/flattener';
