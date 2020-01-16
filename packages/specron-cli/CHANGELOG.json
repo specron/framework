@@ -2,6 +2,18 @@
   "name": "@specron/cli",
   "entries": [
     {
+      "version": "0.15.0",
+      "tag": "@specron/cli_v0.15.0",
+      "date": "Thu, 16 Jan 2020 09:44:14 GMT",
+      "comments": {}
+    },
+    {
+      "version": "0.14.0",
+      "tag": "@specron/cli_v0.14.0",
+      "date": "Thu, 16 Jan 2020 08:27:04 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.13.0",
       "tag": "@specron/cli_v0.13.0",
       "date": "Tue, 14 Jan 2020 12:07:56 GMT",
