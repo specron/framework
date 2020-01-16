@@ -104,21 +104,23 @@ export class Compiler {
    * Cleans output of unnecessary contracts.
    */
   public clean() {
-    Object.keys(this.output.contracts || {}).forEach((file) => {
-      const sourcePath = this.normalizePath(file);
-      const isModule = sourcePath.indexOf('./node_modules') === 0;
-      if (isModule) {
-        return;
-      }
-      const matcher = new RegExp('(?<=contract )(.*?)(?= |{|\n)','gm');
-      const contracts = fs.readFileSync(sourcePath).toString().match(matcher);
-      const json = this.output.contracts[file];
-      Object.keys(json).forEach((contract) => {
-        if (contracts.indexOf(contract) === -1) {
-          delete this.output.contracts[file][contract];
+    try {
+      Object.keys(this.output.contracts || {}).forEach((file) => {
+        const sourcePath = this.normalizePath(file);
+        const isModule = sourcePath.indexOf('./node_modules') === 0;
+        if (isModule) {
+          return;
         }
+        const matcher = new RegExp('(?<=^contract )(.*?)(?= |{|\n)','gm');
+        const contracts = fs.readFileSync(sourcePath).toString().match(matcher);
+        const json = this.output.contracts[file];
+        Object.keys(json).forEach((contract) => {
+          if (contracts && contracts.indexOf(contract) === -1) {
+            delete this.output.contracts[file][contract];
+          }
+        });
       });
-    });
+    } catch {}
   }
   
   /**
