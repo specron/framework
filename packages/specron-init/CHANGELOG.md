@@ -1,6 +1,11 @@
 # Change Log - @specron/init
 
-This log was last generated on Thu, 16 Jan 2020 09:44:14 GMT and should not be manually modified.
+This log was last generated on Mon, 27 Jan 2020 10:44:17 GMT and should not be manually modified.
+
+## 0.15.1
+Mon, 27 Jan 2020 10:44:17 GMT
+
+*Version update only*
 
 ## 0.15.0
 Thu, 16 Jan 2020 09:44:14 GMT
