@@ -17,6 +17,7 @@ export async function deploy(config: {
   const abi = config.contract ? data[config.contract].abi : data.abi;
   const bytecode = config.contract ? data[config.contract].evm.bytecode.object : data.bytecode;
   const contract = new config.web3.eth.Contract(abi);
+  let txHash = null;
   const receipt = await contract.deploy({
     data: bytecode,
     arguments: config.args,
@@ -24,6 +25,8 @@ export async function deploy(config: {
     from: config.from,
     gas: config.gas,
     gasPrice: config.gasPrice,
+  }).on('transactionHash', (transactionHash) => {
+    txHash = transactionHash;
   });
   const instance = new config.web3.eth.Contract(
     abi,
@@ -33,5 +36,9 @@ export async function deploy(config: {
       from: config.from,
     },
   );
+  if(txHash) {
+    const transactionReceipt = await config.web3.eth.getTransactionReceipt(txHash);
+    Object.assign(receipt, transactionReceipt);
+  }
   return { instance, receipt };
 }
