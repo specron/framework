@@ -10,7 +10,6 @@
   },
   "ava": {
     "concurrency": 1,
-    "compileEnhancements": false,
     "require": [
       "ts-node/register"
     ],
@@ -35,20 +34,20 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@0xcert/ethereum-utils-contracts": "2.0.0-alpha15",
-    "@types/fs-extra": "8.0.0",
-    "@types/node": "12.7.8",
-    "ava": "2.4.0",
-    "nyc": "14.1.1",
+    "@0xcert/ethereum-utils-contracts": "2.0.1",
+    "@types/fs-extra": "8.1.0",
+    "@types/node": "13.13.4",
+    "ava": "3.8.1",
+    "nyc": "15.0.1",
     "solc": "0.6.1",
-    "ts-node": "8.4.1",
-    "typescript": "3.6.3"
+    "ts-node": "8.10.1",
+    "typescript": "3.8.3"
   },
   "dependencies": {
     "@specron/flattener": "0.16.0",
-    "@hayspec/reporter": "0.9.0",
-    "fast-glob": "3.0.4",
-    "fs-extra": "8.1.0"
+    "@hayspec/reporter": "0.10.0",
+    "fast-glob": "3.2.2",
+    "fs-extra": "9.0.0"
   },
   "peerDependencies": {
     "solc": "*"

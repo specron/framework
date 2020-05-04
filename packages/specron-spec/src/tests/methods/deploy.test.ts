@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as Web3 from 'web3';
+import Web3 from 'web3';
 import { Sandbox } from '@specron/sandbox';
 import { deploy } from '../../methods/deploy';
 
@@ -37,7 +37,8 @@ test('deploys contract from node_modules', async (t) => {
       from: await web3.eth.getAccounts().then((a) => a[0]),
       gas: 6000000,
       gasPrice: 1,
-      src: '@0xcert/ethereum-utils/build/contracts/Ownable.json',
+      src: '@0xcert/ethereum-utils-contracts/build/ownable.json',
+      contract: 'Ownable',
     });  
     t.pass();
   } catch (e) {

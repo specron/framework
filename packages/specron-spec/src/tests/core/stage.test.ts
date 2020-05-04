@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as Web3 from 'web3';
+import Web3 from 'web3';
 import { Sandbox } from '@specron/sandbox';
 import { Stage, Reporter } from '../..';
 import { deploy } from '../../methods/deploy';

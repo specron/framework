@@ -1,6 +1,6 @@
 import { Runner, Spec, Stage, Reporter } from '@specron/spec';
 import { Sandbox } from '@specron/sandbox';
-import * as Web3 from 'web3';
+import Web3 from 'web3';
 import { getConfig } from '../lib/env';
 
 /**
