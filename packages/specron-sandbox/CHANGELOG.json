@@ -2,6 +2,12 @@
   "name": "@specron/sandbox",
   "entries": [
     {
+      "version": "0.17.0",
+      "tag": "@specron/sandbox_v0.17.0",
+      "date": "Mon, 04 May 2020 10:16:53 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.16.0",
       "tag": "@specron/sandbox_v0.16.0",
       "date": "Fri, 07 Feb 2020 11:38:38 GMT",

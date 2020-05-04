@@ -1,6 +1,11 @@
 # Change Log - @specron/sandbox
 
-This log was last generated on Fri, 07 Feb 2020 11:38:38 GMT and should not be manually modified.
+This log was last generated on Mon, 04 May 2020 10:16:53 GMT and should not be manually modified.
+
+## 0.17.0
+Mon, 04 May 2020 10:16:53 GMT
+
+*Version update only*
 
 ## 0.16.0
 Fri, 07 Feb 2020 11:38:38 GMT
