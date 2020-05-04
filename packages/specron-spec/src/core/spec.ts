@@ -3,7 +3,7 @@ import { DefaultReporter } from '@hayspec/reporter';
 import { Sandbox } from '@specron/sandbox';
 import { Stage } from './stage';
 import { Context } from './context';
-import * as Web3 from 'web3';
+import Web3 from 'web3';
 
 /**
  * 

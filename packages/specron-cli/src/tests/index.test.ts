@@ -44,14 +44,14 @@ test('flattens smart contracts', async (t) => {
 
 test.serial('runs valid tests', async (t) => {
   const command = `./bin/specron test --match ./src/tests/assets/valid.hay.ts --require ts-node/register; echo code: $?`;
-  const { stdout, stderr } = await exec(command)
+  const { stdout, stderr } = await exec(command);
   t.true(stdout.indexOf('code: 0') !== -1);
   t.true(stderr === '');
 });
 
 test.serial('runs invalid tests', async (t) => {
   const command = `./bin/specron test --match ./src/tests/assets/invalid.hay.ts --require ts-node/register; echo code: $?`;
-  const { stdout, stderr } = await exec(command)
+  const { stdout, stderr } = await exec(command);
   t.true(stdout.indexOf('src/tests/assets/invalid.hay.ts') !== -1);
   t.true(stdout.indexOf('code: 1') !== -1);
   t.true(stderr === '');
