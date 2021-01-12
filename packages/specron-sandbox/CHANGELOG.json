@@ -2,6 +2,12 @@
   "name": "@specron/sandbox",
   "entries": [
     {
+      "version": "0.17.3",
+      "tag": "@specron/sandbox_v0.17.3",
+      "date": "Tue, 12 Jan 2021 14:59:18 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.17.2",
       "tag": "@specron/sandbox_v0.17.2",
       "date": "Tue, 12 Jan 2021 12:34:19 GMT",
