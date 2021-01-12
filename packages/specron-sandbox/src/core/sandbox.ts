@@ -69,7 +69,7 @@ export class Sandbox {
   public async listen() {
 
     await new Promise((resolve, reject) => {
-      this.server.listen(this.options.port, (e) => e ? reject(e) : resolve());
+      this.server.listen(this.options.port, (e) => e ? reject(e) : resolve(null));
     });
 
     return this;
