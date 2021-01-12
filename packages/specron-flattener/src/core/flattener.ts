@@ -29,6 +29,7 @@ export class Flattener {
   public cwd: string;
   public sources: string[] = [];
   readonly output: FlattenerOutput;
+  protected SPDX_COMMENT_REGEX = /SPDX-License-Identifier: .+/g;
 
   /**
    * Class constructor.
@@ -69,6 +70,11 @@ export class Flattener {
 
       while(running) {
         await merge(source).then((c) => {
+          const spdxs = c.match(this.SPDX_COMMENT_REGEX);
+          if (spdxs && spdxs.length > 0) {
+            c = c.replace(this.SPDX_COMMENT_REGEX, '');
+            c = `// ${spdxs[0]}\n${c}`;
+          }
           this.output.sources[source] = c;
           running = false;
         }).catch((e) => {
