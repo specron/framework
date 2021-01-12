@@ -19,7 +19,8 @@
     "files": [
       "src/tests/*.test.ts",
       "src/tests/**/*.test.ts"
-    ]
+    ],
+    "timeout": "1m"
   },
   "nyc": {
     "extension": [

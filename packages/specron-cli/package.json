@@ -52,7 +52,8 @@
     "files": [
       "dist/tests/*.test.js",
       "dist/tests/**/*.test.js"
-    ]
+    ],
+    "timeout": "1m"
   },
   "nyc": {
     "exclude": [
