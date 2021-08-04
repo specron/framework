@@ -35,21 +35,21 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@0xcert/ethereum-utils-contracts": "2.0.3",
-    "@types/node": "14.14.20",
+    "@0xcert/ethereum-utils-contracts": "2.1.1",
+    "@types/node": "16.4.11",
     "ava": "3.15.0",
     "nyc": "15.1.0",
-    "ts-node": "9.1.1",
-    "typescript": "4.1.3",
-    "web3": "1.3.1"
+    "ts-node": "10.1.0",
+    "typescript": "4.3.5",
+    "web3": "1.5.0"
   },
   "peerDependencies": {
     "web3": "*"
   },
   "dependencies": {
-    "@hayspec/reporter": "0.10.0",
-    "@hayspec/runner": "0.10.0",
-    "@hayspec/spec": "0.10.0",
+    "@hayspec/reporter": "0.10.2",
+    "@hayspec/runner": "0.10.2",
+    "@hayspec/spec": "0.10.2",
     "@specron/sandbox": "0.17.3"
   }
 }
