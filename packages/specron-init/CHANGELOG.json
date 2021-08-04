@@ -2,6 +2,12 @@
   "name": "@specron/init",
   "entries": [
     {
+      "version": "0.17.4",
+      "tag": "@specron/init_v0.17.4",
+      "date": "Wed, 04 Aug 2021 13:34:22 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.17.3",
       "tag": "@specron/init_v0.17.3",
       "date": "Tue, 12 Jan 2021 14:59:18 GMT",

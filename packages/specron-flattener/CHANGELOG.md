@@ -1,6 +1,11 @@
 # Change Log - @specron/flattener
 
-This log was last generated on Tue, 12 Jan 2021 14:59:18 GMT and should not be manually modified.
+This log was last generated on Wed, 04 Aug 2021 13:34:22 GMT and should not be manually modified.
+
+## 0.17.4
+Wed, 04 Aug 2021 13:34:22 GMT
+
+*Version update only*
 
 ## 0.17.3
 Tue, 12 Jan 2021 14:59:18 GMT
